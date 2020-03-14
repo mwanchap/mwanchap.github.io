@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Play on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/google-play/</link>
+    <description>Recent content in Google Play on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2013 15:04:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/google-play/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting an .apk into the Google Play store</title>
+      <link>https://wanchap.com/posts/getting-an-.apk-into-the-google-play-store/</link>
+      <pubDate>Sun, 01 Dec 2013 15:04:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/getting-an-.apk-into-the-google-play-store/</guid>
+      <description>This is mostly for my own reference but I hope someone else can find it useful too :)Disable debugging in your AndroidManifest.xml file by setting android:debuggable=&amp;quot;false&amp;rdquo; in the &amp;ldquo;application&amp;rdquo; node.cordova build android &amp;ndash;releasejarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore yourkey.keystore app.apk alias_name (assuming you&amp;rsquo;ve generated a key beforehand using keytool in the JDK bin directory)zipalign -v 4 app-release-unsigned.apk app.apk (obviously replace &amp;ldquo;app&amp;rdquo; with your app name)Zipalign must be the last thing that happens!</description>
+    </item>
+    
+  </channel>
+</rss>

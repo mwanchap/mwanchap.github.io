@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/powershell/</link>
+    <description>Recent content in Powershell on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Mar 2020 17:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Export every field of every record of a bunch of Salesforce objects</title>
+      <link>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</link>
+      <pubDate>Wed, 04 Mar 2020 17:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</guid>
+      <description>I needed to get a backup of every record of a bunch of objects (for posterity) which were about to be deleted, I wanted to grab every field and do it in one line. I cheated a little, because I&amp;rsquo;ve defined some functions that just do some of the basic processing. I could put the whole function definitions on one line too, but that&amp;rsquo;d be a bit contrived ;) They&amp;rsquo;re below for reference</description>
+    </item>
+    
+    <item>
+      <title>Combine many CSVs into batches of a specified size with Powershell</title>
+      <link>https://wanchap.com/posts/combine-many-csvs-into-batches-of-a-specified-size-with-powershell/</link>
+      <pubDate>Mon, 02 Mar 2020 20:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/combine-many-csvs-into-batches-of-a-specified-size-with-powershell/</guid>
+      <description>$batchMaxSize = 9.5MB
+$allFiles = Get-ChildItem &#39;fileLocation\*.csv&#39;
+$batchNumber = 0;
+$batchMagnitude = $allFiles.Count.ToString().Length
+# group the files together until there&#39;s none left
+while ($allFiles.Count -gt 0) {
+$batchNumber++;
+$batchSuffix = $batchNumber.ToString().PadLeft($batchMagnitude,&#34;0&#34;);
+$totalSize = 0;
+# add the file sizes together, keeping a running total until it exceeds the max
+$batchFiles = $allFiles | where {$totalSize += $_.Length; $totalSize -lt $batchMaxSize};
+# combine the files in memory - don&#39;t need to deal with headers</description>
+    </item>
+    
+    <item>
+      <title>Exporting from an SQL database (e.g. Dynamics) into Salesforce, without Excel</title>
+      <link>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</guid>
+      <description>Whenever you paste content into it, Excel likes to be helpful and reformat it according to what it thinks you&amp;rsquo;re doing (e.g. format dates, interpret formulae), but often with CSVs it gets this wrong and messes up your carefully-formatted raw data. This was getting pretty frustrating, so rather than figuring out workarounds for Excel&amp;rsquo;s weirdness, here&amp;rsquo;s how to cut out the middleman and get the output of an SQL query directly into Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>Count all Salesforce records of all object types owned by a specific user</title>
+      <link>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</link>
+      <pubDate>Thu, 12 Dec 2019 21:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</guid>
+      <description>It&amp;rsquo;s not the fastest or most elegant script, but using the Force.com CLI it&amp;rsquo;s pretty easy to get a count of objects (of all types) owned by a specific user. It assumes that the field to be checked is ownerid, though, so might not work if you have other fields. A slightly better way might be to check which objects have an ownerid field first.
+$ErrorActionPreference = &amp;lsquo;SilentlyContinue&#39;
+$objects = force sobject list</description>
+    </item>
+    
+    <item>
+      <title>Powershell error: &#39;Retrieving COM class factory failed: class not registered (REGDB_E_CLASSNOTREG)&#39;</title>
+      <link>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</link>
+      <pubDate>Tue, 05 Nov 2019 17:55:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</guid>
+      <description>The problematic command and full error message was:
+&amp;gt;get-webbinding
+&amp;quot;get-webconfigurationproperty : Retrieving the COM class factory for component with CLSID {688EEEE5-6A7E-422F-B2E1-6AF00DC944A6} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).&amp;ldquo;
+I was pretty stuck on the above error while trying to run a script for setting up sites in IIS which involved some calls to get-webbinding (in the WebAdministration module). After much digging around I finally ran into this post.</description>
+    </item>
+    
+    <item>
+      <title>Powershell - normalizing line endings for all files in a directory</title>
+      <link>https://wanchap.com/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/</link>
+      <pubDate>Tue, 22 Oct 2019 23:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/</guid>
+      <description>If you&amp;rsquo;re working with a git repository, a much better way to solve this is by changing the core.autocrlf setting. In this case I didn&amp;rsquo;t have that option, and needed a quick way to update thousands of files so the EOL chars would match in a binary diff tool. Here&amp;rsquo;s my slightly modified version of this SO answer:
+$items = get-childitem -Path &amp;ldquo;C:\path\to\dir&amp;quot; -Recurse -File
+foreach($original_file in $items)
+{
+$text = [IO.</description>
+    </item>
+    
+    <item>
+      <title>Connecting to Sharepoint with Powershell when MFA is enabled</title>
+      <link>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</guid>
+      <description>If you&amp;rsquo;re using multifactor auth, the usual login method mentioned in the SPOService documentation isn&amp;rsquo;t going to work (using Get-Credential) and you&amp;rsquo;ll get an error saying &amp;ldquo;Connect-SPOService : The sign-in name or password does not match one in the Microsoft account system&amp;rdquo;.
+The correct process is rather bizarre:
+$orgName = &amp;ldquo;organizationname&amp;quot;
+connect-sposervice -url &amp;ldquo;https://$orgName-admin.sharepoint.com&amp;quot;
+Then you&amp;rsquo;ll get the same Azure AD auth popup that you&amp;rsquo;d get with Connect-AzureRmAccount and Microsoft&amp;rsquo;s other Powershell modules.</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops CLI - removing old branches after squash merges</title>
+      <link>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</guid>
+      <description>We had a git repo with hundreds of already-merged branches which I wanted to clean up. They&amp;rsquo;d all been merged via &amp;ldquo;squash merges&amp;rdquo;, meaning there was no merge commit to easily link back to the source branches. I wanted to delete these unnecessary branches, but only the ones that had definitely already been merged into the master branch via a pull request (PR). Below is how I used the Azure Devops CLI to get a list of them.</description>
+    </item>
+    
+    <item>
+      <title>Set &#39;Windows spotlight&#39; lockscreen images as desktop wallpapers without installing anything</title>
+      <link>https://wanchap.com/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/</link>
+      <pubDate>Sun, 06 Oct 2019 18:01:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/</guid>
+      <description>I ended up moving the code for this post into my github since I&amp;rsquo;m using it myself ;) Get it from here:&amp;lt;br/ &amp;gt;https://github.com/mwanchap/configs/blob/master/Scripts/Windows%20Spotlight%20Wallpapers.ps1
+Once you&amp;rsquo;ve cloned it, the only things you need to do are:
+Decide where you want the wallpaper images to goUpdate the $location variable in the script with that location (I&amp;rsquo;m using ~\Pictures\Spotlight Wallpapers)Run the scriptOpen windows background settings and set the background type to &amp;ldquo;slideshow&amp;rdquo;, pointed at that locationRun the script at startup if you want to get new images all the time (optional but recommended)</description>
+    </item>
+    
+    <item>
+      <title>The quickest, easiest way to make and connect to an Azure VM</title>
+      <link>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</link>
+      <pubDate>Thu, 15 Aug 2019 23:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</guid>
+      <description>Connect-AzureRmAccount
+$creds = Get-Credential
+$vmname = &amp;ldquo;TestVM&amp;quot;
+$vm = New-AzureRmVm -Name $vmname -Credential $creds -Location &amp;ldquo;AustraliaEast&amp;rdquo; -Size &amp;ldquo;Standard_DS3_v2&amp;rdquo; # obviously change size and location as required
+$fqdn = $vm.FullyQualifiedDomainName;
+$username = $creds.UserName;
+&amp;quot;full address:s:$fqdn&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo;;
+&amp;quot;username:s:$vmname$username&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo; -Append;</description>
+    </item>
+    
+    <item>
+      <title>Get the maximum length of every field in a CSV, Excel etc</title>
+      <link>https://wanchap.com/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/</link>
+      <pubDate>Sun, 30 Jun 2019 21:15:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/</guid>
+      <description>While setting up tables in our data warehouse for use with some external APIs, it was getting a little tedious to figure out the max length of some long fields to get the write size for CREATE TABLE statements, so I wrote this little script to calculate it for me. Yeah, it&amp;rsquo;s kinda messy, so sue me (or don&amp;rsquo;t). You can swap out the import-csv part to also import from Excel or whatever else</description>
+    </item>
+    
+    <item>
+      <title>Useful Azure AD Powershell snippets</title>
+      <link>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</link>
+      <pubDate>Sun, 14 Apr 2019 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of Azure AD stuff lately, so here are some powershell snippets that have been coming in handy.
+I always forget to Connect-AzureAD first, so don&amp;rsquo;t do that
+Get extension properties of a user (e.g. created date)
+Get-AzureADUser -SearchString &amp;lsquo;username or email addy&amp;rsquo; | select -ExpandProperty ExtensionProperty
+Get guest users that are not members of a specified group
+$allGuests = Get-AzureADUser -Filter &amp;ldquo;usertype eq &amp;lsquo;guest&amp;rsquo;&amp;rdquo; -All $true</description>
+    </item>
+    
+    <item>
+      <title>Get details and creators of all Salesforce reports that reference a specified field</title>
+      <link>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</link>
+      <pubDate>Tue, 09 Apr 2019 15:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</guid>
+      <description>If you&amp;rsquo;re ever modifying a Salesforce field and you want to contact everyone who has created reports using the field, here&amp;rsquo;s how you do that using Powershell and the Force.com CLI (which you can also install via chocolatey):
+set-location C:\wherever
+force export
+$reportFiles = get-childitem -Path .\src\reports\ -Recurse | sls &amp;ldquo;field_to_search_for&amp;quot;
+# I&amp;rsquo;ve included some extra fields here, they might come in useful
+$reportData = force query &amp;ndash;format=json &amp;ldquo;select id, createdby.</description>
+    </item>
+    
+    <item>
+      <title>Using the Force.com CLI and Powershell</title>
+      <link>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</link>
+      <pubDate>Thu, 12 Apr 2018 19:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</guid>
+      <description>Inserting or Updating:Put all your data into a CSV file with the exact same column headings as the Salesforce fields, again making sure to save as ASCII and not UTF8 or any other encoding (in Excel, you want the option called &#34;CSV (Comma delimited)&#34; not &#34;CSV UTF-8&#34;). And then do this: force bulk insert Object__c .\new_object_data.csv
+To modify fields for updating, don&#39;t do the updates in Excel unless you have to - do it inline like this: force query --format json &#34;</description>
+    </item>
+    
+    <item>
+      <title>Useful Powershell stuff</title>
+      <link>https://wanchap.com/posts/useful-powershell-stuff/</link>
+      <pubDate>Wed, 27 Sep 2017 15:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-powershell-stuff/</guid>
+      <description>Group objects into batches of X items with a constructed property, credit to Dave Wyatt:
+$bigList = 1..1000
+$counter = [pscustomobject] @{ Value = 0 }
+$groupSize = 100
+$groups = $bigList | Group-Object -Property { [math]::Floor($counter.Value++ / $groupSize) }
+&amp;mdash;&amp;ndash;
+Use &amp;ldquo;PipelineVariable&amp;rdquo; to pass data down the pipeline rather than using a foreach:
+Get-ADUser &amp;lt;username&amp;gt; -PipelineVariable user -Properties memberof |
+Select-Object -ExpandProperty memberof |
+Select-Object @{ n = &amp;lsquo;Name&amp;rsquo;; e = { $user.</description>
+    </item>
+    
+  </channel>
+</rss>

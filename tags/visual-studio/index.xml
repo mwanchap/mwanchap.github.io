@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Studio on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/visual-studio/</link>
+    <description>Recent content in Visual Studio on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Aug 2019 22:06:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/visual-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recurring issues in Visual Studio projects</title>
+      <link>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</link>
+      <pubDate>Thu, 15 Aug 2019 22:06:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</guid>
+      <description>Common issues and solutions to errors I come across in Visual Studio on a semi-regular basis:
+Problem:
+&amp;quot;Could not find a part of the path … bin\roslyn\csc.exe&amp;quot;
+Solution:
+Run this in Package Manager Console:
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+Problem:
+&amp;quot;Creation of the virtual directory http://localhost:12345/ failed with the error: Cannot create the Web site&amp;quot;
+Solution:
+Update .csproj file and set the following:
+&amp;lt;UseIISExpress&amp;gt;true&amp;lt;/UseIISExpress&amp;gt;
+In the &amp;lt;VisualStudio&amp;gt; element, set the following:
+&amp;lt;IISUrl&amp;gt;http://localhost:1234&amp;lt;/IISUrl&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Strongly-typed action links in ASP.NET Core MVC views</title>
+      <link>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</guid>
+      <description>While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&amp;rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&amp;rsquo;t repeat the install instructions, but for some reason they didn&amp;rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio: Edit and Continue issues</title>
+      <link>https://wanchap.com/posts/visual-studio-edit-and-continue-issues/</link>
+      <pubDate>Mon, 16 Jul 2018 17:34:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/visual-studio-edit-and-continue-issues/</guid>
+      <description>Huge thanks to Steve French for this one
+Like him, I&amp;rsquo;d been having issues with &amp;ldquo;Edit and Continue&amp;rdquo; not working for ages. I tried everything and none of the usual advice helped at all. Finally I came across Steve&amp;rsquo;s post here, and as he suggests, uninstalling Stackify Prefix immediately fixed the problem. Turns out everything was fine to start with, it was just Prefix that was getting in the way (probably due to the way it injects itself into the runtime / server / etc).</description>
+    </item>
+    
+    <item>
+      <title>Auto-Incrementing Build Number in Visual Studio and WiX Installer</title>
+      <link>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</link>
+      <pubDate>Sun, 20 Mar 2016 18:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</guid>
+      <description>In AssemblyInfo.cs, remove the &amp;ldquo;AssemblyFileVersion&amp;rdquo; attribute, and set &amp;ldquo;AssemblyVersion&amp;rdquo; to contain &amp;ldquo;*&amp;rdquo; where you want to include the revision and build numbers, like 1.5.*
+In the WiX installer&amp;rsquo;s .wxs file, in the &amp;ldquo;Product&amp;rdquo; node, set the &amp;ldquo;Version&amp;rdquo; property to look like this:
+Version=&amp;rdquo;!(bind.FileVersion.FileId)&amp;ldquo;
+where FileId is the ID of the file to take the version number from.
+Credit to these two StackOverflow posts:
+http://stackoverflow.com/a/826850/2939759
+http://stackoverflow.com/a/641094/2939759</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio - &#39;Find was stopped in progress&#39;</title>
+      <link>https://wanchap.com/posts/visual-studio-find-was-stopped-in-progress/</link>
+      <pubDate>Thu, 29 May 2014 16:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/visual-studio-find-was-stopped-in-progress/</guid>
+      <description>Sometimes you&amp;rsquo;ll do a Find for &amp;ldquo;Entire Solution&amp;rdquo; (Ctrl + Shift + F is a handy shortcut) and instead of finding anything, the &amp;ldquo;Find Results&amp;rdquo; window will immediately display &amp;ldquo;Find was stopped in progress&amp;rdquo; with zero results. I usually deal with it by restarting Visual Studio or my computer, but this time I decided to actually look into it. Turns out it was a lot more common than I thought and is apparently a Windows bug, not Visual Studio, and goes way back to 2004.</description>
+    </item>
+    
+  </channel>
+</rss>

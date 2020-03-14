@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matt Wanchap</title>
+    <link>https://wanchap.com/</link>
+    <description>Recent content on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Dec 2019 08:38:31 +1000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>One-liner to check/uncheck every checkbox on a page</title>
+      <link>https://wanchap.com/posts/one-liner-to-checkuncheck-every-checkbox-on-a-page/</link>
+      <pubDate>Thu, 12 Mar 2020 17:53:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/one-liner-to-checkuncheck-every-checkbox-on-a-page/</guid>
+      <description>Press F12, click console and paste this in there. [].slice.call(document.querySelectorAll(&amp;ldquo;input&amp;rdquo;)).forEach(i =&amp;gt; i.checked=true)</description>
+    </item>
+    
+    <item>
+      <title>String.LastIndexOf, but in T-SQL (handy for getting file extensions)</title>
+      <link>https://wanchap.com/posts/string.lastindexof-but-in-t-sql-handy-for-getting-file-extensions/</link>
+      <pubDate>Mon, 09 Mar 2020 17:12:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/string.lastindexof-but-in-t-sql-handy-for-getting-file-extensions/</guid>
+      <description>Note that this doesn&amp;rsquo;t work on the &amp;ldquo;text&amp;rdquo; datatype, so you&amp;rsquo;ll need to cast to nvarchar&amp;hellip; 
+SELECT LEN(FileName) - CHARINDEX(&#39;.&#39;, REVERSE(FileName)) AS &amp;lsquo;LastIndex&amp;rsquo;,
+RIGHT(FileName, CHARINDEX(&#39;.&#39;, REVERSE(FileName))) AS &amp;lsquo;FileExtension&amp;rsquo; &amp;ndash; still includes the dot
+FROM Files</description>
+    </item>
+    
+    <item>
+      <title>Export every field of every record of a bunch of Salesforce objects</title>
+      <link>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</link>
+      <pubDate>Wed, 04 Mar 2020 17:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</guid>
+      <description>I needed to get a backup of every record of a bunch of objects (for posterity) which were about to be deleted, I wanted to grab every field and do it in one line. I cheated a little, because I&amp;rsquo;ve defined some functions that just do some of the basic processing. I could put the whole function definitions on one line too, but that&amp;rsquo;d be a bit contrived ;) They&amp;rsquo;re below for reference</description>
+    </item>
+    
+    <item>
+      <title>Combine many CSVs into batches of a specified size with Powershell</title>
+      <link>https://wanchap.com/posts/combine-many-csvs-into-batches-of-a-specified-size-with-powershell/</link>
+      <pubDate>Mon, 02 Mar 2020 20:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/combine-many-csvs-into-batches-of-a-specified-size-with-powershell/</guid>
+      <description>$batchMaxSize = 9.5MB
+$allFiles = Get-ChildItem &#39;fileLocation\*.csv&#39;
+$batchNumber = 0;
+$batchMagnitude = $allFiles.Count.ToString().Length
+# group the files together until there&#39;s none left
+while ($allFiles.Count -gt 0) {
+$batchNumber++;
+$batchSuffix = $batchNumber.ToString().PadLeft($batchMagnitude,&#34;0&#34;);
+$totalSize = 0;
+# add the file sizes together, keeping a running total until it exceeds the max
+$batchFiles = $allFiles | where {$totalSize += $_.Length; $totalSize -lt $batchMaxSize};
+# combine the files in memory - don&#39;t need to deal with headers</description>
+    </item>
+    
+    <item>
+      <title>Exporting from an SQL database (e.g. Dynamics) into Salesforce, without Excel</title>
+      <link>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</guid>
+      <description>Whenever you paste content into it, Excel likes to be helpful and reformat it according to what it thinks you&amp;rsquo;re doing (e.g. format dates, interpret formulae), but often with CSVs it gets this wrong and messes up your carefully-formatted raw data. This was getting pretty frustrating, so rather than figuring out workarounds for Excel&amp;rsquo;s weirdness, here&amp;rsquo;s how to cut out the middleman and get the output of an SQL query directly into Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://wanchap.com/about/</link>
+      <pubDate>Tue, 31 Dec 2019 08:38:31 +1000</pubDate>
+      
+      <guid>https://wanchap.com/about/</guid>
+      <description>Hugo is a static site engine written in Go.
+It makes use of a variety of open source projects including:
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
+    </item>
+    
+    <item>
+      <title>Count all Salesforce records of all object types owned by a specific user</title>
+      <link>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</link>
+      <pubDate>Thu, 12 Dec 2019 21:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</guid>
+      <description>It&amp;rsquo;s not the fastest or most elegant script, but using the Force.com CLI it&amp;rsquo;s pretty easy to get a count of objects (of all types) owned by a specific user. It assumes that the field to be checked is ownerid, though, so might not work if you have other fields. A slightly better way might be to check which objects have an ownerid field first.
+$ErrorActionPreference = &amp;lsquo;SilentlyContinue&#39;
+$objects = force sobject list</description>
+    </item>
+    
+    <item>
+      <title>Umbraco SQL query snippets</title>
+      <link>https://wanchap.com/posts/umbraco-sql-query-snippets/</link>
+      <pubDate>Tue, 10 Dec 2019 22:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/umbraco-sql-query-snippets/</guid>
+      <description>Selecting properties of a content item:
+SELECT cast([xml] as xml) as &amp;lsquo;xmldata&amp;rsquo;, nodeId
+FROM dbo.cmsContentXml
+WHERE nodeId = &amp;lsquo;1234&amp;rsquo; &amp;ndash;ID from the node in Umbraco</description>
+    </item>
+    
+    <item>
+      <title>OTF fonts (e.g. Fira Code) look nasty on gVim in Windows</title>
+      <link>https://wanchap.com/posts/otf-fonts-e.g.-fira-code-look-nasty-on-gvim-in-windows/</link>
+      <pubDate>Sun, 10 Nov 2019 15:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/otf-fonts-e.g.-fira-code-look-nasty-on-gvim-in-windows/</guid>
+      <description>I really like the &amp;ldquo;Fira Code&amp;rdquo; font but it always looked nasty in gVim on Windows (my main text editor besides VS), and I really don&amp;rsquo;t want to use a different font for each editor. After spending literally hours fiddling with stuff like the guifont setting, different font/size combos, custom font renderers (e.g. MacType), I finally realised the fonts themselves aren&amp;rsquo;t the problem, nor the rendering settings. The problem was that the chocolatey installer I had used installed OTF versions of the files, which gVim always used by default even if the TTF versions of them were installed.</description>
+    </item>
+    
+    <item>
+      <title>Powershell error: &#39;Retrieving COM class factory failed: class not registered (REGDB_E_CLASSNOTREG)&#39;</title>
+      <link>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</link>
+      <pubDate>Tue, 05 Nov 2019 17:55:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</guid>
+      <description>The problematic command and full error message was:
+&amp;gt;get-webbinding
+&amp;quot;get-webconfigurationproperty : Retrieving the COM class factory for component with CLSID {688EEEE5-6A7E-422F-B2E1-6AF00DC944A6} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).&amp;ldquo;
+I was pretty stuck on the above error while trying to run a script for setting up sites in IIS which involved some calls to get-webbinding (in the WebAdministration module). After much digging around I finally ran into this post.</description>
+    </item>
+    
+    <item>
+      <title>Set default program for opening files without extensions in Windows</title>
+      <link>https://wanchap.com/posts/set-default-program-for-opening-files-without-extensions-in-windows/</link>
+      <pubDate>Tue, 29 Oct 2019 23:41:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/set-default-program-for-opening-files-without-extensions-in-windows/</guid>
+      <description>For some reason, downloading the request / result CSV files for a Salesforce &amp;ldquo;Bulk Data Load&amp;rdquo; job returns CSV files with the file extension missing, so you can&amp;rsquo;t just click to open them. This became super annoying during a troublesome data load so I decided to fix it once and for all. Open cmd as admin and enter the following:
+assoc .=&amp;quot;No Extension&amp;quot;
+ftype &amp;ldquo;No Extension&amp;quot;=&amp;quot;C:\ProgramData\chocolatey\lib\csvfileview\tools\CSVFileView.exe&amp;rdquo; &amp;ldquo;%1&amp;quot;
+Obviously substitute in your favourite CSV editor (unless by some bizarre coincidence, you also like CSVFileView and install everything with chocolatey).</description>
+    </item>
+    
+    <item>
+      <title>Powershell - normalizing line endings for all files in a directory</title>
+      <link>https://wanchap.com/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/</link>
+      <pubDate>Tue, 22 Oct 2019 23:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/</guid>
+      <description>If you&amp;rsquo;re working with a git repository, a much better way to solve this is by changing the core.autocrlf setting. In this case I didn&amp;rsquo;t have that option, and needed a quick way to update thousands of files so the EOL chars would match in a binary diff tool. Here&amp;rsquo;s my slightly modified version of this SO answer:
+$items = get-childitem -Path &amp;ldquo;C:\path\to\dir&amp;quot; -Recurse -File
+foreach($original_file in $items)
+{
+$text = [IO.</description>
+    </item>
+    
+    <item>
+      <title>Connecting to Sharepoint with Powershell when MFA is enabled</title>
+      <link>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</guid>
+      <description>If you&amp;rsquo;re using multifactor auth, the usual login method mentioned in the SPOService documentation isn&amp;rsquo;t going to work (using Get-Credential) and you&amp;rsquo;ll get an error saying &amp;ldquo;Connect-SPOService : The sign-in name or password does not match one in the Microsoft account system&amp;rdquo;.
+The correct process is rather bizarre:
+$orgName = &amp;ldquo;organizationname&amp;quot;
+connect-sposervice -url &amp;ldquo;https://$orgName-admin.sharepoint.com&amp;quot;
+Then you&amp;rsquo;ll get the same Azure AD auth popup that you&amp;rsquo;d get with Connect-AzureRmAccount and Microsoft&amp;rsquo;s other Powershell modules.</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops CLI - removing old branches after squash merges</title>
+      <link>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</guid>
+      <description>We had a git repo with hundreds of already-merged branches which I wanted to clean up. They&amp;rsquo;d all been merged via &amp;ldquo;squash merges&amp;rdquo;, meaning there was no merge commit to easily link back to the source branches. I wanted to delete these unnecessary branches, but only the ones that had definitely already been merged into the master branch via a pull request (PR). Below is how I used the Azure Devops CLI to get a list of them.</description>
+    </item>
+    
+    <item>
+      <title>Set &#39;Windows spotlight&#39; lockscreen images as desktop wallpapers without installing anything</title>
+      <link>https://wanchap.com/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/</link>
+      <pubDate>Sun, 06 Oct 2019 18:01:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/</guid>
+      <description>I ended up moving the code for this post into my github since I&amp;rsquo;m using it myself ;) Get it from here:&amp;lt;br/ &amp;gt;https://github.com/mwanchap/configs/blob/master/Scripts/Windows%20Spotlight%20Wallpapers.ps1
+Once you&amp;rsquo;ve cloned it, the only things you need to do are:
+Decide where you want the wallpaper images to goUpdate the $location variable in the script with that location (I&amp;rsquo;m using ~\Pictures\Spotlight Wallpapers)Run the scriptOpen windows background settings and set the background type to &amp;ldquo;slideshow&amp;rdquo;, pointed at that locationRun the script at startup if you want to get new images all the time (optional but recommended)</description>
+    </item>
+    
+    <item>
+      <title>ImageProcessor security config for Umbraco &#43; Azure Storage Emulator</title>
+      <link>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</link>
+      <pubDate>Sun, 29 Sep 2019 22:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</guid>
+      <description>This is only going to work if you&amp;rsquo;re using ImageProcessor with Umbraco to deal with images being loaded from blob storage in the Azure Storage Emulator. Took me a while to get the settings right, the way I figured it out was:
+firstly, use Azure Storage Explorer to find the URL for your emulated blob container and make sure that works by requesting from there directlyFind the URL it&amp;rsquo;s attempting to use by catching the ImageProcessingExceptions that get thrown when it can&amp;rsquo;t find the file</description>
+    </item>
+    
+    <item>
+      <title>The quickest, easiest way to make and connect to an Azure VM</title>
+      <link>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</link>
+      <pubDate>Thu, 15 Aug 2019 23:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</guid>
+      <description>Connect-AzureRmAccount
+$creds = Get-Credential
+$vmname = &amp;ldquo;TestVM&amp;quot;
+$vm = New-AzureRmVm -Name $vmname -Credential $creds -Location &amp;ldquo;AustraliaEast&amp;rdquo; -Size &amp;ldquo;Standard_DS3_v2&amp;rdquo; # obviously change size and location as required
+$fqdn = $vm.FullyQualifiedDomainName;
+$username = $creds.UserName;
+&amp;quot;full address:s:$fqdn&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo;;
+&amp;quot;username:s:$vmname$username&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo; -Append;</description>
+    </item>
+    
+    <item>
+      <title>Recurring issues in Visual Studio projects</title>
+      <link>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</link>
+      <pubDate>Thu, 15 Aug 2019 22:06:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</guid>
+      <description>Common issues and solutions to errors I come across in Visual Studio on a semi-regular basis:
+Problem:
+&amp;quot;Could not find a part of the path … bin\roslyn\csc.exe&amp;quot;
+Solution:
+Run this in Package Manager Console:
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+Problem:
+&amp;quot;Creation of the virtual directory http://localhost:12345/ failed with the error: Cannot create the Web site&amp;quot;
+Solution:
+Update .csproj file and set the following:
+&amp;lt;UseIISExpress&amp;gt;true&amp;lt;/UseIISExpress&amp;gt;
+In the &amp;lt;VisualStudio&amp;gt; element, set the following:
+&amp;lt;IISUrl&amp;gt;http://localhost:1234&amp;lt;/IISUrl&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Useful git stuff</title>
+      <link>https://wanchap.com/posts/useful-git-stuff/</link>
+      <pubDate>Thu, 18 Jul 2019 23:52:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-git-stuff/</guid>
+      <description>View diff for a specific file between two specific branches
+git difftool branch_from branch_to &amp;ndash; &amp;lsquo;.\file_to_examine&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>Get the maximum length of every field in a CSV, Excel etc</title>
+      <link>https://wanchap.com/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/</link>
+      <pubDate>Sun, 30 Jun 2019 21:15:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/</guid>
+      <description>While setting up tables in our data warehouse for use with some external APIs, it was getting a little tedious to figure out the max length of some long fields to get the write size for CREATE TABLE statements, so I wrote this little script to calculate it for me. Yeah, it&amp;rsquo;s kinda messy, so sue me (or don&amp;rsquo;t). You can swap out the import-csv part to also import from Excel or whatever else</description>
+    </item>
+    
+    <item>
+      <title>Handling double-quoted CSVs in Azure Data Factory Pipelines</title>
+      <link>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</link>
+      <pubDate>Wed, 12 Jun 2019 19:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</guid>
+      <description>Azure Data Factory by default uses a backslash as the escape character for CSVs, but we ran into an issue with this today processing one of the CSV files from data.gov.au. As with most CSVs they use quotes around values as normal and with double-quotes for empty values, but they also use double-quotes to escape quotes within non-empty values. This probably sounds confusing, so here&amp;rsquo;s an example:
+&amp;quot;column 1&amp;rdquo;,&amp;ldquo;column 2&amp;rdquo;,&amp;quot;&amp;ldquo;,&amp;ldquo;column 4 value is &amp;quot;&amp;ldquo;sort of&amp;quot;&amp;ldquo; like this&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>Handy SOQL query snippets</title>
+      <link>https://wanchap.com/posts/handy-soql-query-snippets/</link>
+      <pubDate>Tue, 04 Jun 2019 15:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/handy-soql-query-snippets/</guid>
+      <description>To count how many people logged in for the last time each year, for only inactive users:
+select calendar_year(lastlogindate) LoginYear,count(id) Totalfrom userwhere isactive = falseand lastlogindate &amp;lt;&amp;gt; nullgroup by calendar_year(lastlogindate)order by count(id) desc</description>
+    </item>
+    
+    <item>
+      <title>Formats for dealing with dates and datetimes in Salesforce</title>
+      <link>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</link>
+      <pubDate>Tue, 23 Apr 2019 22:09:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</guid>
+      <description>The correct way to format dates (not datetimes!) for bulk importing CSVs into Salesforce looks like year-month-day, so today would look like 2019-06-17. These default to the timezone set for the user importing them, so there&amp;rsquo;s no need to convert to UTC. Set this in Excel by
+Select the column/s containing datesRight click on them and select &amp;ldquo;Format Cells&amp;rdquo; from the menuSelect the format &amp;ldquo;2012-03-14&amp;quot;Save as CSV (not the UTF-8 type of CSV)</description>
+    </item>
+    
+    <item>
+      <title>DIY Salesforce partial copy sandbox using SandboxBerry</title>
+      <link>https://wanchap.com/posts/diy-salesforce-partial-copy-sandbox-using-sandboxberry/</link>
+      <pubDate>Wed, 17 Apr 2019 17:48:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/diy-salesforce-partial-copy-sandbox-using-sandboxberry/</guid>
+      <description>Salesforce partial copy sandboxes are expensive, but it&amp;rsquo;s possible to approximate one if you&amp;rsquo;re willing to spend a little time moving the data around yourself with a fantastic little tool called SandboxBerry, which you can get from here. Big thanks to Ian Finch for all his work on it!
+Below are the steps I had to go through to get all my data imported. Please let me know if you have any suggestions that could make this easier or more effective!</description>
+    </item>
+    
+    <item>
+      <title>Useful Azure AD Powershell snippets</title>
+      <link>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</link>
+      <pubDate>Sun, 14 Apr 2019 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of Azure AD stuff lately, so here are some powershell snippets that have been coming in handy.
+I always forget to Connect-AzureAD first, so don&amp;rsquo;t do that
+Get extension properties of a user (e.g. created date)
+Get-AzureADUser -SearchString &amp;lsquo;username or email addy&amp;rsquo; | select -ExpandProperty ExtensionProperty
+Get guest users that are not members of a specified group
+$allGuests = Get-AzureADUser -Filter &amp;ldquo;usertype eq &amp;lsquo;guest&amp;rsquo;&amp;rdquo; -All $true</description>
+    </item>
+    
+    <item>
+      <title>Get details and creators of all Salesforce reports that reference a specified field</title>
+      <link>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</link>
+      <pubDate>Tue, 09 Apr 2019 15:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</guid>
+      <description>If you&amp;rsquo;re ever modifying a Salesforce field and you want to contact everyone who has created reports using the field, here&amp;rsquo;s how you do that using Powershell and the Force.com CLI (which you can also install via chocolatey):
+set-location C:\wherever
+force export
+$reportFiles = get-childitem -Path .\src\reports\ -Recurse | sls &amp;ldquo;field_to_search_for&amp;quot;
+# I&amp;rsquo;ve included some extra fields here, they might come in useful
+$reportData = force query &amp;ndash;format=json &amp;ldquo;select id, createdby.</description>
+    </item>
+    
+    <item>
+      <title>Salesforce bulk data load job fails with message &#39;InvalidBatch : Field name not found: Id&#39;</title>
+      <link>https://wanchap.com/posts/salesforce-bulk-data-load-job-fails-with-message-invalidbatch-field-name-not-found-id/</link>
+      <pubDate>Mon, 08 Apr 2019 16:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-bulk-data-load-job-fails-with-message-invalidbatch-field-name-not-found-id/</guid>
+      <description>After creating a bulk / batch job, I&amp;rsquo;ll sometimes see that it failed before even starting (failed batches:1, but with 0 records failed), with the following error:
+InvalidBatch : Field name not found: ﻿Id
+Annoyingly, this is caused by the inability of the Salesforce bulk import process to handle anything but ASCII. Try saving your CSV again, making sure it&amp;rsquo;s in ASCII (called &amp;ldquo;CSV (Comma delimited)&amp;rdquo; in Excel) and not using UTF-8 or some other encoding.</description>
+    </item>
+    
+    <item>
+      <title>Azure AD error - &#39;IDX10311: RequireNonce is true but validationContext.Nonce is null&#39;</title>
+      <link>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</link>
+      <pubDate>Wed, 13 Mar 2019 22:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</guid>
+      <description>I&amp;rsquo;ve experienced this one enough times now that I&amp;rsquo;d like to preserve the solution/s for future occurrences. The exact message is:
+IDX10311: RequireNonce is &amp;lsquo;true&amp;rsquo; (default) but validationContext.Nonce is null. A nonce cannot be validated. If you don&amp;rsquo;t need to check the nonce, set OpenIdConnectProtocolValidator.RequireNonce to &amp;lsquo;false&amp;rsquo;.An easy way to reproduce this one is to hit the &amp;ldquo;back&amp;rdquo; button after having signed in to an ASP.NET web app that auths with Azure AD using the OWIN library.</description>
+    </item>
+    
+    <item>
+      <title>Testing Sendgrid SMTP without sending emails using sandbox mode</title>
+      <link>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</link>
+      <pubDate>Sun, 03 Mar 2019 17:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</guid>
+      <description>Here&amp;rsquo;s how to test out a Sendgrid integration using SMTP without actually sending emails. Obviously make sure you have Sendgrid SMTP set up in your config first, and then just add the X-SMTPAPI header (docs link) with some JSON like the below.
+MailMessage msg = new MailMessage();
+var json = @&amp;quot;{
+&amp;ldquo;&amp;ldquo;mail_settings&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;sandbox_mode&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;enable&amp;rdquo;&amp;quot;: true
+}
+}
+}&amp;quot;;
+msg.Headers.Add(&amp;ldquo;X-SMTPAPI&amp;rdquo;, json);
+// all the usual email stuff
+SmtpClient smtpclient = new SmtpClient();</description>
+    </item>
+    
+    <item>
+      <title>Chrome forcing all localhost queries to https, breaking various CLIs</title>
+      <link>https://wanchap.com/posts/chrome-forcing-all-localhost-queries-to-https-breaking-various-clis/</link>
+      <pubDate>Sun, 13 Jan 2019 17:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/chrome-forcing-all-localhost-queries-to-https-breaking-various-clis/</guid>
+      <description>I use the Azure CLI and the Force.com CLI pretty regularly, and both of them make use of a little webserver running on localhost, presumably to catch the auth tokens once the SSO process redirects back. I also like to use localhost as a new tab page, to better invoke Chrome&amp;rsquo;s Vimium extension on all new tabs. On several installs of several dev machines, http://localhost has been regularly redirected to https where it shouldn&amp;rsquo;t be, causing breakage of all the CLIs, since they&amp;rsquo;re not providing TLS certs, and my new tab page as I haven&amp;rsquo;t got a TLS binding set up for the IIS default website.</description>
+    </item>
+    
+    <item>
+      <title>Docker &#43; ASP.NET MVC Hello world - abridged edition</title>
+      <link>https://wanchap.com/posts/docker-asp.net-mvc-hello-world-abridged-edition/</link>
+      <pubDate>Wed, 26 Dec 2018 19:42:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/docker-asp.net-mvc-hello-world-abridged-edition/</guid>
+      <description>Here&amp;rsquo;s the exact steps to get the ASP.NET MVC sample application running in a Docker container in Windows 10, abridged from the Microsoft tutorial here. I used a fresh Azure VM to avoid the many weird issues I kept running into with my bizarrely-screwy desktop, because of course it is.
+$ip = (New-AzureRmVm -Name dockertest -Credential (Get-Credential) | Get-AzureRmPublicIpAddress); &amp;ldquo;Remote desktop to: &amp;quot; + $ip.IpAddress; mstsc -v $ip.IpAddress
+Next, install chocolatey, then install everything else:choco install visualstudio2017professional visualstudio2017-workload-netweb docker docker-desktop -ySign out and back in again, run docker desktop as admin, right-click the tray icon and switch to windows containers, let it enable hyper-v and reboot.</description>
+    </item>
+    
+    <item>
+      <title>Get the date each branch in a git repo diverged from master</title>
+      <link>https://wanchap.com/posts/get-the-date-each-branch-in-a-git-repo-diverged-from-master/</link>
+      <pubDate>Wed, 12 Dec 2018 23:26:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-the-date-each-branch-in-a-git-repo-diverged-from-master/</guid>
+      <description>I&amp;rsquo;m trying to clean up some long-lived branches in our repo and came across this handy stackoverflow post to get branches by the date of the commit they branched from.
+I&amp;rsquo;ve modified it slightly to be easier to use for my purposes:
+git show-ref | { while read branch; do merge_base=$(git merge-base &amp;ndash;all $branch master); date_branched=$(git show -s &amp;ndash;format=format:&amp;quot;%cd %an&amp;rdquo; &amp;ndash;date=short $merge_base); echo &amp;ldquo;$date_branched, $branch&amp;rdquo;; done } | sort</description>
+    </item>
+    
+    <item>
+      <title>Powershell jobs</title>
+      <link>https://wanchap.com/posts/powershell-jobs/</link>
+      <pubDate>Wed, 12 Dec 2018 00:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-jobs/</guid>
+      <description>Mostly for my own benefit but maybe someone will find this a helpful and concise reference
+Create a job like this
+$job = start-job {sleep 60; get-service;}
+If you&amp;rsquo;re creating jobs in a loop, add them to an array
+$jobs = @()
+foreach ($asdf in $qwer) { $jobs += start-job {&amp;hellip;} }
+Check job status while a job is running with
+$job | get-job
+Receive the result of that job with</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops, unit tests and Azure AD Service Authentication</title>
+      <link>https://wanchap.com/posts/azure-devops-unit-tests-and-azure-ad-service-authentication/</link>
+      <pubDate>Mon, 26 Nov 2018 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-devops-unit-tests-and-azure-ad-service-authentication/</guid>
+      <description>I couldn&amp;rsquo;t think of a title for this one that wasn&amp;rsquo;t ridiculously long so to help future Googlers, here&amp;rsquo;s what we were trying to do:
+Authenticate against Azure Key Vaultusing a Service Principalusing Azure AD Service AuthenticationRrom our build serverRunning an Azure Devops build agent
+Whew. Basically we had some integration tests that retrieve a database connection string from an Azure Key Vault, and needed Azure Devops to be able to run those tests on our build server.</description>
+    </item>
+    
+    <item>
+      <title>Making EntityFramework play nice with Azure Key Vault</title>
+      <link>https://wanchap.com/posts/making-entityframework-play-nice-with-azure-key-vault/</link>
+      <pubDate>Wed, 14 Nov 2018 18:15:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/making-entityframework-play-nice-with-azure-key-vault/</guid>
+      <description>Make a separate class containing a constructor to pass in the connection string from KV. Don&amp;rsquo;t modify the constructor in the Whatever.Context.cs file because it&amp;rsquo;ll get regenerated when you update the model and overwrite any changes you make in there.
+Get the connection string from the &amp;ldquo;update model from database&amp;rdquo; command, but replace &amp;amp;quot; with actual quotes. The connection string in KV should look like this:
+metadata=res:///EntityFramework.DataWarehouse.csdl|res:///EntityFramework.DataWarehouse.ssdl|res://*/EntityFramework.DataWarehouse.msl;provider=System.Data.SqlClient;provider connection string=&amp;quot;data source=databasename.database.windows.net;initial catalog=thedatabase;user id=dbusername;password=passwordgoeshere;MultipleActiveResultSets=True;App=EntityFramework&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Salesforce - bypass running unnecessary unit tests during a deployment</title>
+      <link>https://wanchap.com/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/</link>
+      <pubDate>Fri, 09 Nov 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/</guid>
+      <description>We had to urgently fix a bug in an Apex class written by a previous colleague, which was causing major issues with a customer-facing application on a Friday afternoon (because these things always happen then). We&amp;rsquo;d found the bug and updated the code easily enough, but Salesforce&amp;rsquo;s default deployment option of running all local unit tests was failing because of some completely unrelated tests that were failing.
+Salesforce&amp;rsquo;s documentation (or at least the parts that I read) doesn&amp;rsquo;t clarify that you aren&amp;rsquo;t actually required to get 75% code coverage across all Apex code in your production org - you only need to get 75% coverage over the code you&amp;rsquo;re deploying.</description>
+    </item>
+    
+    <item>
+      <title>A non-useful Powershell snippet</title>
+      <link>https://wanchap.com/posts/a-non-useful-powershell-snippet/</link>
+      <pubDate>Tue, 02 Oct 2018 16:55:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-non-useful-powershell-snippet/</guid>
+      <description>What can I say, I was distracted
+$t = &amp;ldquo;Taste the rainbow &amp;ldquo;; $c = ([ConsoleColor].GetEnumNames()); (1..7) | % {$c += $c; $t += $t}; foreach($x in $c) { write-host $t -ForegroundColor $x -NoNewline; sleep -Milliseconds 50 }</description>
+    </item>
+    
+    <item>
+      <title>Strongly-typed action links in ASP.NET Core MVC views</title>
+      <link>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</guid>
+      <description>While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&amp;rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&amp;rsquo;t repeat the install instructions, but for some reason they didn&amp;rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>IIS secured local debugging</title>
+      <link>https://wanchap.com/posts/iis-secured-local-debugging/</link>
+      <pubDate>Thu, 23 Aug 2018 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-secured-local-debugging/</guid>
+      <description>Download and run this:
+https://github.com/mwanchap/configs/blob/master/SetupLocalhostCerts.ps1
+For each project:
+Open Visual StudioIn Solution Explorer, select the web project and press F4 to open properties (not right click -&amp;gt; Properties, that&amp;rsquo;s a different set of properties for some reason)Set &amp;ldquo;SSL Enabled&amp;rdquo; = TrueCopy the SSL URLRight click on the project name in Solution Explorer again and open Properties from thereSelect &amp;ldquo;Web&amp;rdquo; sectionPaste SSL URL into &amp;ldquo;Project Url&amp;quot;TODO: script to enable edit-and-continue for local IIS</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio: Edit and Continue issues</title>
+      <link>https://wanchap.com/posts/visual-studio-edit-and-continue-issues/</link>
+      <pubDate>Mon, 16 Jul 2018 17:34:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/visual-studio-edit-and-continue-issues/</guid>
+      <description>Huge thanks to Steve French for this one
+Like him, I&amp;rsquo;d been having issues with &amp;ldquo;Edit and Continue&amp;rdquo; not working for ages. I tried everything and none of the usual advice helped at all. Finally I came across Steve&amp;rsquo;s post here, and as he suggests, uninstalling Stackify Prefix immediately fixed the problem. Turns out everything was fine to start with, it was just Prefix that was getting in the way (probably due to the way it injects itself into the runtime / server / etc).</description>
+    </item>
+    
+    <item>
+      <title>Installing SQL Server Express to set up an Azure database locally</title>
+      <link>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</link>
+      <pubDate>Wed, 27 Jun 2018 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</guid>
+      <description>Installing SQL Express:Download SQL Express installerSwitch to an account with full local admin permissions (our regular accounts don&amp;rsquo;t have these so I had to use a global admin account instead) and install SQL Express with that accountOnce installation completes, make a note of the connection string you&amp;rsquo;re given on the final page of the installerOpen SSMS and connect to the database - default name is localhost\sqlexpressNavigate to Security -&amp;gt; Logins -&amp;gt; New LoginAdd the regular (non-admin) domain account that you&amp;rsquo;ll be using most of the timeOnce added, open that account under the Logins section and then open the &amp;ldquo;Server Roles&amp;rdquo; pageAdd the account to the &amp;ldquo;sysadmin&amp;rdquo; roleObtaining the Azure database:Open the database and select the &amp;ldquo;Export&amp;rdquo; option at the top of the &amp;ldquo;Overview&amp;rdquo; pageChoose a storage account and container to drop the export file in and enter the server admin credsOnce the file has been created, access that storage container and download the db export fileRestoring the export fileBack in SSMS, connect to your local SQL express server instance again (if it isn&amp;rsquo;t still connected), right-click on the &amp;ldquo;Databases&amp;rdquo; node and select &amp;ldquo;Import Data-tier Application&amp;quot;Select the db export file, give the database a name, click &amp;ldquo;Next&amp;quot;Don&amp;rsquo;t forget to update connection strings in your applications ;) If they&amp;rsquo;re running under your normal account (i.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM Microsoft.IdentityModel exception in Windows 10</title>
+      <link>https://wanchap.com/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/</link>
+      <pubDate>Mon, 04 Jun 2018 18:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/</guid>
+      <description>When trying to connect to Dynamics CRM services on a Windows 10, machine, you might get this error:
+Could not load file or assembly ‘Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35’ or one of its dependencies
+There are plenty of blog posts around that will all tell you to go and install &amp;ldquo;Windows Identity Foundation&amp;rdquo;, however this is no longer the case for Windows 10 and the installer for WIF will fail. This is because it&amp;rsquo;s now a Windows feature - install it via the &amp;ldquo;Turn Windows features on or off&amp;rdquo; section in &amp;ldquo;Programs and Features&amp;rdquo; as mentioned here.</description>
+    </item>
+    
+    <item>
+      <title>Salesforce admin gotchas</title>
+      <link>https://wanchap.com/posts/salesforce-admin-gotchas/</link>
+      <pubDate>Thu, 17 May 2018 18:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-admin-gotchas/</guid>
+      <description>After coming across some of these for the hundredth time, I&amp;rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.
+Editable list views for certain objects don&amp;rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &amp;ldquo;Change owner&amp;rdquo; or &amp;ldquo;Assign&amp;rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.It&amp;rsquo;s possible to mass-edit most things in list views, but not tasks.</description>
+    </item>
+    
+    <item>
+      <title>&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</title>
+      <link>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</link>
+      <pubDate>Thu, 03 May 2018 23:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</guid>
+      <description>After installing the Application Insights nuget package to an Umbraco solution, you&amp;rsquo;ll get this error:
+A section using &amp;lsquo;configSource&amp;rsquo; may contain no other attributes or elements
+&amp;lt;ExamineLuceneIndexSets configSource=&amp;quot;config\ExamineIndex.config&amp;rdquo; /&amp;gt;
+&amp;lt;log4net configSource=&amp;quot;config\log4net.config&amp;rdquo;&amp;gt;
+&amp;lt;root&amp;gt;
+&amp;lt;level value=&amp;quot;ALL&amp;rdquo; /&amp;gt;
+&amp;lt;appender-ref ref=&amp;quot;aiAppender&amp;rdquo; /&amp;gt;
+Source File: \project\web.config
+This happens because part of the Application Insights installation process adds a &amp;lt;log4net&amp;gt; section to web.config. Which would make sense, except Umbraco already has a &amp;lt;log4net&amp;gt; section in /config/log4net.config. So as you can imagine, the solution is to manually move everything its added into that file.</description>
+    </item>
+    
+    <item>
+      <title>Using the Force.com CLI and Powershell</title>
+      <link>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</link>
+      <pubDate>Thu, 12 Apr 2018 19:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</guid>
+      <description>Inserting or Updating:Put all your data into a CSV file with the exact same column headings as the Salesforce fields, again making sure to save as ASCII and not UTF8 or any other encoding (in Excel, you want the option called &#34;CSV (Comma delimited)&#34; not &#34;CSV UTF-8&#34;). And then do this: force bulk insert Object__c .\new_object_data.csv
+To modify fields for updating, don&#39;t do the updates in Excel unless you have to - do it inline like this: force query --format json &#34;</description>
+    </item>
+    
+    <item>
+      <title>IIS HTTP Error 500.19, Error Code 0x8007000d</title>
+      <link>https://wanchap.com/posts/iis-http-error-500.19-error-code-0x8007000d/</link>
+      <pubDate>Fri, 19 Jan 2018 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-http-error-500.19-error-code-0x8007000d/</guid>
+      <description>I probably come across this error at least once per year. Ran into it again today when setting up a website to host locally in IIS, on a computer I don&amp;rsquo;t use much.
+HTTP Error 500.19 - Internal Server Error
+The requested page cannot be accessed because the related configuration data for the page is invalid.
+Detailed Error Information:
+Module IIS Web Core
+Notification Unknown
+Handler Not yet determined
+Error Code 0x8007000d</description>
+    </item>
+    
+    <item>
+      <title>Umbraco&#39;s TinyMCE error: &#39;Cannot read property parentsRequired of undefined&#39;</title>
+      <link>https://wanchap.com/posts/umbracos-tinymce-error-cannot-read-property-parentsrequired-of-undefined/</link>
+      <pubDate>Wed, 17 Jan 2018 16:07:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/umbracos-tinymce-error-cannot-read-property-parentsrequired-of-undefined/</guid>
+      <description>If you find that the &amp;ldquo;Formats&amp;rdquo; list in an Umbraco RTE refuses to open, and the Javascript console contains this error:
+&amp;quot;Cannot read property &amp;lsquo;parentsRequired&amp;rsquo; of undefined&amp;quot;
+Check the stylesheet that the RTE is using. In my case, adding this style had triggered the issue:
+/*umb_name:Small/
+small{}
+
+Although there&amp;rsquo;s nothing wrong with this style itself, the problem is in what TinyMCE considers to be &amp;ldquo;valid&amp;rdquo; HTML elements. Why is &amp;ldquo;small&amp;rdquo; not valid?</description>
+    </item>
+    
+    <item>
+      <title>Using Umbraco ModelsBuilder</title>
+      <link>https://wanchap.com/posts/using-umbraco-modelsbuilder/</link>
+      <pubDate>Mon, 27 Nov 2017 17:31:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-umbraco-modelsbuilder/</guid>
+      <description>Firstly, make sure the following properties are set in your solution&amp;rsquo;s top-level web.config to enable the models builder:
+&amp;lt;add key=&amp;quot;Umbraco.ModelsBuilder.Enable&amp;rdquo; value=&amp;quot;true&amp;rdquo;/&amp;gt;
+&amp;lt;add key=&amp;quot;Umbraco.ModelsBuilder.ModelsMode&amp;rdquo; value=&amp;quot;LiveAppData&amp;rdquo;/&amp;gt;
+
+I like the &amp;ldquo;LiveAppData&amp;rdquo; mode, but you should experiment with the others from the list in the ModelsBuilder docs here. Generate your model classes, and include them in the VS Solution.
+Unless you&amp;rsquo;re on a brand new project, any existing views will need to be modified.</description>
+    </item>
+    
+    <item>
+      <title>Powershell as a Visual Studio External Tool</title>
+      <link>https://wanchap.com/posts/powershell-as-a-visual-studio-external-tool/</link>
+      <pubDate>Sun, 22 Oct 2017 18:12:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-as-a-visual-studio-external-tool/</guid>
+      <description>It&amp;rsquo;s handy to be able to open Powershell at the current solution directory, e.g. for invoking scripts or git commands etc.
+Click the Tools menu -&amp;gt; External Tools -&amp;gt; Add
+Title: Powershell, or whatever you want
+Command: your PS directory, e.g C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Arguments: -ExecutionPolicy RemoteSigned -NoExit -Command &amp;ldquo;Set-Location &amp;lsquo;$(SolutionDir)&amp;rsquo; | Clear-Host&amp;quot;
+Initial directory: $(SolutionDir)</description>
+    </item>
+    
+    <item>
+      <title>Useful Vim Stuff</title>
+      <link>https://wanchap.com/posts/useful-vim-stuff/</link>
+      <pubDate>Wed, 18 Oct 2017 15:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-vim-stuff/</guid>
+      <description>!ls - execute ls in shell
+Ctrl+q - block select
+Ctrl+q, I - insert mode across multi-line block selection (operates across selection after Esc is pressed)
+qx - record macro x
+@@ - replay last macro
+2@x - replay x twice
+Ctrl+6 - edit last file (think of it like Ctrl+^ or ^^)
+g; - previous change
+gq - reformat
+O - other end of visual selection
+:split - horizontal split the current file</description>
+    </item>
+    
+    <item>
+      <title>Useful Powershell stuff</title>
+      <link>https://wanchap.com/posts/useful-powershell-stuff/</link>
+      <pubDate>Wed, 27 Sep 2017 15:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-powershell-stuff/</guid>
+      <description>Group objects into batches of X items with a constructed property, credit to Dave Wyatt:
+$bigList = 1..1000
+$counter = [pscustomobject] @{ Value = 0 }
+$groupSize = 100
+$groups = $bigList | Group-Object -Property { [math]::Floor($counter.Value++ / $groupSize) }
+&amp;mdash;&amp;ndash;
+Use &amp;ldquo;PipelineVariable&amp;rdquo; to pass data down the pipeline rather than using a foreach:
+Get-ADUser &amp;lt;username&amp;gt; -PipelineVariable user -Properties memberof |
+Select-Object -ExpandProperty memberof |
+Select-Object @{ n = &amp;lsquo;Name&amp;rsquo;; e = { $user.</description>
+    </item>
+    
+    <item>
+      <title>Umbraco Deployment Checklist</title>
+      <link>https://wanchap.com/posts/umbraco-deployment-checklist/</link>
+      <pubDate>Tue, 10 Jan 2017 16:41:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/umbraco-deployment-checklist/</guid>
+      <description>This is primarily aimed at deploying from Visual Studio to an Azure Web App + Azure SQL database, feel free to skip bits that aren&amp;rsquo;t relevant if you&amp;rsquo;re doing other things.
+Prerequisites for developing locally:
+Visual Studio (obviously)
+Ensure IIS URL Rewrite module is installed using web platform installer (other downloads from MS documentation don&amp;rsquo;t seem to work)
+Set up Azure:
+Make a new SQL Database in Azure, take note of the server name, database name, admin login and admin password.</description>
+    </item>
+    
+    <item>
+      <title>Customising Umbraco&#39;s Default Grid Editors</title>
+      <link>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</link>
+      <pubDate>Wed, 19 Oct 2016 20:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</guid>
+      <description>Create a new directory in App_Plugins called anything you like. This will be your &amp;ldquo;package&amp;rdquo; directoryCopy the web.config file that&amp;rsquo;s inside the main &amp;ldquo;Views&amp;rdquo; directory (not your project&amp;rsquo;s main web.config!) into your package directory. This is needed for MVC to work properlyCreate a package.manifest file and put this in it (come back and modify these properties as necessary):
+{
+&amp;ldquo;gridEditors&amp;rdquo;:
+[{
+&amp;ldquo;name&amp;rdquo;: &amp;ldquo;Speaker Portrait&amp;rdquo;,
+&amp;ldquo;alias&amp;rdquo;: &amp;ldquo;speakerPortrait&amp;rdquo;,
+&amp;ldquo;view&amp;rdquo;: &amp;ldquo;media&amp;rdquo;,
+&amp;ldquo;render&amp;rdquo;: &amp;ldquo;/app_plugins/yourpackagedir/MediaMarkup.</description>
+    </item>
+    
+    <item>
+      <title>Auto-Incrementing Build Number in Visual Studio and WiX Installer</title>
+      <link>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</link>
+      <pubDate>Sun, 20 Mar 2016 18:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</guid>
+      <description>In AssemblyInfo.cs, remove the &amp;ldquo;AssemblyFileVersion&amp;rdquo; attribute, and set &amp;ldquo;AssemblyVersion&amp;rdquo; to contain &amp;ldquo;*&amp;rdquo; where you want to include the revision and build numbers, like 1.5.*
+In the WiX installer&amp;rsquo;s .wxs file, in the &amp;ldquo;Product&amp;rdquo; node, set the &amp;ldquo;Version&amp;rdquo; property to look like this:
+Version=&amp;rdquo;!(bind.FileVersion.FileId)&amp;ldquo;
+where FileId is the ID of the file to take the version number from.
+Credit to these two StackOverflow posts:
+http://stackoverflow.com/a/826850/2939759
+http://stackoverflow.com/a/641094/2939759</description>
+    </item>
+    
+    <item>
+      <title>Setting up a Linked Server login for EasySoft Salesforce ODBC Driver</title>
+      <link>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</link>
+      <pubDate>Wed, 20 Jan 2016 17:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</guid>
+      <description>We&amp;rsquo;re currently using EasySoft&amp;rsquo;s excellent Salesforce ODBC Driver to be able to treat our Salesforce org as if it were another SQL database (really useful for updating legacy stored procedures by rewriting queries that reference migrated Dynamics tables to query Salesforce instead!) We were working on updating a particular page in our website that needed to use it but was running into permissions issues when querying it, the error was:</description>
+    </item>
+    
+    <item>
+      <title>Scribe Agent Issues</title>
+      <link>https://wanchap.com/posts/scribe-agent-issues/</link>
+      <pubDate>Wed, 02 Dec 2015 18:21:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/scribe-agent-issues/</guid>
+      <description>Today we encountered a weird problem after resetting the credentials for the Salesforce account used for synchronising data. Although the &amp;ldquo;Test Connection&amp;rdquo; was successful, any attempts to connect to Salesforce ended up with this error: &amp;ldquo;Destination URL not reset. The URL returned from login must be set in the SforceService SOQL&amp;rdquo; Which really doesn&amp;rsquo;t help much; Googling for it just turns up a bunch of info about Salesforce API connections, so hopefully someone having the same issue finds this post.</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Redirect Loop</title>
+      <link>https://wanchap.com/posts/azure-active-directory-redirect-loop/</link>
+      <pubDate>Thu, 08 Oct 2015 17:46:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-active-directory-redirect-loop/</guid>
+      <description>While developing an Azure web app that uses Azure AD integration, I ran into a mysterious redirect loop, first on my wife&amp;rsquo;s phone while trying to show it off (embarrassing!) and then again at work. Turns out that if you don&amp;rsquo;t specify https, the Microsoft sign-in page keeps redirecting back to the app and vice-versa. Took me a little while to figure this out, thanks to tugberkugurlu for finding the solution!</description>
+    </item>
+    
+    <item>
+      <title>How to make yourself a Dynamics CRM 2011 Deployment Administrator</title>
+      <link>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</link>
+      <pubDate>Tue, 01 Sep 2015 16:53:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</guid>
+      <description>Today I needed to deactivate one of our Dynamics organisations, but when I opened the Dynamics Deployment Manager, I received the following error:
+&amp;quot;Only the Deployment Administrators are able to use Deployment Manager. You are not a Deployment Administrator.&amp;ldquo;
+Bummer. I did a bit of Googling and found this post by Ronald Lemmen (thanks for pointing me in the right direction!). Since the Dynamics Deployment Manager is obviously checking the MSCRM_CONFIG database for this information I attached a database trace to it and found that it&amp;rsquo;s executing these queries (among many others):</description>
+    </item>
+    
+    <item>
+      <title>Authentication error querying Dynamics CRM OrganisationService</title>
+      <link>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</link>
+      <pubDate>Sat, 02 May 2015 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</guid>
+      <description>An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
+&amp;rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&amp;ldquo;
+Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.</description>
+    </item>
+    
+    <item>
+      <title>IIS returns 404 on all .woff files</title>
+      <link>https://wanchap.com/posts/iis-returns-404-on-all-.woff-files/</link>
+      <pubDate>Mon, 10 Nov 2014 16:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-returns-404-on-all-.woff-files/</guid>
+      <description>For some reason (tell me if you know why) IIS does not seem to like .woff files, and any attempt to load them for use in CSS will be met with a 404. I found a solution to it here, and it is to paste the following into your web.config&amp;rsquo;s system.webserver section:
+&amp;lt;staticContent&amp;gt;
+&amp;lt;remove fileExtension=&amp;rdquo;.woff&amp;rdquo;/&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;rdquo;.woff&amp;rdquo; mimeType=&amp;quot;application/x-font-woff&amp;rdquo; /&amp;gt;
+&amp;lt;/staticContent&amp;gt;
+Which fixed the problem immediately!</description>
+    </item>
+    
+    <item>
+      <title>IIS - Preventing URL Access to a Specific Directory</title>
+      <link>https://wanchap.com/posts/iis-preventing-url-access-to-a-specific-directory/</link>
+      <pubDate>Thu, 09 Oct 2014 18:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-preventing-url-access-to-a-specific-directory/</guid>
+      <description>Yesterday I was asked to made a web page which provided the ability to download files, which weren&amp;rsquo;t served directly (by passing the file URL to the client) but were sent by reading the file on the server and sending the output. However, I realised that the files could still be accessed by an unauthenticated user by typing in the file&amp;rsquo;s direct URL. Most solutions to this that I found required remote access to the server (which I don&amp;rsquo;t have) or adding URL rewrite rules (the URL rewrite module wasn&amp;rsquo;t installed).</description>
+    </item>
+    
+    <item>
+      <title>Preventing the Dynamics CRM Outlook add-in from creating contacts, forever</title>
+      <link>https://wanchap.com/posts/preventing-the-dynamics-crm-outlook-add-in-from-creating-contacts-forever/</link>
+      <pubDate>Thu, 25 Sep 2014 23:07:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/preventing-the-dynamics-crm-outlook-add-in-from-creating-contacts-forever/</guid>
+      <description>It&amp;rsquo;s an ongoing issue here wherein a misconfigured / misbehaving Outlook client sometimes creates duplicate or redundant contacts in our CRM, and I&amp;rsquo;ve seen many blog posts and forum threads discussing the various ways of getting around it. Unfortunately they all require user-specific configuration, whereas I wanted to banish the problem across the board once-and-for-all. Completely by accident I came across a solution, which in retrospect is extremely obvious and I&amp;rsquo;m rather embarrassed that I didn&amp;rsquo;t figure it out sooner!</description>
+    </item>
+    
+    <item>
+      <title>jQuery ajax error logging on the server with log4net</title>
+      <link>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</guid>
+      <description>This post is based on Toby Gundry&amp;rsquo;s post on the same technique, but adapted for logging jQuery ajax errors (although I added a few extra things too).
+In your Javascript:
+$(document).on({
+ajaxError: function (event, jqXHR, ajaxSettings) {
+var err = &amp;ldquo;Location: &amp;quot; + document.location.href + &amp;ldquo;; &amp;ldquo;;
+if (jqXHR)
+{
+err += &amp;ldquo;Status: &amp;quot; + jqXHR.status + &amp;ldquo;; &amp;ldquo;;
+err += &amp;ldquo;Text: &amp;quot; + jqXHR.statusText + &amp;ldquo;; &amp;ldquo;;
+}
+if (jqXHR.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM - error publishing entity, role does not exist</title>
+      <link>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</link>
+      <pubDate>Tue, 05 Aug 2014 15:59:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</guid>
+      <description>This morning I was trying to add a new option to an option set field for a custom entity I had made earlier, however an error dialog popped up which said &amp;ldquo;The requested record is unavailable or you have insufficient permission to view the record&amp;rdquo;, even though I&amp;rsquo;m in a System Administrator role. Upon downloading the exception details and examining them, the actual error was this:
+role With Id = dba45c71-05e2-e311-9210-0050568f0001 Does Not Exist</description>
+    </item>
+    
+    <item>
+      <title>T-SQL: Easy way to check for existence of a temp table</title>
+      <link>https://wanchap.com/posts/t-sql-easy-way-to-check-for-existence-of-a-temp-table/</link>
+      <pubDate>Wed, 30 Jul 2014 17:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/t-sql-easy-way-to-check-for-existence-of-a-temp-table/</guid>
+      <description>Normally I&amp;rsquo;d do something like selecting from sysobjects to find if a temp table exists, but I found this little gem to drop a global temp table at the start of a query (in case it wasn&amp;rsquo;t cleaned up in the previous execution):
+IF(object_id(&amp;lsquo;tempdb..##tmpTable&amp;rsquo;) IS NOT NULL)
+DROP TABLE ##tmpTable
+GO
+I&amp;rsquo;m sure you can come up with a better way to do this rather than using a global temp table, but a local one wasn&amp;rsquo;t going to work in this context since I was using a combination of EXEC and OpenQuery to select from Active Directory, and regular local temp tables seem to disappear upon leaving EXEC, perhaps due to the connection changing or something?</description>
+    </item>
+    
+    <item>
+      <title>IIS and ASP.NET 404 error handlers don&#39;t play nicely together</title>
+      <link>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</link>
+      <pubDate>Thu, 24 Jul 2014 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</guid>
+      <description>While trying to setup both ASP.NET as well as IIS error-handling, I noticed that IIS wasn&amp;rsquo;t dealing with certain 404 errors in which the file extension was wrong. For example, I could request ThisFileDoesntExist.aspx and that would redirect to NotFound.aspx just fine, but WrongExtension.aspz would kick the user out to the ugly default IIS 404 error page.
+So I did a bit of investigation and found this post, which pointed out that, in your web.</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio - &#39;Find was stopped in progress&#39;</title>
+      <link>https://wanchap.com/posts/visual-studio-find-was-stopped-in-progress/</link>
+      <pubDate>Thu, 29 May 2014 16:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/visual-studio-find-was-stopped-in-progress/</guid>
+      <description>Sometimes you&amp;rsquo;ll do a Find for &amp;ldquo;Entire Solution&amp;rdquo; (Ctrl + Shift + F is a handy shortcut) and instead of finding anything, the &amp;ldquo;Find Results&amp;rdquo; window will immediately display &amp;ldquo;Find was stopped in progress&amp;rdquo; with zero results. I usually deal with it by restarting Visual Studio or my computer, but this time I decided to actually look into it. Turns out it was a lot more common than I thought and is apparently a Windows bug, not Visual Studio, and goes way back to 2004.</description>
+    </item>
+    
+    <item>
+      <title>The JSON deserialisation drinking game</title>
+      <link>https://wanchap.com/posts/the-json-deserialisation-drinking-game/</link>
+      <pubDate>Tue, 27 May 2014 18:50:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-json-deserialisation-drinking-game/</guid>
+      <description>Take a drink every time you see this pattern:
+$.ajax({
+data: &amp;ldquo;{things:stuff}&amp;quot;,
+dataType: &amp;ldquo;json&amp;rdquo;,
+ //other properties omitted
+success: function (result) {
+var myObject = eval( &amp;ldquo;(&amp;rdquo; + result.d + &amp;ldquo;)&amp;quot; ); //noooooooooooooooo
+}
+});
+Take a drink when someone seriously brings up the catchphrase &amp;ldquo;eval is evil&amp;rdquo; or a variant of it.
+Finish all of the drinks if you sincerely think that nobody would ever get malicious code into your database/application that will be happily executed when eval evaluates it and send your client to their phishing duplicate of your login page where they harvest user credentials before redirecting them right back to your application so nobody ever realises what just happened.</description>
+    </item>
+    
+    <item>
+      <title>Using jQuery validation plugin with fields in a jQuery UI .dialog()</title>
+      <link>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</link>
+      <pubDate>Wed, 21 May 2014 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</guid>
+      <description>One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&amp;rsquo;s moved outside of the page&amp;rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&amp;rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&amp;rsquo;s not a lot you can do to move the dialog or the form.</description>
+    </item>
+    
+    <item>
+      <title>Don&#39;t use eval to parse JSON data</title>
+      <link>https://wanchap.com/posts/dont-use-eval-to-parse-json-data/</link>
+      <pubDate>Tue, 20 May 2014 22:26:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dont-use-eval-to-parse-json-data/</guid>
+      <description>Today I read about an interesting security vulnerability in Javascript&amp;rsquo;s eval() function that I wasn&amp;rsquo;t aware of previously (which I was naively using to parse JSON data). Open a developer console and try this:
+eval(&amp;ldquo;alert(&amp;lsquo;pwned&amp;rsquo;)&amp;quot;)
+The code is executed! This could perhaps be used to return malformed instructions instead of JSON and do something malicious to the client. However, try this:
+JSON.parse(&amp;ldquo;alert(&amp;lsquo;not pwned&amp;rsquo;)&amp;quot;)
+Notice that it just throws a parsing error, but of course for actual JSON it still produces the correct object.</description>
+    </item>
+    
+    <item>
+      <title>Error adding dynamic values to email templates in Dynamics CRM Workflows</title>
+      <link>https://wanchap.com/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/</link>
+      <pubDate>Thu, 01 May 2014 18:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/</guid>
+      <description>This morning I was setting up a new workflow process for sending an email to some users and came across a weird bug. When editing the body of an email, everything was fine until I needed to add a dynamic value from the entity to the email&amp;rsquo;s body, and then as soon as I tried to save, this:
+
+Error details:
+Unhandled Exception: System.ServiceModel.FaultException`1[[Microsoft.Xrm.Sdk.OrganizationServiceFault, Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]: System.Xml.XmlException: Microsoft Dynamics CRM has experienced an error.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM - Replacing old CRM 4 API references with regular expressions</title>
+      <link>https://wanchap.com/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/</link>
+      <pubDate>Wed, 19 Feb 2014 21:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/</guid>
+      <description>When upgrading Dynamics CRM 2011 to the most recent set of updates, it turns out that CRM 4 API stuff was no longer supported, even though the Microsoft code validation tool said that it should all work in IE! &amp;gt;:-[
+So I needed to quickly replace loads of old CRM 4 API references, such as
+crmForm.all.some_field.DataValue = 1;
+with the newer CRM 2011 API, which in this example would look like:</description>
+    </item>
+    
+    <item>
+      <title>Altering User-Defined Sharing Permissions for Dynamics CRM Charts Directly in the Database</title>
+      <link>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</link>
+      <pubDate>Thu, 23 Jan 2014 22:05:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</guid>
+      <description>Today I received an email from a user experiencing difficulty editing charts that had been shared with them by another user, who had forgotten to check the &amp;ldquo;Write&amp;rdquo; permission. Unfortunately this person was away for the day, and for some reason CRM doesn&amp;rsquo;t have a neat admin tool for managing individual user-specified sharing settings for charts and such. So I had little choice but to dig into the bowels of the database and set the permissions manually.</description>
+    </item>
+    
+    <item>
+      <title>TSQL - checking for the intersection of two sets of dates</title>
+      <link>https://wanchap.com/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/</link>
+      <pubDate>Sun, 19 Jan 2014 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/</guid>
+      <description>Double post day!
+The same query that had concatenation happening from the previous post also had date range parameters, @StartDate and @EndDate, and needed to only return records (which also had their own start/end date fields) in which the records&amp;rsquo; were active during the specified date range. I.e. where the record&amp;rsquo;s date range intersected with the date range parameters. It confused me for a bit so I&amp;rsquo;m recording for posterity. As I see it, there are three possible valid cases:</description>
+    </item>
+    
+    <item>
+      <title>TSQL - Removing a trailing comma from a list of concatenated values</title>
+      <link>https://wanchap.com/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/</link>
+      <pubDate>Sun, 19 Jan 2014 16:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/</guid>
+      <description>On a semi-regular basis I&amp;rsquo;d need to squish a list of comma-delimited values all concatenated together into one field, so I&amp;rsquo;d use this old snippet:
+SELECTLEFT(ConcatValues, LEN(ConcatValues)-1) AS &#39;TheValues&#39;&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;FROM SomeTable t&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;CROSS APPLY( SELECT t2.SomeField + &amp;rsquo;, &amp;lsquo; AS [text()]&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;FROM SomeTable t2&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;WHERE t.SomeField = t2.SomeField&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;
+FOR XML PATH(&#39;&amp;lsquo;) ) C(ConcatValues)&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;Problem is when the concatenated field has length zero, LEFT gets a -1 length and returns an error:
+
+Msg 537, Level 16, State 5, Line 1&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;Invalid length parameter passed to the LEFT or SUBSTRING function.</description>
+    </item>
+    
+    <item>
+      <title>Getting an .apk into the Google Play store</title>
+      <link>https://wanchap.com/posts/getting-an-.apk-into-the-google-play-store/</link>
+      <pubDate>Sun, 01 Dec 2013 15:04:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/getting-an-.apk-into-the-google-play-store/</guid>
+      <description>This is mostly for my own reference but I hope someone else can find it useful too :)Disable debugging in your AndroidManifest.xml file by setting android:debuggable=&amp;quot;false&amp;rdquo; in the &amp;ldquo;application&amp;rdquo; node.cordova build android &amp;ndash;releasejarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore yourkey.keystore app.apk alias_name (assuming you&amp;rsquo;ve generated a key beforehand using keytool in the JDK bin directory)zipalign -v 4 app-release-unsigned.apk app.apk (obviously replace &amp;ldquo;app&amp;rdquo; with your app name)Zipalign must be the last thing that happens!</description>
+    </item>
+    
+    <item>
+      <title>Stopping Dynamics CRM from auto-creating contacts from tracked Outlook emails</title>
+      <link>https://wanchap.com/posts/stopping-dynamics-crm-from-auto-creating-contacts-from-tracked-outlook-emails/</link>
+      <pubDate>Mon, 11 Nov 2013 17:05:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/stopping-dynamics-crm-from-auto-creating-contacts-from-tracked-outlook-emails/</guid>
+      <description>I encountered an issue today where any time one of several users attempted to track an email in Dynamics CRM (2011) from within their Outlook client it would create contact records in CRM for whoever the email was sent to. I knew this was a setting in CRM somewhere and found it in the settings dialog here:
+
+However I didn&amp;rsquo;t want to go through all the annoyance of instructing everyone affected to manually alter the setting, so I fixed the problem once-and-for-all (at least until we get more users) by updating it for everyone in the CRM database.</description>
+    </item>
+    
+    <item>
+      <title>Using WiX to create an event source during install of a .NET framework project</title>
+      <link>https://wanchap.com/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/</link>
+      <pubDate>Thu, 31 Oct 2013 16:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/</guid>
+      <description>Edit: so I guess I wasn&amp;rsquo;t the only one confused with this stuff, as it&amp;rsquo;s been my most popular post by far! If I&amp;rsquo;ve helped you out or saved you some time, please let me know in the comments :)
+In order for this to work, you have to add references to WixUtilExtension and WixNetFxExtension to your WiX project. Once that&amp;rsquo;s done, add this inside a &amp;lt;Component&amp;gt; element:
+&amp;lt;Util:EventSourcexmlns:Util=&amp;quot;http://schemas.microsoft.com/wix/UtilExtension&amp;quot;Name=&amp;quot;EVENTSOURCEGOESHERE&amp;quot;Log=&amp;quot;Application&amp;quot;EventMessageFile=&amp;quot;[NETFRAMEWORK40FULLINSTALLROOTDIR]EventLogMessages.dll&amp;quot;/&amp;gt;
+Obviously replace EVENTSOURCEGOESHERE with your event source name.</description>
+    </item>
+    
+    <item>
+      <title>Using Log4Net to use both event log and a rolling log file</title>
+      <link>https://wanchap.com/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/</link>
+      <pubDate>Tue, 29 Oct 2013 23:49:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/</guid>
+      <description>Here&amp;rsquo;s the config section, note that the applicationNameproperty in the EventLogAppender needs to be the same as the event source in the windows event log that you want to log to. If the event source doesn&amp;rsquo;t exist, that appender won&amp;rsquo;t work. In this particular project I create that during install using WiX (which is covered in another post)
+
+&amp;lt;log4netdebug=&amp;quot;true&amp;quot;&amp;gt;
+&amp;lt;appendername=&amp;quot;RollingLogFileAppender&amp;quot;type=&amp;quot;log4net.Appender.RollingFileAppender&amp;quot;&amp;gt;
+&amp;lt;filevalue=&amp;quot;log.txt&amp;quot;/&amp;gt;
+&amp;lt;datePatternvalue=&amp;quot;dd-MM-yyyy&amp;quot;/&amp;gt;
+&amp;lt;appendToFilevalue=&amp;quot;true&amp;quot;/&amp;gt;
+&amp;lt;locationinfovalue=&amp;quot;false&amp;quot;/&amp;gt;
+&amp;lt;rollingStylevalue=&amp;quot;Size&amp;quot;/&amp;gt;
+&amp;lt;maximumFileSizevalue=&amp;quot;1MB&amp;quot;/&amp;gt;
+&amp;lt;maxSizeRollBackupsvalue=&amp;quot;10&amp;quot;/&amp;gt;
+&amp;lt;staticLogFileNamevalue=&amp;quot;true&amp;quot;/&amp;gt;
+&amp;lt;layouttype=&amp;quot;log4net.Layout.PatternLayout&amp;quot;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>A wonderful day</title>
+      <link>https://wanchap.com/posts/a-wonderful-day/</link>
+      <pubDate>Thu, 03 Oct 2013 23:42:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-wonderful-day/</guid>
+      <description>Momentous things done today:
+Start my first web-based source control https://bitbucket.org/mwanchapStart a blog of some sort (hint: it&amp;rsquo;s this one!)Drink a beer
+Pretty good, I reckon.</description>
+    </item>
+    
+  </channel>
+</rss>

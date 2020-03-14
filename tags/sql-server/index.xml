@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL Server on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/sql-server/</link>
+    <description>Recent content in SQL Server on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Jun 2018 16:43:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/sql-server/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing SQL Server Express to set up an Azure database locally</title>
+      <link>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</link>
+      <pubDate>Wed, 27 Jun 2018 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</guid>
+      <description>Installing SQL Express:Download SQL Express installerSwitch to an account with full local admin permissions (our regular accounts don&amp;rsquo;t have these so I had to use a global admin account instead) and install SQL Express with that accountOnce installation completes, make a note of the connection string you&amp;rsquo;re given on the final page of the installerOpen SSMS and connect to the database - default name is localhost\sqlexpressNavigate to Security -&amp;gt; Logins -&amp;gt; New LoginAdd the regular (non-admin) domain account that you&amp;rsquo;ll be using most of the timeOnce added, open that account under the Logins section and then open the &amp;ldquo;Server Roles&amp;rdquo; pageAdd the account to the &amp;ldquo;sysadmin&amp;rdquo; roleObtaining the Azure database:Open the database and select the &amp;ldquo;Export&amp;rdquo; option at the top of the &amp;ldquo;Overview&amp;rdquo; pageChoose a storage account and container to drop the export file in and enter the server admin credsOnce the file has been created, access that storage container and download the db export fileRestoring the export fileBack in SSMS, connect to your local SQL express server instance again (if it isn&amp;rsquo;t still connected), right-click on the &amp;ldquo;Databases&amp;rdquo; node and select &amp;ldquo;Import Data-tier Application&amp;quot;Select the db export file, give the database a name, click &amp;ldquo;Next&amp;quot;Don&amp;rsquo;t forget to update connection strings in your applications ;) If they&amp;rsquo;re running under your normal account (i.</description>
+    </item>
+    
+  </channel>
+</rss>

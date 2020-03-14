@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+
+<title>Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Matt Wanchap"/>
+<meta name="twitter:description" content=""/>
+
+<meta property="og:title" content="Matt Wanchap" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wanchap.com/" />
+<meta property="og:updated_time" content="2019-12-31T08:38:31+10:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://wanchap.com/index.xml" title="Matt Wanchap" />
+
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/" >Error adding dynamic values to email templates in Dynamics CRM Workflows</a>
+        </span>
+        <span class="item__date">
+          May 01, 2014
+        </span>
+        <span >
+        
+        This morning I was setting up a new workflow process for sending an email to some users and came across a weird bug. When editing the body of an email, everything was fine until I needed to add a dynamic value from the entity to the email&rsquo;s body, and then as soon as I tried to save, this:
+
+Error details:
+Unhandled Exception: System.ServiceModel.FaultException`1[[Microsoft.Xrm.Sdk.OrganizationServiceFault, Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]: System.Xml.XmlException: Microsoft Dynamics CRM has experienced an error.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/" >Dynamics CRM - Replacing old CRM 4 API references with regular expressions</a>
+        </span>
+        <span class="item__date">
+          Feb 19, 2014
+        </span>
+        <span >
+        
+        When upgrading Dynamics CRM 2011 to the most recent set of updates, it turns out that CRM 4 API stuff was no longer supported, even though the Microsoft code validation tool said that it should all work in IE! &gt;:-[
+So I needed to quickly replace loads of old CRM 4 API references, such as
+crmForm.all.some_field.DataValue = 1;
+with the newer CRM 2011 API, which in this example would look like:
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/" >Altering User-Defined Sharing Permissions for Dynamics CRM Charts Directly in the Database</a>
+        </span>
+        <span class="item__date">
+          Jan 23, 2014
+        </span>
+        <span >
+        
+        Today I received an email from a user experiencing difficulty editing charts that had been shared with them by another user, who had forgotten to check the &ldquo;Write&rdquo; permission. Unfortunately this person was away for the day, and for some reason CRM doesn&rsquo;t have a neat admin tool for managing individual user-specified sharing settings for charts and such. So I had little choice but to dig into the bowels of the database and set the permissions manually.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/" >TSQL - checking for the intersection of two sets of dates</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2014
+        </span>
+        <span >
+        
+        Double post day!
+The same query that had concatenation happening from the previous post also had date range parameters, @StartDate and @EndDate, and needed to only return records (which also had their own start/end date fields) in which the records&rsquo; were active during the specified date range. I.e. where the record&rsquo;s date range intersected with the date range parameters. It confused me for a bit so I&rsquo;m recording for posterity. As I see it, there are three possible valid cases:
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/" >TSQL - Removing a trailing comma from a list of concatenated values</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2014
+        </span>
+        <span >
+        
+        On a semi-regular basis I&rsquo;d need to squish a list of comma-delimited values all concatenated together into one field, so I&rsquo;d use this old snippet:
+SELECTLEFT(ConcatValues, LEN(ConcatValues)-1) AS 'TheValues'&lt;o:p&gt;&lt;/o:p&gt;FROM SomeTable t&lt;o:p&gt;&lt;/o:p&gt;CROSS APPLY( SELECT t2.SomeField + &rsquo;, &lsquo; AS [text()]&lt;o:p&gt;&lt;/o:p&gt;FROM SomeTable t2&lt;o:p&gt;&lt;/o:p&gt;WHERE t.SomeField = t2.SomeField&lt;o:p&gt;&lt;/o:p&gt;
+FOR XML PATH('&lsquo;) ) C(ConcatValues)&lt;o:p&gt;&lt;/o:p&gt;Problem is when the concatenated field has length zero, LEFT gets a -1 length and returns an error:
+
+Msg 537, Level 16, State 5, Line 1&lt;o:p&gt;&lt;/o:p&gt;Invalid length parameter passed to the LEFT or SUBSTRING function.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/getting-an-.apk-into-the-google-play-store/" >Getting an .apk into the Google Play store</a>
+        </span>
+        <span class="item__date">
+          Dec 01, 2013
+        </span>
+        <span >
+        
+        This is mostly for my own reference but I hope someone else can find it useful too :)Disable debugging in your AndroidManifest.xml file by setting android:debuggable=&quot;false&rdquo; in the &ldquo;application&rdquo; node.cordova build android &ndash;releasejarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore yourkey.keystore app.apk alias_name (assuming you&rsquo;ve generated a key beforehand using keytool in the JDK bin directory)zipalign -v 4 app-release-unsigned.apk app.apk (obviously replace &ldquo;app&rdquo; with your app name)Zipalign must be the last thing that happens!
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/getting-an-.apk-into-the-google-play-store/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/stopping-dynamics-crm-from-auto-creating-contacts-from-tracked-outlook-emails/" >Stopping Dynamics CRM from auto-creating contacts from tracked Outlook emails</a>
+        </span>
+        <span class="item__date">
+          Nov 11, 2013
+        </span>
+        <span >
+        
+        I encountered an issue today where any time one of several users attempted to track an email in Dynamics CRM (2011) from within their Outlook client it would create contact records in CRM for whoever the email was sent to. I knew this was a setting in CRM somewhere and found it in the settings dialog here:
+
+However I didn&rsquo;t want to go through all the annoyance of instructing everyone affected to manually alter the setting, so I fixed the problem once-and-for-all (at least until we get more users) by updating it for everyone in the CRM database.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/stopping-dynamics-crm-from-auto-creating-contacts-from-tracked-outlook-emails/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/" >Using WiX to create an event source during install of a .NET framework project</a>
+        </span>
+        <span class="item__date">
+          Oct 31, 2013
+        </span>
+        <span >
+        
+        Edit: so I guess I wasn&rsquo;t the only one confused with this stuff, as it&rsquo;s been my most popular post by far! If I&rsquo;ve helped you out or saved you some time, please let me know in the comments :)
+In order for this to work, you have to add references to WixUtilExtension and WixNetFxExtension to your WiX project. Once that&rsquo;s done, add this inside a &lt;Component&gt; element:
+&lt;Util:EventSourcexmlns:Util=&quot;http://schemas.microsoft.com/wix/UtilExtension&quot;Name=&quot;EVENTSOURCEGOESHERE&quot;Log=&quot;Application&quot;EventMessageFile=&quot;[NETFRAMEWORK40FULLINSTALLROOTDIR]EventLogMessages.dll&quot;/&gt;
+Obviously replace EVENTSOURCEGOESHERE with your event source name.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/" >Using Log4Net to use both event log and a rolling log file</a>
+        </span>
+        <span class="item__date">
+          Oct 29, 2013
+        </span>
+        <span >
+        
+        Here&rsquo;s the config section, note that the applicationNameproperty in the EventLogAppender needs to be the same as the event source in the windows event log that you want to log to. If the event source doesn&rsquo;t exist, that appender won&rsquo;t work. In this particular project I create that during install using WiX (which is covered in another post)
+
+&lt;log4netdebug=&quot;true&quot;&gt;
+&lt;appendername=&quot;RollingLogFileAppender&quot;type=&quot;log4net.Appender.RollingFileAppender&quot;&gt;
+&lt;filevalue=&quot;log.txt&quot;/&gt;
+&lt;datePatternvalue=&quot;dd-MM-yyyy&quot;/&gt;
+&lt;appendToFilevalue=&quot;true&quot;/&gt;
+&lt;locationinfovalue=&quot;false&quot;/&gt;
+&lt;rollingStylevalue=&quot;Size&quot;/&gt;
+&lt;maximumFileSizevalue=&quot;1MB&quot;/&gt;
+&lt;maxSizeRollBackupsvalue=&quot;10&quot;/&gt;
+&lt;staticLogFileNamevalue=&quot;true&quot;/&gt;
+&lt;layouttype=&quot;log4net.Layout.PatternLayout&quot;&gt;
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/a-wonderful-day/" >A wonderful day</a>
+        </span>
+        <span class="item__date">
+          Oct 03, 2013
+        </span>
+        <span >
+        
+        Momentous things done today:
+Start my first web-based source control https://bitbucket.org/mwanchapStart a blog of some sort (hint: it&rsquo;s this one!)Drink a beer
+Pretty good, I reckon.
+        
+        </span>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/7/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/7/">7</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    <li class="page-item disabled">
+    <a href="" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

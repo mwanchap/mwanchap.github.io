@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQuery on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/jquery/</link>
+    <description>Recent content in jQuery on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Sep 2014 22:23:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery ajax error logging on the server with log4net</title>
+      <link>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</guid>
+      <description>This post is based on Toby Gundry&amp;rsquo;s post on the same technique, but adapted for logging jQuery ajax errors (although I added a few extra things too).
+In your Javascript:
+$(document).on({
+ajaxError: function (event, jqXHR, ajaxSettings) {
+var err = &amp;ldquo;Location: &amp;quot; + document.location.href + &amp;ldquo;; &amp;ldquo;;
+if (jqXHR)
+{
+err += &amp;ldquo;Status: &amp;quot; + jqXHR.status + &amp;ldquo;; &amp;ldquo;;
+err += &amp;ldquo;Text: &amp;quot; + jqXHR.statusText + &amp;ldquo;; &amp;ldquo;;
+}
+if (jqXHR.</description>
+    </item>
+    
+    <item>
+      <title>The JSON deserialisation drinking game</title>
+      <link>https://wanchap.com/posts/the-json-deserialisation-drinking-game/</link>
+      <pubDate>Tue, 27 May 2014 18:50:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-json-deserialisation-drinking-game/</guid>
+      <description>Take a drink every time you see this pattern:
+$.ajax({
+data: &amp;ldquo;{things:stuff}&amp;quot;,
+dataType: &amp;ldquo;json&amp;rdquo;,
+ //other properties omitted
+success: function (result) {
+var myObject = eval( &amp;ldquo;(&amp;rdquo; + result.d + &amp;ldquo;)&amp;quot; ); //noooooooooooooooo
+}
+});
+Take a drink when someone seriously brings up the catchphrase &amp;ldquo;eval is evil&amp;rdquo; or a variant of it.
+Finish all of the drinks if you sincerely think that nobody would ever get malicious code into your database/application that will be happily executed when eval evaluates it and send your client to their phishing duplicate of your login page where they harvest user credentials before redirecting them right back to your application so nobody ever realises what just happened.</description>
+    </item>
+    
+    <item>
+      <title>Using jQuery validation plugin with fields in a jQuery UI .dialog()</title>
+      <link>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</link>
+      <pubDate>Wed, 21 May 2014 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</guid>
+      <description>One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&amp;rsquo;s moved outside of the page&amp;rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&amp;rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&amp;rsquo;s not a lot you can do to move the dialog or the form.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CLI on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/cli/</link>
+    <description>Recent content in CLI on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Oct 2019 18:27:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Azure Devops CLI - removing old branches after squash merges</title>
+      <link>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</guid>
+      <description>We had a git repo with hundreds of already-merged branches which I wanted to clean up. They&amp;rsquo;d all been merged via &amp;ldquo;squash merges&amp;rdquo;, meaning there was no merge commit to easily link back to the source branches. I wanted to delete these unnecessary branches, but only the ones that had definitely already been merged into the master branch via a pull request (PR). Below is how I used the Azure Devops CLI to get a list of them.</description>
+    </item>
+    
+    <item>
+      <title>The quickest, easiest way to make and connect to an Azure VM</title>
+      <link>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</link>
+      <pubDate>Thu, 15 Aug 2019 23:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</guid>
+      <description>Connect-AzureRmAccount
+$creds = Get-Credential
+$vmname = &amp;ldquo;TestVM&amp;quot;
+$vm = New-AzureRmVm -Name $vmname -Credential $creds -Location &amp;ldquo;AustraliaEast&amp;rdquo; -Size &amp;ldquo;Standard_DS3_v2&amp;rdquo; # obviously change size and location as required
+$fqdn = $vm.FullyQualifiedDomainName;
+$username = $creds.UserName;
+&amp;quot;full address:s:$fqdn&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo;;
+&amp;quot;username:s:$vmname$username&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo; -Append;</description>
+    </item>
+    
+  </channel>
+</rss>

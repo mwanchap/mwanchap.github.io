@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET Core on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/.net-core/</link>
+    <description>Recent content in .NET Core on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Sep 2018 23:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/.net-core/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Strongly-typed action links in ASP.NET Core MVC views</title>
+      <link>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</guid>
+      <description>While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&amp;rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&amp;rsquo;t repeat the install instructions, but for some reason they didn&amp;rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+  </channel>
+</rss>

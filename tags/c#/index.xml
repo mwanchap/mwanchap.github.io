@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/c#/</link>
+    <description>Recent content in C# on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Apr 2019 22:09:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formats for dealing with dates and datetimes in Salesforce</title>
+      <link>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</link>
+      <pubDate>Tue, 23 Apr 2019 22:09:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</guid>
+      <description>The correct way to format dates (not datetimes!) for bulk importing CSVs into Salesforce looks like year-month-day, so today would look like 2019-06-17. These default to the timezone set for the user importing them, so there&amp;rsquo;s no need to convert to UTC. Set this in Excel by
+Select the column/s containing datesRight click on them and select &amp;ldquo;Format Cells&amp;rdquo; from the menuSelect the format &amp;ldquo;2012-03-14&amp;quot;Save as CSV (not the UTF-8 type of CSV)</description>
+    </item>
+    
+    <item>
+      <title>Azure AD error - &#39;IDX10311: RequireNonce is true but validationContext.Nonce is null&#39;</title>
+      <link>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</link>
+      <pubDate>Wed, 13 Mar 2019 22:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</guid>
+      <description>I&amp;rsquo;ve experienced this one enough times now that I&amp;rsquo;d like to preserve the solution/s for future occurrences. The exact message is:
+IDX10311: RequireNonce is &amp;lsquo;true&amp;rsquo; (default) but validationContext.Nonce is null. A nonce cannot be validated. If you don&amp;rsquo;t need to check the nonce, set OpenIdConnectProtocolValidator.RequireNonce to &amp;lsquo;false&amp;rsquo;.An easy way to reproduce this one is to hit the &amp;ldquo;back&amp;rdquo; button after having signed in to an ASP.NET web app that auths with Azure AD using the OWIN library.</description>
+    </item>
+    
+    <item>
+      <title>Testing Sendgrid SMTP without sending emails using sandbox mode</title>
+      <link>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</link>
+      <pubDate>Sun, 03 Mar 2019 17:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</guid>
+      <description>Here&amp;rsquo;s how to test out a Sendgrid integration using SMTP without actually sending emails. Obviously make sure you have Sendgrid SMTP set up in your config first, and then just add the X-SMTPAPI header (docs link) with some JSON like the below.
+MailMessage msg = new MailMessage();
+var json = @&amp;quot;{
+&amp;ldquo;&amp;ldquo;mail_settings&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;sandbox_mode&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;enable&amp;rdquo;&amp;quot;: true
+}
+}
+}&amp;quot;;
+msg.Headers.Add(&amp;ldquo;X-SMTPAPI&amp;rdquo;, json);
+// all the usual email stuff
+SmtpClient smtpclient = new SmtpClient();</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>Customising Umbraco&#39;s Default Grid Editors</title>
+      <link>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</link>
+      <pubDate>Wed, 19 Oct 2016 20:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</guid>
+      <description>Create a new directory in App_Plugins called anything you like. This will be your &amp;ldquo;package&amp;rdquo; directoryCopy the web.config file that&amp;rsquo;s inside the main &amp;ldquo;Views&amp;rdquo; directory (not your project&amp;rsquo;s main web.config!) into your package directory. This is needed for MVC to work properlyCreate a package.manifest file and put this in it (come back and modify these properties as necessary):
+{
+&amp;ldquo;gridEditors&amp;rdquo;:
+[{
+&amp;ldquo;name&amp;rdquo;: &amp;ldquo;Speaker Portrait&amp;rdquo;,
+&amp;ldquo;alias&amp;rdquo;: &amp;ldquo;speakerPortrait&amp;rdquo;,
+&amp;ldquo;view&amp;rdquo;: &amp;ldquo;media&amp;rdquo;,
+&amp;ldquo;render&amp;rdquo;: &amp;ldquo;/app_plugins/yourpackagedir/MediaMarkup.</description>
+    </item>
+    
+    <item>
+      <title>Auto-Incrementing Build Number in Visual Studio and WiX Installer</title>
+      <link>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</link>
+      <pubDate>Sun, 20 Mar 2016 18:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</guid>
+      <description>In AssemblyInfo.cs, remove the &amp;ldquo;AssemblyFileVersion&amp;rdquo; attribute, and set &amp;ldquo;AssemblyVersion&amp;rdquo; to contain &amp;ldquo;*&amp;rdquo; where you want to include the revision and build numbers, like 1.5.*
+In the WiX installer&amp;rsquo;s .wxs file, in the &amp;ldquo;Product&amp;rdquo; node, set the &amp;ldquo;Version&amp;rdquo; property to look like this:
+Version=&amp;rdquo;!(bind.FileVersion.FileId)&amp;ldquo;
+where FileId is the ID of the file to take the version number from.
+Credit to these two StackOverflow posts:
+http://stackoverflow.com/a/826850/2939759
+http://stackoverflow.com/a/641094/2939759</description>
+    </item>
+    
+    <item>
+      <title>Authentication error querying Dynamics CRM OrganisationService</title>
+      <link>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</link>
+      <pubDate>Sat, 02 May 2015 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</guid>
+      <description>An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
+&amp;rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&amp;ldquo;
+Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.</description>
+    </item>
+    
+  </channel>
+</rss>

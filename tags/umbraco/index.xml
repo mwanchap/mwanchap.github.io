@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Umbraco on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/umbraco/</link>
+    <description>Recent content in Umbraco on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Dec 2019 22:32:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/umbraco/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Umbraco SQL query snippets</title>
+      <link>https://wanchap.com/posts/umbraco-sql-query-snippets/</link>
+      <pubDate>Tue, 10 Dec 2019 22:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/umbraco-sql-query-snippets/</guid>
+      <description>Selecting properties of a content item:
+SELECT cast([xml] as xml) as &amp;lsquo;xmldata&amp;rsquo;, nodeId
+FROM dbo.cmsContentXml
+WHERE nodeId = &amp;lsquo;1234&amp;rsquo; &amp;ndash;ID from the node in Umbraco</description>
+    </item>
+    
+    <item>
+      <title>ImageProcessor security config for Umbraco &#43; Azure Storage Emulator</title>
+      <link>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</link>
+      <pubDate>Sun, 29 Sep 2019 22:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</guid>
+      <description>This is only going to work if you&amp;rsquo;re using ImageProcessor with Umbraco to deal with images being loaded from blob storage in the Azure Storage Emulator. Took me a while to get the settings right, the way I figured it out was:
+firstly, use Azure Storage Explorer to find the URL for your emulated blob container and make sure that works by requesting from there directlyFind the URL it&amp;rsquo;s attempting to use by catching the ImageProcessingExceptions that get thrown when it can&amp;rsquo;t find the file</description>
+    </item>
+    
+    <item>
+      <title>&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</title>
+      <link>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</link>
+      <pubDate>Thu, 03 May 2018 23:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</guid>
+      <description>After installing the Application Insights nuget package to an Umbraco solution, you&amp;rsquo;ll get this error:
+A section using &amp;lsquo;configSource&amp;rsquo; may contain no other attributes or elements
+&amp;lt;ExamineLuceneIndexSets configSource=&amp;quot;config\ExamineIndex.config&amp;rdquo; /&amp;gt;
+&amp;lt;log4net configSource=&amp;quot;config\log4net.config&amp;rdquo;&amp;gt;
+&amp;lt;root&amp;gt;
+&amp;lt;level value=&amp;quot;ALL&amp;rdquo; /&amp;gt;
+&amp;lt;appender-ref ref=&amp;quot;aiAppender&amp;rdquo; /&amp;gt;
+Source File: \project\web.config
+This happens because part of the Application Insights installation process adds a &amp;lt;log4net&amp;gt; section to web.config. Which would make sense, except Umbraco already has a &amp;lt;log4net&amp;gt; section in /config/log4net.config. So as you can imagine, the solution is to manually move everything its added into that file.</description>
+    </item>
+    
+    <item>
+      <title>Using Umbraco ModelsBuilder</title>
+      <link>https://wanchap.com/posts/using-umbraco-modelsbuilder/</link>
+      <pubDate>Mon, 27 Nov 2017 17:31:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-umbraco-modelsbuilder/</guid>
+      <description>Firstly, make sure the following properties are set in your solution&amp;rsquo;s top-level web.config to enable the models builder:
+&amp;lt;add key=&amp;quot;Umbraco.ModelsBuilder.Enable&amp;rdquo; value=&amp;quot;true&amp;rdquo;/&amp;gt;
+&amp;lt;add key=&amp;quot;Umbraco.ModelsBuilder.ModelsMode&amp;rdquo; value=&amp;quot;LiveAppData&amp;rdquo;/&amp;gt;
+
+I like the &amp;ldquo;LiveAppData&amp;rdquo; mode, but you should experiment with the others from the list in the ModelsBuilder docs here. Generate your model classes, and include them in the VS Solution.
+Unless you&amp;rsquo;re on a brand new project, any existing views will need to be modified.</description>
+    </item>
+    
+    <item>
+      <title>Customising Umbraco&#39;s Default Grid Editors</title>
+      <link>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</link>
+      <pubDate>Wed, 19 Oct 2016 20:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</guid>
+      <description>Create a new directory in App_Plugins called anything you like. This will be your &amp;ldquo;package&amp;rdquo; directoryCopy the web.config file that&amp;rsquo;s inside the main &amp;ldquo;Views&amp;rdquo; directory (not your project&amp;rsquo;s main web.config!) into your package directory. This is needed for MVC to work properlyCreate a package.manifest file and put this in it (come back and modify these properties as necessary):
+{
+&amp;ldquo;gridEditors&amp;rdquo;:
+[{
+&amp;ldquo;name&amp;rdquo;: &amp;ldquo;Speaker Portrait&amp;rdquo;,
+&amp;ldquo;alias&amp;rdquo;: &amp;ldquo;speakerPortrait&amp;rdquo;,
+&amp;ldquo;view&amp;rdquo;: &amp;ldquo;media&amp;rdquo;,
+&amp;ldquo;render&amp;rdquo;: &amp;ldquo;/app_plugins/yourpackagedir/MediaMarkup.</description>
+    </item>
+    
+  </channel>
+</rss>

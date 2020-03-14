@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scribe Online on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/scribe-online/</link>
+    <description>Recent content in Scribe Online on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Dec 2015 18:21:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/scribe-online/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scribe Agent Issues</title>
+      <link>https://wanchap.com/posts/scribe-agent-issues/</link>
+      <pubDate>Wed, 02 Dec 2015 18:21:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/scribe-agent-issues/</guid>
+      <description>Today we encountered a weird problem after resetting the credentials for the Salesforce account used for synchronising data. Although the &amp;ldquo;Test Connection&amp;rdquo; was successful, any attempts to connect to Salesforce ended up with this error: &amp;ldquo;Destination URL not reset. The URL returned from login must be set in the SforceService SOQL&amp;rdquo; Which really doesn&amp;rsquo;t help much; Googling for it just turns up a bunch of info about Salesforce API connections, so hopefully someone having the same issue finds this post.</description>
+    </item>
+    
+  </channel>
+</rss>

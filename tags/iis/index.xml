@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IIS on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/iis/</link>
+    <description>Recent content in IIS on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Nov 2019 17:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/iis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Powershell error: &#39;Retrieving COM class factory failed: class not registered (REGDB_E_CLASSNOTREG)&#39;</title>
+      <link>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</link>
+      <pubDate>Tue, 05 Nov 2019 17:55:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</guid>
+      <description>The problematic command and full error message was:
+&amp;gt;get-webbinding
+&amp;quot;get-webconfigurationproperty : Retrieving the COM class factory for component with CLSID {688EEEE5-6A7E-422F-B2E1-6AF00DC944A6} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).&amp;ldquo;
+I was pretty stuck on the above error while trying to run a script for setting up sites in IIS which involved some calls to get-webbinding (in the WebAdministration module). After much digging around I finally ran into this post.</description>
+    </item>
+    
+    <item>
+      <title>IIS HTTP Error 500.19, Error Code 0x8007000d</title>
+      <link>https://wanchap.com/posts/iis-http-error-500.19-error-code-0x8007000d/</link>
+      <pubDate>Fri, 19 Jan 2018 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-http-error-500.19-error-code-0x8007000d/</guid>
+      <description>I probably come across this error at least once per year. Ran into it again today when setting up a website to host locally in IIS, on a computer I don&amp;rsquo;t use much.
+HTTP Error 500.19 - Internal Server Error
+The requested page cannot be accessed because the related configuration data for the page is invalid.
+Detailed Error Information:
+Module IIS Web Core
+Notification Unknown
+Handler Not yet determined
+Error Code 0x8007000d</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Redirect Loop</title>
+      <link>https://wanchap.com/posts/azure-active-directory-redirect-loop/</link>
+      <pubDate>Thu, 08 Oct 2015 17:46:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-active-directory-redirect-loop/</guid>
+      <description>While developing an Azure web app that uses Azure AD integration, I ran into a mysterious redirect loop, first on my wife&amp;rsquo;s phone while trying to show it off (embarrassing!) and then again at work. Turns out that if you don&amp;rsquo;t specify https, the Microsoft sign-in page keeps redirecting back to the app and vice-versa. Took me a little while to figure this out, thanks to tugberkugurlu for finding the solution!</description>
+    </item>
+    
+    <item>
+      <title>Authentication error querying Dynamics CRM OrganisationService</title>
+      <link>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</link>
+      <pubDate>Sat, 02 May 2015 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</guid>
+      <description>An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
+&amp;rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&amp;ldquo;
+Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.</description>
+    </item>
+    
+    <item>
+      <title>IIS returns 404 on all .woff files</title>
+      <link>https://wanchap.com/posts/iis-returns-404-on-all-.woff-files/</link>
+      <pubDate>Mon, 10 Nov 2014 16:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-returns-404-on-all-.woff-files/</guid>
+      <description>For some reason (tell me if you know why) IIS does not seem to like .woff files, and any attempt to load them for use in CSS will be met with a 404. I found a solution to it here, and it is to paste the following into your web.config&amp;rsquo;s system.webserver section:
+&amp;lt;staticContent&amp;gt;
+&amp;lt;remove fileExtension=&amp;rdquo;.woff&amp;rdquo;/&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;rdquo;.woff&amp;rdquo; mimeType=&amp;quot;application/x-font-woff&amp;rdquo; /&amp;gt;
+&amp;lt;/staticContent&amp;gt;
+Which fixed the problem immediately!</description>
+    </item>
+    
+    <item>
+      <title>IIS - Preventing URL Access to a Specific Directory</title>
+      <link>https://wanchap.com/posts/iis-preventing-url-access-to-a-specific-directory/</link>
+      <pubDate>Thu, 09 Oct 2014 18:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-preventing-url-access-to-a-specific-directory/</guid>
+      <description>Yesterday I was asked to made a web page which provided the ability to download files, which weren&amp;rsquo;t served directly (by passing the file URL to the client) but were sent by reading the file on the server and sending the output. However, I realised that the files could still be accessed by an unauthenticated user by typing in the file&amp;rsquo;s direct URL. Most solutions to this that I found required remote access to the server (which I don&amp;rsquo;t have) or adding URL rewrite rules (the URL rewrite module wasn&amp;rsquo;t installed).</description>
+    </item>
+    
+    <item>
+      <title>IIS and ASP.NET 404 error handlers don&#39;t play nicely together</title>
+      <link>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</link>
+      <pubDate>Thu, 24 Jul 2014 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</guid>
+      <description>While trying to setup both ASP.NET as well as IIS error-handling, I noticed that IIS wasn&amp;rsquo;t dealing with certain 404 errors in which the file extension was wrong. For example, I could request ThisFileDoesntExist.aspx and that would redirect to NotFound.aspx just fine, but WrongExtension.aspz would kick the user out to the ugly default IIS 404 error page.
+So I did a bit of investigation and found this post, which pointed out that, in your web.</description>
+    </item>
+    
+  </channel>
+</rss>

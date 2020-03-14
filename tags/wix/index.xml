@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WiX on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/wix/</link>
+    <description>Recent content in WiX on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Mar 2016 18:17:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/wix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Auto-Incrementing Build Number in Visual Studio and WiX Installer</title>
+      <link>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</link>
+      <pubDate>Sun, 20 Mar 2016 18:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</guid>
+      <description>In AssemblyInfo.cs, remove the &amp;ldquo;AssemblyFileVersion&amp;rdquo; attribute, and set &amp;ldquo;AssemblyVersion&amp;rdquo; to contain &amp;ldquo;*&amp;rdquo; where you want to include the revision and build numbers, like 1.5.*
+In the WiX installer&amp;rsquo;s .wxs file, in the &amp;ldquo;Product&amp;rdquo; node, set the &amp;ldquo;Version&amp;rdquo; property to look like this:
+Version=&amp;rdquo;!(bind.FileVersion.FileId)&amp;ldquo;
+where FileId is the ID of the file to take the version number from.
+Credit to these two StackOverflow posts:
+http://stackoverflow.com/a/826850/2939759
+http://stackoverflow.com/a/641094/2939759</description>
+    </item>
+    
+  </channel>
+</rss>

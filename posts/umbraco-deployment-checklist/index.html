@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+    
+    
+
+<title>Umbraco Deployment Checklist • Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Umbraco Deployment Checklist"/>
+<meta name="twitter:description" content="This is primarily aimed at deploying from Visual Studio to an Azure Web App &#43; Azure SQL database, feel free to skip bits that aren&rsquo;t relevant if you&rsquo;re doing other things.
+Prerequisites for developing locally:
+Visual Studio (obviously)
+Ensure IIS URL Rewrite module is installed using web platform installer (other downloads from MS documentation don&rsquo;t seem to work)
+Set up Azure:
+Make a new SQL Database in Azure, take note of the server name, database name, admin login and admin password."/>
+
+<meta property="og:title" content="Umbraco Deployment Checklist" />
+<meta property="og:description" content="This is primarily aimed at deploying from Visual Studio to an Azure Web App &#43; Azure SQL database, feel free to skip bits that aren&rsquo;t relevant if you&rsquo;re doing other things.
+Prerequisites for developing locally:
+Visual Studio (obviously)
+Ensure IIS URL Rewrite module is installed using web platform installer (other downloads from MS documentation don&rsquo;t seem to work)
+Set up Azure:
+Make a new SQL Database in Azure, take note of the server name, database name, admin login and admin password." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanchap.com/posts/umbraco-deployment-checklist/" />
+<meta property="article:published_time" content="2017-01-10T16:41:00+00:00" />
+<meta property="article:modified_time" content="2017-01-10T16:41:00+00:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Umbraco Deployment Checklist</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jan 10, 2017
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>This is primarily aimed at deploying from Visual Studio to an Azure Web App + Azure SQL database, feel free to skip bits that aren&rsquo;t relevant if you&rsquo;re doing other things.<br /><br /><b>Prerequisites for developing locally:</b><br />Visual Studio (obviously)<br />Ensure IIS URL Rewrite module is installed using web platform installer (other downloads from MS documentation don&rsquo;t seem to work)<br /><br /><b>Set up Azure:</b><br />Make a new SQL Database in Azure, take note of the server name, database name, admin login and admin password.  If you already have a server and resource group, automate with Powershell as shown below (you&rsquo;ll need to replace the param values):<br /><code>New-AzureRmSqlDatabase -DatabaseName &ldquo;UmbracoDatabase&rdquo; -ServerName &ldquo;TheServer&rdquo; -ResourceGroupName &ldquo;Whatever&rdquo; -Edition &ldquo;Basic&quot;</code><br />Add your IP to the Azure SQL db firewall so Umbraco can connect to it later when running locally<br />Create a new Azure web app, either manually or via Powershell:<br /><code>New-AzureRmWebApp -ResourceGroupName &ldquo;Whatever&rdquo; -Name &ldquo;UmbracoWebsite&rdquo; -Location &ldquo;AustraliaEast&rdquo; -AppServicePlan &ldquo;YourASP&quot;</code><br /><div><div>Set &ldquo;PHP Version&rdquo; to &ldquo;Off&quot;</div></div><br /><b>Create the project:</b><br />Open VS and make a new ASP.NET Web Application, targeting the latest release version of .NET, and select the &ldquo;Empty&rdquo; project template<br />Open the Package Manager Console, and run &ldquo;Install-Package UmbracoCms&quot;<br />Once that&rsquo;s done, build &amp; run your VS solution (debug mode is fine)<br />Put your admin account details into the install page<br />Click &ldquo;Customize&rdquo;, <b>not</b> &ldquo;Install&rdquo;!<br />Select &ldquo;Microsoft SQL Azure&rdquo; as the target database and enter the server/admin details<br />Probably don&rsquo;t install a starter pack<br />If everything worked, you should be logged into the Umbraco backend on localhost<br /><br /><b>Pre-deployment:</b><br />Set &lt;customErrors mode=&quot;Off&rdquo; /&gt; in web.config.  Remember to change this back later.<br />Delete the Umbraco/Install folder<br /><div>Copy the .gitignore from <a href="https://github.com/github/gitignore/blob/master/Umbraco.gitignore"><a href="https://github.com/github/gitignore/blob/master/Umbraco.gitignore">https://github.com/github/gitignore/blob/master/Umbraco.gitignore</a></a> to your project&rsquo;s root and obviously save as .gitignore<br />While you&rsquo;re at it, make sure you have a Visual Studo gitignore set up too: <a href="https://github.com/github/gitignore/blob/master/VisualStudio.gitignore"><a href="https://github.com/github/gitignore/blob/master/VisualStudio.gitignore">https://github.com/github/gitignore/blob/master/VisualStudio.gitignore</a></a><br />Do the usual new git project stuff: git init / add / commit / remote add origin / push origin master<br />Include \App_Data\ in the solution, but only \App_Data\packages, and \App_Data\Models\ (and the models once you&rsquo;ve compiled your models, depending on your ModelsBuilder setting). Exclude everything else under \App_Data\ like logs, nugetbackup, temp and umbraco.config etc.<br />If you were using a starter kit, include everything from that too (make sure you have &ldquo;Show all files&rdquo; selected in Solution Explorer)<br />Add this URL rewrite rule to redirect from /admin to /umbraco:<br />&lt;rewrite&gt;<br />    &lt;rules&gt;<br />        &lt;rule name=&quot;Umbraco Admin&rdquo; enabled=&quot;true&rdquo; stopProcessing=&quot;true&rdquo;&gt;<br />            &lt;match url=&quot;^admin$&rdquo; /&gt;<br />            &lt;action type=&quot;Redirect&rdquo; url=&rdquo;/umbraco&rdquo; appendQueryString=&quot;false&rdquo; redirectType=&quot;Temporary&rdquo; /&gt;<br />        &lt;/rule&gt;<br />    &lt;/rules&gt;<br />&lt;/rewrite&gt;</div><div><br /></div><div><b>Deployment:</b></div><div>Publish via VS&rsquo; web publish (right click project node, &ldquo;Publish&rdquo;)<br />Don&rsquo;t use git-based deployments because the contents of \Media\ changes whenever users upload files, and a git-based deployment will erase any changes they make there.<br />It&rsquo;s easier to use Azure blob storage for media (see below) to avoid storing media files inside the site at all.  But if you&rsquo;re leaving media in \Media, make sure you keep the git repo up-to-date.  Before a publish always right-click &ldquo;Media&rdquo; in VS and select &ldquo;Replace Media from server&rdquo;.  Publishing <i>without </i>doing this won&rsquo;t delete people&rsquo;s file uploads, but any file links will break if you ever try to clone the site from git.<br /><br />Azure AD integration<br /><a href="https://www.jdibble.co.uk/blog/securing-umbraco-backoffice-with-azure-active-directory/">https://www.jdibble.co.uk/blog/securing-umbraco-backoffice-with-azure-active-directory/</a><br /><a href="https://stackoverflow.com/questions/40301349/azure-ad-identity-doesnt-seem-to-provide-email-for-auto-linking-umbraco-user">https://stackoverflow.com/questions/40301349/azure-ad-identity-doesnt-seem-to-provide-email-for-auto-linking-umbraco-user</a><br /><br /><b>Azure blob storage integration:</b><br />Using the &ldquo;media&rdquo; folder to store media sucks if you&rsquo;re using source control and are running a large site with lots of constantly-changing media files.  There&rsquo;s a better way!  Install this package: https://www.nuget.org/packages/UmbracoFileSystemProviders.Azure/<br />And then configure it like this: <a href="https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure">https://github.com/JimBobSquarePants/UmbracoFileSystemProviders.Azure</a></div><div><br /></div><div><b>Setting up Umbraco itself:</b></div><div>Setting up your document types can happen either locally or on the server (since they write to the same db)</div><div>Always do all your coding (like templates) locally in Visual Studio, commit to git and deploy to the server.  Don&rsquo;t edit code within Umbraco itself, unless you aren&rsquo;t using version control and don&rsquo;t care about Visual Studio&rsquo;s vastly superior editor, debugging, etc.<br />If you don&rsquo;t know what to do from here, go to <a href="http://umbraco.tv/">http://umbraco.tv/</a> and learn how to Umbraco ;)</div><div><br /></div><b>Post-deployment / going live:</b><br />Remember to put &lt;customErrors mode=&quot;Off&rdquo; /&gt; back to how it was in web.config (either &ldquo;RemoteOnly&rdquo; or ideally &ldquo;On&rdquo; with some error handling)<br />Set up google analytics (optional)<br />Set up app insights (optional).  Note that it&rsquo;ll add some stuff to the &lt;log4net&gt; section of web.config, which broke it during automated setup. Copy the new content into config\log4net.config<br />Go through everything in Umbraco&rsquo;s back office -&gt; Developer -&gt; Health Check<br />Once everything is set up and you&rsquo;re ready to launch the site:<br />The below isn&rsquo;t essential, but useful:<br />Turn Umbraco&rsquo;s logging off (/config/umbracoSettings.config)<br />Set umbracoDebugMode to false<br />Set up custom error pages<br />Set custumerrors mode=&quot;Off&quot;<br />Set &lt;compilation debug=&quot;false&rdquo; /&gt;<br />Set &lt;trace enabled=&quot;false&quot;<br />Set umbracoDisableVersionCheck to true<br /><br />Add the following in the disabledLogTypes node:<br /><br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;debug&lt;/logTypeAlias&gt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;notfound&lt;/logTypeAlias&gt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;open&lt;/logTypeAlias&gt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;packagerinstall&lt;/logTypeAlias&gt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;packageruninstall&lt;/logTypeAlias&gt;<br /><span class="Apple-tab-span" style="white-space: pre;">  </span>&lt;logTypeAlias&gt;ping&lt;/logTypeAlias&gt;<br /><div><br /></div><div><b>Remote debugging:</b></div><div>This feature is so handy I thought I&rsquo;d make a section for it</div><div>In Visual Studio, do a web deploy in &ldquo;Debug&rdquo; mode</div><div>In the Server Explorer pane, find your web app, right click and select &ldquo;Attach Debugger&quot;<br />Obviously  make sure to set &ldquo;Remote debugging&rdquo; to &ldquo;Off&rdquo; in the Azure Web App &ldquo;Application Settings&rdquo; page once you&rsquo;re done.  It turns off automatically in 48 hours anyway, but still.</div><br /><b>Other points:</b><br />This is an excellent checklist of other things:<br /><a href="https://github.com/engern/Umbraco-Deployment-Checklist">https://github.com/engern/Umbraco-Deployment-Checklist</a><br />The easiest way to make a copy of the SQL database for testing is to click the &ldquo;Copy&rdquo; button on the database&rsquo;s &ldquo;Overview&rdquo; page in Azure.  These are priced at cents per hour, so just delete it when you&rsquo;re done testing.  It&rsquo;s so easy to make a new one that you probably don&rsquo;t need to keep it around once you&rsquo;re done.<br />Otherwise if you want to load it elsewhere, click &ldquo;Export&rdquo; and save a backup, then download that and restore to another database of your choice.<br />Sync file updates from Azure to VS (e.g. when people upload files)<br /><br /><b>Azure AD integration:</b><br />First do this:<br /><a href="https://www.jdibble.co.uk/blog/securing-umbraco-backoffice-with-azure-active-directory/">https://www.jdibble.co.uk/blog/securing-umbraco-backoffice-with-azure-active-directory/</a><br />Then do this:<br /><a href="https://stackoverflow.com/questions/40301349/azure-ad-identity-doesnt-seem-to-provide-email-for-auto-linking-umbraco-user">https://stackoverflow.com/questions/40301349/azure-ad-identity-doesnt-seem-to-provide-email-for-auto-linking-umbraco-user</a><br />In web.config, change the &ldquo;owin:appStartup&rdquo; key&rsquo;s value to &ldquo;UmbracoStandardOwinStartup&quot;<br />Remember to add the app&rsquo;s URL including /umbraco to the list of reply URL&rsquo;s in Azure<br /><br />Inside the code block for new OpenIdConnectAuthenticationOptions:<br />Change the &ldquo;email&rdquo; line of AuthorizationCodeReceived to:<br />var email = context.JwtSecurityToken.Claims.First(x =&gt; x.Type == &ldquo;upn&rdquo;).Value;<br /><br />Change the &ldquo;if user == null&rdquo; part to<br />if (user == null)<br />{<br />    user = userService.CreateUserWithIdentity(email, email);//, writerUserType);<br />}<br /><br />Change the last bit to:<br />adOptions.SetExternalSignInAutoLinkOptions(new ExternalSignInAutoLinkOptions(autoLinkExternalAccount: true, defaultUserGroups: new string[] { &ldquo;writer&rdquo; }, defaultCulture: null));<br /><br />TODO: ModelsBuilder modes<br /><br />Other sources not already mentioned:<br /><a href="https://our.umbraco.org/documentation/getting-started/setup/install/install-umbraco-with-nuget">https://our.umbraco.org/documentation/getting-started/setup/install/install-umbraco-with-nuget</a><br /><a href="https://caveofcode.com/2016/03/how-to-setup-umbraco-locally-and-on-azure/">https://caveofcode.com/2016/03/how-to-setup-umbraco-locally-and-on-azure/</a></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/customising-umbracos-default-grid-editors/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Customising Umbraco&#39;s Default Grid Editors</span>
+    </a>
+    
+    
+    <a href="/posts/useful-powershell-stuff/" class="navigation-next">
+      <span class="navigation-tittle">Useful Powershell stuff</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuget on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/nuget/</link>
+    <description>Recent content in Nuget on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Aug 2019 22:06:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/nuget/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recurring issues in Visual Studio projects</title>
+      <link>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</link>
+      <pubDate>Thu, 15 Aug 2019 22:06:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</guid>
+      <description>Common issues and solutions to errors I come across in Visual Studio on a semi-regular basis:
+Problem:
+&amp;quot;Could not find a part of the path … bin\roslyn\csc.exe&amp;quot;
+Solution:
+Run this in Package Manager Console:
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+Problem:
+&amp;quot;Creation of the virtual directory http://localhost:12345/ failed with the error: Cannot create the Web site&amp;quot;
+Solution:
+Update .csproj file and set the following:
+&amp;lt;UseIISExpress&amp;gt;true&amp;lt;/UseIISExpress&amp;gt;
+In the &amp;lt;VisualStudio&amp;gt; element, set the following:
+&amp;lt;IISUrl&amp;gt;http://localhost:1234&amp;lt;/IISUrl&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Strongly-typed action links in ASP.NET Core MVC views</title>
+      <link>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</guid>
+      <description>While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&amp;rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&amp;rsquo;t repeat the install instructions, but for some reason they didn&amp;rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+    
+    
+
+<title>Salesforce admin gotchas • Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Salesforce admin gotchas"/>
+<meta name="twitter:description" content="After coming across some of these for the hundredth time, I&rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.
+Editable list views for certain objects don&rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &ldquo;Change owner&rdquo; or &ldquo;Assign&rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.It&rsquo;s possible to mass-edit most things in list views, but not tasks."/>
+
+<meta property="og:title" content="Salesforce admin gotchas" />
+<meta property="og:description" content="After coming across some of these for the hundredth time, I&rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.
+Editable list views for certain objects don&rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &ldquo;Change owner&rdquo; or &ldquo;Assign&rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.It&rsquo;s possible to mass-edit most things in list views, but not tasks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanchap.com/posts/salesforce-admin-gotchas/" />
+<meta property="article:published_time" content="2018-05-17T18:38:00+00:00" />
+<meta property="article:modified_time" content="2018-05-17T18:38:00+00:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Salesforce admin gotchas</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 17, 2018
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/salesforce">salesforce</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>After coming across some of these for the hundredth time, I&rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.<br /><br /><br /><ul><li>Editable list views for certain objects don&rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &ldquo;Change owner&rdquo; or &ldquo;Assign&rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.</li><li>It&rsquo;s possible to mass-edit most things in list views, but not tasks.  There&rsquo;s no explanation why, <a href="https://success.salesforce.com/ideaView?id=08730000000BpldAAC">official response</a> from Salesforce is &ldquo;install an AppExchange package&rdquo; - at least there&rsquo;s a community that building what should be basic functionality (and already is, for other objects!).</li><li>You can mass transfer ownership of accounts, but not contacts. It&rsquo;s because of <a href="https://success.salesforce.com/ideaView?id=08730000000BrrFAAS" target="_blank">this</a>.</li><li>The force.com cli&rsquo;s export-to-csv functionality (force query &ndash;format:csv) creates a file that its own CSV parsing functions consider invalid if you try to re-import it (force bulk update whatevs.csv).</li><li>Bulk data load jobs refuse to parse CSV files encoded with UTF-8, so you have to re-save them all in ASCII and hope there&rsquo;s nobody named José in there. How the heck do they use it in Asian countries?</li><li>Adding a custom field to a standard object does not add it to any report types for that object.  But adding a custom field to a custom object does.</li><li>Unlike every other programming, scripting and query language, SOQL doesn&rsquo;t have a comment character.  Not even a single-line one.</li><li>Rather than updating existing features, Salesforce sometimes makes a completely separate, &ldquo;enhanced&rdquo; version of that feature but preserves the old one too (probably for legacy compatibility etc). This would be great if the &ldquo;enhanced&rdquo; version was at least at feature parity with the old stuff, but there are plenty of cases where you have to switch back and forth betwen <i>both</i> versions, as certain functionality only exists in the old version and is just never implemented.  In most other SaaS stuff this would be completely insane. Examples below</li><li>The old &ldquo;Flows&rdquo; functionality is pretty nasty but has some useful features (like error handling and iterating) that were never added to the &ldquo;Process Builder&rdquo; feature, which tries to be a partial replacement for it but really, really isn&rsquo;t</li><li>Old profile editor vs &ldquo;enhanced&rdquo; profile editor:  the old profile editor allowed you to update settings for multiple objects simultaneously, which is required in certain situations such as the following ridiculous situation from <a href="http://forcemonkey.blogspot.com/2018/11/resolving-read-all-accounts-permissions.html" target="_blank">this blog post</a>:<br /><i>&rdquo;&hellip; as soon as I went to remove access to the Account Brands object, Salesforce presented an error: I couldn&rsquo;t remove those permissions until I first removed permission from the Scorecard Associations object. Similarly, if I tried to remove permissions from Scorecard Association, I got an error saying I had to first resolve the access permissions on the Account Brands object&hellip;You need to revert back to the old Profile Editor, since it allows permission changes to multiple objects before a Save operation is committed&quot;</i></li><li>You can&rsquo;t create a Master-&gt;Detail relationship with the Product object, and you can&rsquo;t get around it by making a regular lookup a required field. No reason is given except for some musings in the forums about it being a &ldquo;special&rdquo; object and a workaround involving a validation rule.</li><li>Salesforce imposes a hard limit on the maximum length of an email that you&rsquo;re allowed to import, and it&rsquo;s a pretty tiny limit: 131072 characters, and that&rsquo;s after you ask for it to be increased from the pitiful 32000 characters. Keep in mind this refers to all HTML, not just human-entered text characters, and Outlook likes to use a heck of a lot of HTML in its emails, so it&rsquo;s not hard to reach this limit if you&rsquo;re using something that automatically syncs emails. Of course, you can still <i>send</i> emails much longer than that from Salesforce, you just can&rsquo;t import them - so the limit isn&rsquo;t even a physical one, it&rsquo;s entirely artificial.</li></ul><div><br /></div><div><br /></div></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</span>
+    </a>
+    
+    
+    <a href="/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/" class="navigation-next">
+      <span class="navigation-tittle">Dynamics CRM Microsoft.IdentityModel exception in Windows 10</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

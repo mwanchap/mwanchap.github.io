@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+
+<title>Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Matt Wanchap"/>
+<meta name="twitter:description" content=""/>
+
+<meta property="og:title" content="Matt Wanchap" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wanchap.com/" />
+<meta property="og:updated_time" content="2019-12-31T08:38:31+10:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://wanchap.com/index.xml" title="Matt Wanchap" />
+
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/" >Installing SQL Server Express to set up an Azure database locally</a>
+        </span>
+        <span class="item__date">
+          Jun 27, 2018
+        </span>
+        <span >
+        
+        Installing SQL Express:Download SQL Express installerSwitch to an account with full local admin permissions (our regular accounts don&rsquo;t have these so I had to use a global admin account instead) and install SQL Express with that accountOnce installation completes, make a note of the connection string you&rsquo;re given on the final page of the installerOpen SSMS and connect to the database - default name is localhost\sqlexpressNavigate to Security -&gt; Logins -&gt; New LoginAdd the regular (non-admin) domain account that you&rsquo;ll be using most of the timeOnce added, open that account under the Logins section and then open the &ldquo;Server Roles&rdquo; pageAdd the account to the &ldquo;sysadmin&rdquo; roleObtaining the Azure database:Open the database and select the &ldquo;Export&rdquo; option at the top of the &ldquo;Overview&rdquo; pageChoose a storage account and container to drop the export file in and enter the server admin credsOnce the file has been created, access that storage container and download the db export fileRestoring the export fileBack in SSMS, connect to your local SQL express server instance again (if it isn&rsquo;t still connected), right-click on the &ldquo;Databases&rdquo; node and select &ldquo;Import Data-tier Application&quot;Select the db export file, give the database a name, click &ldquo;Next&quot;Don&rsquo;t forget to update connection strings in your applications ;) If they&rsquo;re running under your normal account (i.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/" >Dynamics CRM Microsoft.IdentityModel exception in Windows 10</a>
+        </span>
+        <span class="item__date">
+          Jun 04, 2018
+        </span>
+        <span >
+        
+        When trying to connect to Dynamics CRM services on a Windows 10, machine, you might get this error:
+Could not load file or assembly ‘Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35’ or one of its dependencies
+There are plenty of blog posts around that will all tell you to go and install &ldquo;Windows Identity Foundation&rdquo;, however this is no longer the case for Windows 10 and the installer for WIF will fail. This is because it&rsquo;s now a Windows feature - install it via the &ldquo;Turn Windows features on or off&rdquo; section in &ldquo;Programs and Features&rdquo; as mentioned here.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/salesforce-admin-gotchas/" >Salesforce admin gotchas</a>
+        </span>
+        <span class="item__date">
+          May 17, 2018
+        </span>
+        <span >
+        
+        After coming across some of these for the hundredth time, I&rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.
+Editable list views for certain objects don&rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &ldquo;Change owner&rdquo; or &ldquo;Assign&rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.It&rsquo;s possible to mass-edit most things in list views, but not tasks.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/salesforce-admin-gotchas/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/" >&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</a>
+        </span>
+        <span class="item__date">
+          May 03, 2018
+        </span>
+        <span >
+        
+        After installing the Application Insights nuget package to an Umbraco solution, you&rsquo;ll get this error:
+A section using &lsquo;configSource&rsquo; may contain no other attributes or elements
+&lt;ExamineLuceneIndexSets configSource=&quot;config\ExamineIndex.config&rdquo; /&gt;
+&lt;log4net configSource=&quot;config\log4net.config&rdquo;&gt;
+&lt;root&gt;
+&lt;level value=&quot;ALL&rdquo; /&gt;
+&lt;appender-ref ref=&quot;aiAppender&rdquo; /&gt;
+Source File: \project\web.config
+This happens because part of the Application Insights installation process adds a &lt;log4net&gt; section to web.config. Which would make sense, except Umbraco already has a &lt;log4net&gt; section in /config/log4net.config. So as you can imagine, the solution is to manually move everything its added into that file.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-the-force.com-cli-and-powershell/" >Using the Force.com CLI and Powershell</a>
+        </span>
+        <span class="item__date">
+          Apr 12, 2018
+        </span>
+        <span >
+        
+        Inserting or Updating:Put all your data into a CSV file with the exact same column headings as the Salesforce fields, again making sure to save as ASCII and not UTF8 or any other encoding (in Excel, you want the option called "CSV (Comma delimited)" not "CSV UTF-8"). And then do this: force bulk insert Object__c .\new_object_data.csv
+To modify fields for updating, don't do the updates in Excel unless you have to - do it inline like this: force query --format json "
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-the-force.com-cli-and-powershell/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/iis-http-error-500.19-error-code-0x8007000d/" >IIS HTTP Error 500.19, Error Code 0x8007000d</a>
+        </span>
+        <span class="item__date">
+          Jan 19, 2018
+        </span>
+        <span >
+        
+        I probably come across this error at least once per year. Ran into it again today when setting up a website to host locally in IIS, on a computer I don&rsquo;t use much.
+HTTP Error 500.19 - Internal Server Error
+The requested page cannot be accessed because the related configuration data for the page is invalid.
+Detailed Error Information:
+Module IIS Web Core
+Notification Unknown
+Handler Not yet determined
+Error Code 0x8007000d
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/iis-http-error-500.19-error-code-0x8007000d/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/umbracos-tinymce-error-cannot-read-property-parentsrequired-of-undefined/" >Umbraco&#39;s TinyMCE error: &#39;Cannot read property parentsRequired of undefined&#39;</a>
+        </span>
+        <span class="item__date">
+          Jan 17, 2018
+        </span>
+        <span >
+        
+        If you find that the &ldquo;Formats&rdquo; list in an Umbraco RTE refuses to open, and the Javascript console contains this error:
+&quot;Cannot read property &lsquo;parentsRequired&rsquo; of undefined&quot;
+Check the stylesheet that the RTE is using. In my case, adding this style had triggered the issue:
+/*umb_name:Small/
+small{}
+
+Although there&rsquo;s nothing wrong with this style itself, the problem is in what TinyMCE considers to be &ldquo;valid&rdquo; HTML elements. Why is &ldquo;small&rdquo; not valid?
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/umbracos-tinymce-error-cannot-read-property-parentsrequired-of-undefined/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-umbraco-modelsbuilder/" >Using Umbraco ModelsBuilder</a>
+        </span>
+        <span class="item__date">
+          Nov 27, 2017
+        </span>
+        <span >
+        
+        Firstly, make sure the following properties are set in your solution&rsquo;s top-level web.config to enable the models builder:
+&lt;add key=&quot;Umbraco.ModelsBuilder.Enable&rdquo; value=&quot;true&rdquo;/&gt;
+&lt;add key=&quot;Umbraco.ModelsBuilder.ModelsMode&rdquo; value=&quot;LiveAppData&rdquo;/&gt;
+
+I like the &ldquo;LiveAppData&rdquo; mode, but you should experiment with the others from the list in the ModelsBuilder docs here. Generate your model classes, and include them in the VS Solution.
+Unless you&rsquo;re on a brand new project, any existing views will need to be modified.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-umbraco-modelsbuilder/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/powershell-as-a-visual-studio-external-tool/" >Powershell as a Visual Studio External Tool</a>
+        </span>
+        <span class="item__date">
+          Oct 22, 2017
+        </span>
+        <span >
+        
+        It&rsquo;s handy to be able to open Powershell at the current solution directory, e.g. for invoking scripts or git commands etc.
+Click the Tools menu -&gt; External Tools -&gt; Add
+Title: Powershell, or whatever you want
+Command: your PS directory, e.g C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Arguments: -ExecutionPolicy RemoteSigned -NoExit -Command &ldquo;Set-Location &lsquo;$(SolutionDir)&rsquo; | Clear-Host&quot;
+Initial directory: $(SolutionDir)
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/useful-vim-stuff/" >Useful Vim Stuff</a>
+        </span>
+        <span class="item__date">
+          Oct 18, 2017
+        </span>
+        <span >
+        
+        !ls - execute ls in shell
+Ctrl+q - block select
+Ctrl+q, I - insert mode across multi-line block selection (operates across selection after Esc is pressed)
+qx - record macro x
+@@ - replay last macro
+2@x - replay x twice
+Ctrl+6 - edit last file (think of it like Ctrl+^ or ^^)
+g; - previous change
+gq - reformat
+O - other end of visual selection
+:split - horizontal split the current file
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/useful-vim-stuff/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/4/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/6/">6</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/6/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

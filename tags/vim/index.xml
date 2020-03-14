@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/vim/</link>
+    <description>Recent content in Vim on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Nov 2019 15:23:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OTF fonts (e.g. Fira Code) look nasty on gVim in Windows</title>
+      <link>https://wanchap.com/posts/otf-fonts-e.g.-fira-code-look-nasty-on-gvim-in-windows/</link>
+      <pubDate>Sun, 10 Nov 2019 15:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/otf-fonts-e.g.-fira-code-look-nasty-on-gvim-in-windows/</guid>
+      <description>I really like the &amp;ldquo;Fira Code&amp;rdquo; font but it always looked nasty in gVim on Windows (my main text editor besides VS), and I really don&amp;rsquo;t want to use a different font for each editor. After spending literally hours fiddling with stuff like the guifont setting, different font/size combos, custom font renderers (e.g. MacType), I finally realised the fonts themselves aren&amp;rsquo;t the problem, nor the rendering settings. The problem was that the chocolatey installer I had used installed OTF versions of the files, which gVim always used by default even if the TTF versions of them were installed.</description>
+    </item>
+    
+  </channel>
+</rss>

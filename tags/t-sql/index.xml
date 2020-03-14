@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>T-SQL on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/t-sql/</link>
+    <description>Recent content in T-SQL on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2020 17:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/t-sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>String.LastIndexOf, but in T-SQL (handy for getting file extensions)</title>
+      <link>https://wanchap.com/posts/string.lastindexof-but-in-t-sql-handy-for-getting-file-extensions/</link>
+      <pubDate>Mon, 09 Mar 2020 17:12:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/string.lastindexof-but-in-t-sql-handy-for-getting-file-extensions/</guid>
+      <description>Note that this doesn&amp;rsquo;t work on the &amp;ldquo;text&amp;rdquo; datatype, so you&amp;rsquo;ll need to cast to nvarchar&amp;hellip; 
+SELECT LEN(FileName) - CHARINDEX(&#39;.&#39;, REVERSE(FileName)) AS &amp;lsquo;LastIndex&amp;rsquo;,
+RIGHT(FileName, CHARINDEX(&#39;.&#39;, REVERSE(FileName))) AS &amp;lsquo;FileExtension&amp;rsquo; &amp;ndash; still includes the dot
+FROM Files</description>
+    </item>
+    
+    <item>
+      <title>Exporting from an SQL database (e.g. Dynamics) into Salesforce, without Excel</title>
+      <link>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</guid>
+      <description>Whenever you paste content into it, Excel likes to be helpful and reformat it according to what it thinks you&amp;rsquo;re doing (e.g. format dates, interpret formulae), but often with CSVs it gets this wrong and messes up your carefully-formatted raw data. This was getting pretty frustrating, so rather than figuring out workarounds for Excel&amp;rsquo;s weirdness, here&amp;rsquo;s how to cut out the middleman and get the output of an SQL query directly into Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>Umbraco SQL query snippets</title>
+      <link>https://wanchap.com/posts/umbraco-sql-query-snippets/</link>
+      <pubDate>Tue, 10 Dec 2019 22:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/umbraco-sql-query-snippets/</guid>
+      <description>Selecting properties of a content item:
+SELECT cast([xml] as xml) as &amp;lsquo;xmldata&amp;rsquo;, nodeId
+FROM dbo.cmsContentXml
+WHERE nodeId = &amp;lsquo;1234&amp;rsquo; &amp;ndash;ID from the node in Umbraco</description>
+    </item>
+    
+    <item>
+      <title>Setting up a Linked Server login for EasySoft Salesforce ODBC Driver</title>
+      <link>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</link>
+      <pubDate>Wed, 20 Jan 2016 17:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</guid>
+      <description>We&amp;rsquo;re currently using EasySoft&amp;rsquo;s excellent Salesforce ODBC Driver to be able to treat our Salesforce org as if it were another SQL database (really useful for updating legacy stored procedures by rewriting queries that reference migrated Dynamics tables to query Salesforce instead!) We were working on updating a particular page in our website that needed to use it but was running into permissions issues when querying it, the error was:</description>
+    </item>
+    
+    <item>
+      <title>How to make yourself a Dynamics CRM 2011 Deployment Administrator</title>
+      <link>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</link>
+      <pubDate>Tue, 01 Sep 2015 16:53:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</guid>
+      <description>Today I needed to deactivate one of our Dynamics organisations, but when I opened the Dynamics Deployment Manager, I received the following error:
+&amp;quot;Only the Deployment Administrators are able to use Deployment Manager. You are not a Deployment Administrator.&amp;ldquo;
+Bummer. I did a bit of Googling and found this post by Ronald Lemmen (thanks for pointing me in the right direction!). Since the Dynamics Deployment Manager is obviously checking the MSCRM_CONFIG database for this information I attached a database trace to it and found that it&amp;rsquo;s executing these queries (among many others):</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM - error publishing entity, role does not exist</title>
+      <link>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</link>
+      <pubDate>Tue, 05 Aug 2014 15:59:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</guid>
+      <description>This morning I was trying to add a new option to an option set field for a custom entity I had made earlier, however an error dialog popped up which said &amp;ldquo;The requested record is unavailable or you have insufficient permission to view the record&amp;rdquo;, even though I&amp;rsquo;m in a System Administrator role. Upon downloading the exception details and examining them, the actual error was this:
+role With Id = dba45c71-05e2-e311-9210-0050568f0001 Does Not Exist</description>
+    </item>
+    
+    <item>
+      <title>T-SQL: Easy way to check for existence of a temp table</title>
+      <link>https://wanchap.com/posts/t-sql-easy-way-to-check-for-existence-of-a-temp-table/</link>
+      <pubDate>Wed, 30 Jul 2014 17:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/t-sql-easy-way-to-check-for-existence-of-a-temp-table/</guid>
+      <description>Normally I&amp;rsquo;d do something like selecting from sysobjects to find if a temp table exists, but I found this little gem to drop a global temp table at the start of a query (in case it wasn&amp;rsquo;t cleaned up in the previous execution):
+IF(object_id(&amp;lsquo;tempdb..##tmpTable&amp;rsquo;) IS NOT NULL)
+DROP TABLE ##tmpTable
+GO
+I&amp;rsquo;m sure you can come up with a better way to do this rather than using a global temp table, but a local one wasn&amp;rsquo;t going to work in this context since I was using a combination of EXEC and OpenQuery to select from Active Directory, and regular local temp tables seem to disappear upon leaving EXEC, perhaps due to the connection changing or something?</description>
+    </item>
+    
+    <item>
+      <title>Altering User-Defined Sharing Permissions for Dynamics CRM Charts Directly in the Database</title>
+      <link>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</link>
+      <pubDate>Thu, 23 Jan 2014 22:05:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</guid>
+      <description>Today I received an email from a user experiencing difficulty editing charts that had been shared with them by another user, who had forgotten to check the &amp;ldquo;Write&amp;rdquo; permission. Unfortunately this person was away for the day, and for some reason CRM doesn&amp;rsquo;t have a neat admin tool for managing individual user-specified sharing settings for charts and such. So I had little choice but to dig into the bowels of the database and set the permissions manually.</description>
+    </item>
+    
+    <item>
+      <title>TSQL - checking for the intersection of two sets of dates</title>
+      <link>https://wanchap.com/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/</link>
+      <pubDate>Sun, 19 Jan 2014 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/</guid>
+      <description>Double post day!
+The same query that had concatenation happening from the previous post also had date range parameters, @StartDate and @EndDate, and needed to only return records (which also had their own start/end date fields) in which the records&amp;rsquo; were active during the specified date range. I.e. where the record&amp;rsquo;s date range intersected with the date range parameters. It confused me for a bit so I&amp;rsquo;m recording for posterity. As I see it, there are three possible valid cases:</description>
+    </item>
+    
+    <item>
+      <title>TSQL - Removing a trailing comma from a list of concatenated values</title>
+      <link>https://wanchap.com/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/</link>
+      <pubDate>Sun, 19 Jan 2014 16:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/</guid>
+      <description>On a semi-regular basis I&amp;rsquo;d need to squish a list of comma-delimited values all concatenated together into one field, so I&amp;rsquo;d use this old snippet:
+SELECTLEFT(ConcatValues, LEN(ConcatValues)-1) AS &#39;TheValues&#39;&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;FROM SomeTable t&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;CROSS APPLY( SELECT t2.SomeField + &amp;rsquo;, &amp;lsquo; AS [text()]&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;FROM SomeTable t2&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;WHERE t.SomeField = t2.SomeField&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;
+FOR XML PATH(&#39;&amp;lsquo;) ) C(ConcatValues)&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;Problem is when the concatenated field has length zero, LEFT gets a -1 length and returns an error:
+
+Msg 537, Level 16, State 5, Line 1&amp;lt;o:p&amp;gt;&amp;lt;/o:p&amp;gt;Invalid length parameter passed to the LEFT or SUBSTRING function.</description>
+    </item>
+    
+  </channel>
+</rss>

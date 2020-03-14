@@ -1,11 +1,608 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>http://wanchap.com/</loc>
-  <lastmod>2015-06-11T23:26:00+00:00</lastmod>
-</url>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wanchap.com/tags/javascript/</loc>
+    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/one-liner-to-checkuncheck-every-checkbox-on-a-page/</loc>
+    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/</loc>
+    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/</loc>
+    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/string.lastindexof-but-in-t-sql-handy-for-getting-file-extensions/</loc>
+    <lastmod>2020-03-09T17:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/t-sql/</loc>
+    <lastmod>2020-03-09T17:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</loc>
+    <lastmod>2020-03-04T17:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/powershell/</loc>
+    <lastmod>2020-03-04T17:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/salesforce/</loc>
+    <lastmod>2020-03-04T17:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/combine-many-csvs-into-batches-of-a-specified-size-with-powershell/</loc>
+    <lastmod>2020-03-02T20:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/dynamics-crm-2011/</loc>
+    <lastmod>2020-01-06T17:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</loc>
+    <lastmod>2020-01-06T17:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/about/</loc>
+    <lastmod>2019-12-31T08:38:31+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/</loc>
+    <lastmod>2019-12-31T08:38:31+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</loc>
+    <lastmod>2019-12-12T21:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/umbraco/</loc>
+    <lastmod>2019-12-10T22:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/umbraco-sql-query-snippets/</loc>
+    <lastmod>2019-12-10T22:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/otf-fonts-e.g.-fira-code-look-nasty-on-gvim-in-windows/</loc>
+    <lastmod>2019-11-10T15:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/vim/</loc>
+    <lastmod>2019-11-10T15:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/iis/</loc>
+    <lastmod>2019-11-05T17:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/</loc>
+    <lastmod>2019-11-05T17:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/set-default-program-for-opening-files-without-extensions-in-windows/</loc>
+    <lastmod>2019-10-29T23:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/</loc>
+    <lastmod>2019-10-22T23:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/azure/</loc>
+    <lastmod>2019-10-20T19:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</loc>
+    <lastmod>2019-10-20T19:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/sharepoint-online/</loc>
+    <lastmod>2019-10-20T19:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/azure-devops/</loc>
+    <lastmod>2019-10-15T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</loc>
+    <lastmod>2019-10-15T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/cli/</loc>
+    <lastmod>2019-10-15T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/git/</loc>
+    <lastmod>2019-10-15T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/</loc>
+    <lastmod>2019-10-06T18:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</loc>
+    <lastmod>2019-09-29T22:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</loc>
+    <lastmod>2019-08-15T23:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/nuget/</loc>
+    <lastmod>2019-08-15T22:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/recurring-issues-in-visual-studio-projects/</loc>
+    <lastmod>2019-08-15T22:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/visual-studio/</loc>
+    <lastmod>2019-08-15T22:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/useful-git-stuff/</loc>
+    <lastmod>2019-07-18T23:52:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/</loc>
+    <lastmod>2019-06-30T21:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/azure-data-factory/</loc>
+    <lastmod>2019-06-12T19:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</loc>
+    <lastmod>2019-06-12T19:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/handy-soql-query-snippets/</loc>
+    <lastmod>2019-06-04T15:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/c#/</loc>
+    <lastmod>2019-04-23T22:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</loc>
+    <lastmod>2019-04-23T22:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/diy-salesforce-partial-copy-sandbox-using-sandboxberry/</loc>
+    <lastmod>2019-04-17T17:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/active-directory/</loc>
+    <lastmod>2019-04-14T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</loc>
+    <lastmod>2019-04-14T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</loc>
+    <lastmod>2019-04-09T15:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/salesforce-bulk-data-load-job-fails-with-message-invalidbatch-field-name-not-found-id/</loc>
+    <lastmod>2019-04-08T16:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</loc>
+    <lastmod>2019-03-13T22:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/sendgrid/</loc>
+    <lastmod>2019-03-03T17:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</loc>
+    <lastmod>2019-03-03T17:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/chrome-forcing-all-localhost-queries-to-https-breaking-various-clis/</loc>
+    <lastmod>2019-01-13T17:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/docker-asp.net-mvc-hello-world-abridged-edition/</loc>
+    <lastmod>2018-12-26T19:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/bash/</loc>
+    <lastmod>2018-12-12T23:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/get-the-date-each-branch-in-a-git-repo-diverged-from-master/</loc>
+    <lastmod>2018-12-12T23:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/powershell-jobs/</loc>
+    <lastmod>2018-12-12T00:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/azure-devops-unit-tests-and-azure-ad-service-authentication/</loc>
+    <lastmod>2018-11-26T21:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/making-entityframework-play-nice-with-azure-key-vault/</loc>
+    <lastmod>2018-11-14T18:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/</loc>
+    <lastmod>2018-11-09T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/a-non-useful-powershell-snippet/</loc>
+    <lastmod>2018-10-02T16:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/.net-core/</loc>
+    <lastmod>2018-09-30T23:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/asp.net/</loc>
+    <lastmod>2018-09-30T23:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</loc>
+    <lastmod>2018-09-30T23:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</loc>
+    <lastmod>2018-09-20T13:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/mvc/</loc>
+    <lastmod>2018-09-20T13:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/iis-secured-local-debugging/</loc>
+    <lastmod>2018-08-23T21:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/visual-studio-edit-and-continue-issues/</loc>
+    <lastmod>2018-07-16T17:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</loc>
+    <lastmod>2018-06-27T16:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/sql-server/</loc>
+    <lastmod>2018-06-27T16:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/</loc>
+    <lastmod>2018-06-04T18:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/salesforce-admin-gotchas/</loc>
+    <lastmod>2018-05-17T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</loc>
+    <lastmod>2018-05-03T23:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/application-insights/</loc>
+    <lastmod>2018-05-03T23:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</loc>
+    <lastmod>2018-04-12T19:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/iis-http-error-500.19-error-code-0x8007000d/</loc>
+    <lastmod>2018-01-19T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/umbracos-tinymce-error-cannot-read-property-parentsrequired-of-undefined/</loc>
+    <lastmod>2018-01-17T16:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/using-umbraco-modelsbuilder/</loc>
+    <lastmod>2017-11-27T17:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/powershell-as-a-visual-studio-external-tool/</loc>
+    <lastmod>2017-10-22T18:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/useful-vim-stuff/</loc>
+    <lastmod>2017-10-18T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/useful-powershell-stuff/</loc>
+    <lastmod>2017-09-27T15:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/umbraco-deployment-checklist/</loc>
+    <lastmod>2017-01-10T16:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</loc>
+    <lastmod>2016-10-19T20:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/auto-incrementing-build-number-in-visual-studio-and-wix-installer/</loc>
+    <lastmod>2016-03-20T18:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/wix/</loc>
+    <lastmod>2016-03-20T18:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</loc>
+    <lastmod>2016-01-20T17:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/scribe-agent-issues/</loc>
+    <lastmod>2015-12-02T18:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/scribe-online/</loc>
+    <lastmod>2015-12-02T18:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/azure-active-directory-redirect-loop/</loc>
+    <lastmod>2015-10-08T17:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</loc>
+    <lastmod>2015-09-01T16:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</loc>
+    <lastmod>2015-05-02T21:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/iis-returns-404-on-all-.woff-files/</loc>
+    <lastmod>2014-11-10T16:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/iis-preventing-url-access-to-a-specific-directory/</loc>
+    <lastmod>2014-10-09T18:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/preventing-the-dynamics-crm-outlook-add-in-from-creating-contacts-forever/</loc>
+    <lastmod>2014-09-25T23:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/jquery/</loc>
+    <lastmod>2014-09-17T22:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</loc>
+    <lastmod>2014-09-17T22:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/log4net/</loc>
+    <lastmod>2014-09-17T22:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</loc>
+    <lastmod>2014-08-05T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/t-sql-easy-way-to-check-for-existence-of-a-temp-table/</loc>
+    <lastmod>2014-07-30T17:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</loc>
+    <lastmod>2014-07-24T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/visual-studio-find-was-stopped-in-progress/</loc>
+    <lastmod>2014-05-29T16:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/json/</loc>
+    <lastmod>2014-05-27T18:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/the-json-deserialisation-drinking-game/</loc>
+    <lastmod>2014-05-27T18:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</loc>
+    <lastmod>2014-05-21T16:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/validation/</loc>
+    <lastmod>2014-05-21T16:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/dont-use-eval-to-parse-json-data/</loc>
+    <lastmod>2014-05-20T22:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/</loc>
+    <lastmod>2014-05-01T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/</loc>
+    <lastmod>2014-02-19T21:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/regular-expressions/</loc>
+    <lastmod>2014-02-19T21:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</loc>
+    <lastmod>2014-01-23T22:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/tsql-checking-for-the-intersection-of-two-sets-of-dates/</loc>
+    <lastmod>2014-01-19T18:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/tsql-removing-a-trailing-comma-from-a-list-of-concatenated-values/</loc>
+    <lastmod>2014-01-19T16:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/android-dev/</loc>
+    <lastmod>2013-12-01T15:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/getting-an-.apk-into-the-google-play-store/</loc>
+    <lastmod>2013-12-01T15:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/google-play/</loc>
+    <lastmod>2013-12-01T15:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/linkdump/</loc>
+    <lastmod>2013-12-01T15:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/stopping-dynamics-crm-from-auto-creating-contacts-from-tracked-outlook-emails/</loc>
+    <lastmod>2013-11-11T17:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/</loc>
+    <lastmod>2013-10-31T16:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/</loc>
+    <lastmod>2013-10-29T23:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/a-wonderful-day/</loc>
+    <lastmod>2013-10-03T23:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/portfolio/</loc>
+  </url>
+  
 </urlset>

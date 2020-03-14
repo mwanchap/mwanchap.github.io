@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASP.NET on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/asp.net/</link>
+    <description>Recent content in ASP.NET on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Sep 2018 23:16:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/asp.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Strongly-typed action links in ASP.NET Core MVC views</title>
+      <link>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/</guid>
+      <description>While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&amp;rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&amp;rsquo;t repeat the install instructions, but for some reason they didn&amp;rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</title>
+      <link>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</link>
+      <pubDate>Thu, 03 May 2018 23:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</guid>
+      <description>After installing the Application Insights nuget package to an Umbraco solution, you&amp;rsquo;ll get this error:
+A section using &amp;lsquo;configSource&amp;rsquo; may contain no other attributes or elements
+&amp;lt;ExamineLuceneIndexSets configSource=&amp;quot;config\ExamineIndex.config&amp;rdquo; /&amp;gt;
+&amp;lt;log4net configSource=&amp;quot;config\log4net.config&amp;rdquo;&amp;gt;
+&amp;lt;root&amp;gt;
+&amp;lt;level value=&amp;quot;ALL&amp;rdquo; /&amp;gt;
+&amp;lt;appender-ref ref=&amp;quot;aiAppender&amp;rdquo; /&amp;gt;
+Source File: \project\web.config
+This happens because part of the Application Insights installation process adds a &amp;lt;log4net&amp;gt; section to web.config. Which would make sense, except Umbraco already has a &amp;lt;log4net&amp;gt; section in /config/log4net.config. So as you can imagine, the solution is to manually move everything its added into that file.</description>
+    </item>
+    
+    <item>
+      <title>Customising Umbraco&#39;s Default Grid Editors</title>
+      <link>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</link>
+      <pubDate>Wed, 19 Oct 2016 20:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</guid>
+      <description>Create a new directory in App_Plugins called anything you like. This will be your &amp;ldquo;package&amp;rdquo; directoryCopy the web.config file that&amp;rsquo;s inside the main &amp;ldquo;Views&amp;rdquo; directory (not your project&amp;rsquo;s main web.config!) into your package directory. This is needed for MVC to work properlyCreate a package.manifest file and put this in it (come back and modify these properties as necessary):
+{
+&amp;ldquo;gridEditors&amp;rdquo;:
+[{
+&amp;ldquo;name&amp;rdquo;: &amp;ldquo;Speaker Portrait&amp;rdquo;,
+&amp;ldquo;alias&amp;rdquo;: &amp;ldquo;speakerPortrait&amp;rdquo;,
+&amp;ldquo;view&amp;rdquo;: &amp;ldquo;media&amp;rdquo;,
+&amp;ldquo;render&amp;rdquo;: &amp;ldquo;/app_plugins/yourpackagedir/MediaMarkup.</description>
+    </item>
+    
+    <item>
+      <title>jQuery ajax error logging on the server with log4net</title>
+      <link>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</guid>
+      <description>This post is based on Toby Gundry&amp;rsquo;s post on the same technique, but adapted for logging jQuery ajax errors (although I added a few extra things too).
+In your Javascript:
+$(document).on({
+ajaxError: function (event, jqXHR, ajaxSettings) {
+var err = &amp;ldquo;Location: &amp;quot; + document.location.href + &amp;ldquo;; &amp;ldquo;;
+if (jqXHR)
+{
+err += &amp;ldquo;Status: &amp;quot; + jqXHR.status + &amp;ldquo;; &amp;ldquo;;
+err += &amp;ldquo;Text: &amp;quot; + jqXHR.statusText + &amp;ldquo;; &amp;ldquo;;
+}
+if (jqXHR.</description>
+    </item>
+    
+    <item>
+      <title>IIS and ASP.NET 404 error handlers don&#39;t play nicely together</title>
+      <link>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</link>
+      <pubDate>Thu, 24 Jul 2014 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/iis-and-asp.net-404-error-handlers-dont-play-nicely-together/</guid>
+      <description>While trying to setup both ASP.NET as well as IIS error-handling, I noticed that IIS wasn&amp;rsquo;t dealing with certain 404 errors in which the file extension was wrong. For example, I could request ThisFileDoesntExist.aspx and that would redirect to NotFound.aspx just fine, but WrongExtension.aspz would kick the user out to the ugly default IIS 404 error page.
+So I did a bit of investigation and found this post, which pointed out that, in your web.</description>
+    </item>
+    
+    <item>
+      <title>Using jQuery validation plugin with fields in a jQuery UI .dialog()</title>
+      <link>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</link>
+      <pubDate>Wed, 21 May 2014 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</guid>
+      <description>One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&amp;rsquo;s moved outside of the page&amp;rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&amp;rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&amp;rsquo;s not a lot you can do to move the dialog or the form.</description>
+    </item>
+    
+  </channel>
+</rss>

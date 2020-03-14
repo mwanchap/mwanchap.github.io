@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sharepoint Online on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/sharepoint-online/</link>
+    <description>Recent content in Sharepoint Online on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Oct 2019 19:29:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/sharepoint-online/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connecting to Sharepoint with Powershell when MFA is enabled</title>
+      <link>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</guid>
+      <description>If you&amp;rsquo;re using multifactor auth, the usual login method mentioned in the SPOService documentation isn&amp;rsquo;t going to work (using Get-Credential) and you&amp;rsquo;ll get an error saying &amp;ldquo;Connect-SPOService : The sign-in name or password does not match one in the Microsoft account system&amp;rdquo;.
+The correct process is rather bizarre:
+$orgName = &amp;ldquo;organizationname&amp;quot;
+connect-sposervice -url &amp;ldquo;https://$orgName-admin.sharepoint.com&amp;quot;
+Then you&amp;rsquo;ll get the same Azure AD auth popup that you&amp;rsquo;d get with Connect-AzureRmAccount and Microsoft&amp;rsquo;s other Powershell modules.</description>
+    </item>
+    
+  </channel>
+</rss>

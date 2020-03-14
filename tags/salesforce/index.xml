@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Salesforce on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/salesforce/</link>
+    <description>Recent content in Salesforce on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Mar 2020 17:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Export every field of every record of a bunch of Salesforce objects</title>
+      <link>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</link>
+      <pubDate>Wed, 04 Mar 2020 17:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/export-every-field-of-every-record-of-a-bunch-of-salesforce-objects/</guid>
+      <description>I needed to get a backup of every record of a bunch of objects (for posterity) which were about to be deleted, I wanted to grab every field and do it in one line. I cheated a little, because I&amp;rsquo;ve defined some functions that just do some of the basic processing. I could put the whole function definitions on one line too, but that&amp;rsquo;d be a bit contrived ;) They&amp;rsquo;re below for reference</description>
+    </item>
+    
+    <item>
+      <title>Exporting from an SQL database (e.g. Dynamics) into Salesforce, without Excel</title>
+      <link>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</guid>
+      <description>Whenever you paste content into it, Excel likes to be helpful and reformat it according to what it thinks you&amp;rsquo;re doing (e.g. format dates, interpret formulae), but often with CSVs it gets this wrong and messes up your carefully-formatted raw data. This was getting pretty frustrating, so rather than figuring out workarounds for Excel&amp;rsquo;s weirdness, here&amp;rsquo;s how to cut out the middleman and get the output of an SQL query directly into Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>Count all Salesforce records of all object types owned by a specific user</title>
+      <link>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</link>
+      <pubDate>Thu, 12 Dec 2019 21:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/count-all-salesforce-records-of-all-object-types-owned-by-a-specific-user/</guid>
+      <description>It&amp;rsquo;s not the fastest or most elegant script, but using the Force.com CLI it&amp;rsquo;s pretty easy to get a count of objects (of all types) owned by a specific user. It assumes that the field to be checked is ownerid, though, so might not work if you have other fields. A slightly better way might be to check which objects have an ownerid field first.
+$ErrorActionPreference = &amp;lsquo;SilentlyContinue&#39;
+$objects = force sobject list</description>
+    </item>
+    
+    <item>
+      <title>Set default program for opening files without extensions in Windows</title>
+      <link>https://wanchap.com/posts/set-default-program-for-opening-files-without-extensions-in-windows/</link>
+      <pubDate>Tue, 29 Oct 2019 23:41:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/set-default-program-for-opening-files-without-extensions-in-windows/</guid>
+      <description>For some reason, downloading the request / result CSV files for a Salesforce &amp;ldquo;Bulk Data Load&amp;rdquo; job returns CSV files with the file extension missing, so you can&amp;rsquo;t just click to open them. This became super annoying during a troublesome data load so I decided to fix it once and for all. Open cmd as admin and enter the following:
+assoc .=&amp;quot;No Extension&amp;quot;
+ftype &amp;ldquo;No Extension&amp;quot;=&amp;quot;C:\ProgramData\chocolatey\lib\csvfileview\tools\CSVFileView.exe&amp;rdquo; &amp;ldquo;%1&amp;quot;
+Obviously substitute in your favourite CSV editor (unless by some bizarre coincidence, you also like CSVFileView and install everything with chocolatey).</description>
+    </item>
+    
+    <item>
+      <title>Handy SOQL query snippets</title>
+      <link>https://wanchap.com/posts/handy-soql-query-snippets/</link>
+      <pubDate>Tue, 04 Jun 2019 15:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/handy-soql-query-snippets/</guid>
+      <description>To count how many people logged in for the last time each year, for only inactive users:
+select calendar_year(lastlogindate) LoginYear,count(id) Totalfrom userwhere isactive = falseand lastlogindate &amp;lt;&amp;gt; nullgroup by calendar_year(lastlogindate)order by count(id) desc</description>
+    </item>
+    
+    <item>
+      <title>Formats for dealing with dates and datetimes in Salesforce</title>
+      <link>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</link>
+      <pubDate>Tue, 23 Apr 2019 22:09:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/formats-for-dealing-with-dates-and-datetimes-in-salesforce/</guid>
+      <description>The correct way to format dates (not datetimes!) for bulk importing CSVs into Salesforce looks like year-month-day, so today would look like 2019-06-17. These default to the timezone set for the user importing them, so there&amp;rsquo;s no need to convert to UTC. Set this in Excel by
+Select the column/s containing datesRight click on them and select &amp;ldquo;Format Cells&amp;rdquo; from the menuSelect the format &amp;ldquo;2012-03-14&amp;quot;Save as CSV (not the UTF-8 type of CSV)</description>
+    </item>
+    
+    <item>
+      <title>Get details and creators of all Salesforce reports that reference a specified field</title>
+      <link>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</link>
+      <pubDate>Tue, 09 Apr 2019 15:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/get-details-and-creators-of-all-salesforce-reports-that-reference-a-specified-field/</guid>
+      <description>If you&amp;rsquo;re ever modifying a Salesforce field and you want to contact everyone who has created reports using the field, here&amp;rsquo;s how you do that using Powershell and the Force.com CLI (which you can also install via chocolatey):
+set-location C:\wherever
+force export
+$reportFiles = get-childitem -Path .\src\reports\ -Recurse | sls &amp;ldquo;field_to_search_for&amp;quot;
+# I&amp;rsquo;ve included some extra fields here, they might come in useful
+$reportData = force query &amp;ndash;format=json &amp;ldquo;select id, createdby.</description>
+    </item>
+    
+    <item>
+      <title>Salesforce bulk data load job fails with message &#39;InvalidBatch : Field name not found: Id&#39;</title>
+      <link>https://wanchap.com/posts/salesforce-bulk-data-load-job-fails-with-message-invalidbatch-field-name-not-found-id/</link>
+      <pubDate>Mon, 08 Apr 2019 16:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-bulk-data-load-job-fails-with-message-invalidbatch-field-name-not-found-id/</guid>
+      <description>After creating a bulk / batch job, I&amp;rsquo;ll sometimes see that it failed before even starting (failed batches:1, but with 0 records failed), with the following error:
+InvalidBatch : Field name not found: ﻿Id
+Annoyingly, this is caused by the inability of the Salesforce bulk import process to handle anything but ASCII. Try saving your CSV again, making sure it&amp;rsquo;s in ASCII (called &amp;ldquo;CSV (Comma delimited)&amp;rdquo; in Excel) and not using UTF-8 or some other encoding.</description>
+    </item>
+    
+    <item>
+      <title>Salesforce - bypass running unnecessary unit tests during a deployment</title>
+      <link>https://wanchap.com/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/</link>
+      <pubDate>Fri, 09 Nov 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/</guid>
+      <description>We had to urgently fix a bug in an Apex class written by a previous colleague, which was causing major issues with a customer-facing application on a Friday afternoon (because these things always happen then). We&amp;rsquo;d found the bug and updated the code easily enough, but Salesforce&amp;rsquo;s default deployment option of running all local unit tests was failing because of some completely unrelated tests that were failing.
+Salesforce&amp;rsquo;s documentation (or at least the parts that I read) doesn&amp;rsquo;t clarify that you aren&amp;rsquo;t actually required to get 75% code coverage across all Apex code in your production org - you only need to get 75% coverage over the code you&amp;rsquo;re deploying.</description>
+    </item>
+    
+    <item>
+      <title>Salesforce admin gotchas</title>
+      <link>https://wanchap.com/posts/salesforce-admin-gotchas/</link>
+      <pubDate>Thu, 17 May 2018 18:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/salesforce-admin-gotchas/</guid>
+      <description>After coming across some of these for the hundredth time, I&amp;rsquo;ve decided to keep a list of bizarre inconsistencies / gotchas in Salesforce.
+Editable list views for certain objects don&amp;rsquo;t allow editing of record owner field, even though certain object types (e.g. Cases) have a &amp;ldquo;Change owner&amp;rdquo; or &amp;ldquo;Assign&amp;rdquo; option right there on the list view which does the same thing, so something exactly like this is obviously already implemented.It&amp;rsquo;s possible to mass-edit most things in list views, but not tasks.</description>
+    </item>
+    
+    <item>
+      <title>Using the Force.com CLI and Powershell</title>
+      <link>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</link>
+      <pubDate>Thu, 12 Apr 2018 19:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-the-force.com-cli-and-powershell/</guid>
+      <description>Inserting or Updating:Put all your data into a CSV file with the exact same column headings as the Salesforce fields, again making sure to save as ASCII and not UTF8 or any other encoding (in Excel, you want the option called &#34;CSV (Comma delimited)&#34; not &#34;CSV UTF-8&#34;). And then do this: force bulk insert Object__c .\new_object_data.csv
+To modify fields for updating, don&#39;t do the updates in Excel unless you have to - do it inline like this: force query --format json &#34;</description>
+    </item>
+    
+    <item>
+      <title>Setting up a Linked Server login for EasySoft Salesforce ODBC Driver</title>
+      <link>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</link>
+      <pubDate>Wed, 20 Jan 2016 17:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</guid>
+      <description>We&amp;rsquo;re currently using EasySoft&amp;rsquo;s excellent Salesforce ODBC Driver to be able to treat our Salesforce org as if it were another SQL database (really useful for updating legacy stored procedures by rewriting queries that reference migrated Dynamics tables to query Salesforce instead!) We were working on updating a particular page in our website that needed to use it but was running into permissions issues when querying it, the error was:</description>
+    </item>
+    
+    <item>
+      <title>Scribe Agent Issues</title>
+      <link>https://wanchap.com/posts/scribe-agent-issues/</link>
+      <pubDate>Wed, 02 Dec 2015 18:21:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/scribe-agent-issues/</guid>
+      <description>Today we encountered a weird problem after resetting the credentials for the Salesforce account used for synchronising data. Although the &amp;ldquo;Test Connection&amp;rdquo; was successful, any attempts to connect to Salesforce ended up with this error: &amp;ldquo;Destination URL not reset. The URL returned from login must be set in the SforceService SOQL&amp;rdquo; Which really doesn&amp;rsquo;t help much; Googling for it just turns up a bunch of info about Salesforce API connections, so hopefully someone having the same issue finds this post.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/</link>
+    <description>Recent content in Tags on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Mar 2020 17:53:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://wanchap.com/tags/javascript/</link>
+      <pubDate>Thu, 12 Mar 2020 17:53:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T-SQL</title>
+      <link>https://wanchap.com/tags/t-sql/</link>
+      <pubDate>Mon, 09 Mar 2020 17:12:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/t-sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://wanchap.com/tags/powershell/</link>
+      <pubDate>Wed, 04 Mar 2020 17:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Salesforce</title>
+      <link>https://wanchap.com/tags/salesforce/</link>
+      <pubDate>Wed, 04 Mar 2020 17:56:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/salesforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM 2011</title>
+      <link>https://wanchap.com/tags/dynamics-crm-2011/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/dynamics-crm-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Umbraco</title>
+      <link>https://wanchap.com/tags/umbraco/</link>
+      <pubDate>Tue, 10 Dec 2019 22:32:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/umbraco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://wanchap.com/tags/vim/</link>
+      <pubDate>Sun, 10 Nov 2019 15:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IIS</title>
+      <link>https://wanchap.com/tags/iis/</link>
+      <pubDate>Tue, 05 Nov 2019 17:55:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/iis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure</title>
+      <link>https://wanchap.com/tags/azure/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sharepoint Online</title>
+      <link>https://wanchap.com/tags/sharepoint-online/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/sharepoint-online/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Devops</title>
+      <link>https://wanchap.com/tags/azure-devops/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/azure-devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CLI</title>
+      <link>https://wanchap.com/tags/cli/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://wanchap.com/tags/git/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nuget</title>
+      <link>https://wanchap.com/tags/nuget/</link>
+      <pubDate>Thu, 15 Aug 2019 22:06:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/nuget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visual Studio</title>
+      <link>https://wanchap.com/tags/visual-studio/</link>
+      <pubDate>Thu, 15 Aug 2019 22:06:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/visual-studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Data Factory</title>
+      <link>https://wanchap.com/tags/azure-data-factory/</link>
+      <pubDate>Wed, 12 Jun 2019 19:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/azure-data-factory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://wanchap.com/tags/c#/</link>
+      <pubDate>Tue, 23 Apr 2019 22:09:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Directory</title>
+      <link>https://wanchap.com/tags/active-directory/</link>
+      <pubDate>Sun, 14 Apr 2019 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sendgrid</title>
+      <link>https://wanchap.com/tags/sendgrid/</link>
+      <pubDate>Sun, 03 Mar 2019 17:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/sendgrid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://wanchap.com/tags/bash/</link>
+      <pubDate>Wed, 12 Dec 2018 23:26:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://wanchap.com/tags/.net-core/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET</title>
+      <link>https://wanchap.com/tags/asp.net/</link>
+      <pubDate>Sun, 30 Sep 2018 23:16:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/asp.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVC</title>
+      <link>https://wanchap.com/tags/mvc/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL Server</title>
+      <link>https://wanchap.com/tags/sql-server/</link>
+      <pubDate>Wed, 27 Jun 2018 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/sql-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Application Insights</title>
+      <link>https://wanchap.com/tags/application-insights/</link>
+      <pubDate>Thu, 03 May 2018 23:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/application-insights/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WiX</title>
+      <link>https://wanchap.com/tags/wix/</link>
+      <pubDate>Sun, 20 Mar 2016 18:17:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/wix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scribe Online</title>
+      <link>https://wanchap.com/tags/scribe-online/</link>
+      <pubDate>Wed, 02 Dec 2015 18:21:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/scribe-online/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>https://wanchap.com/tags/jquery/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log4net</title>
+      <link>https://wanchap.com/tags/log4net/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/log4net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://wanchap.com/tags/json/</link>
+      <pubDate>Tue, 27 May 2014 18:50:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Validation</title>
+      <link>https://wanchap.com/tags/validation/</link>
+      <pubDate>Wed, 21 May 2014 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://wanchap.com/tags/regular-expressions/</link>
+      <pubDate>Wed, 19 Feb 2014 21:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/regular-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android Dev</title>
+      <link>https://wanchap.com/tags/android-dev/</link>
+      <pubDate>Sun, 01 Dec 2013 15:04:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/android-dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Play</title>
+      <link>https://wanchap.com/tags/google-play/</link>
+      <pubDate>Sun, 01 Dec 2013 15:04:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/google-play/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linkdump</title>
+      <link>https://wanchap.com/tags/linkdump/</link>
+      <pubDate>Sun, 01 Dec 2013 15:04:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/tags/linkdump/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application Insights on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/application-insights/</link>
+    <description>Recent content in Application Insights on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 May 2018 23:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/application-insights/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>&#39;A section using configSource may contain no other attributes or elements&#39; error after installing Application Insights</title>
+      <link>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</link>
+      <pubDate>Thu, 03 May 2018 23:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/a-section-using-configsource-may-contain-no-other-attributes-or-elements-error-after-installing-application-insights/</guid>
+      <description>After installing the Application Insights nuget package to an Umbraco solution, you&amp;rsquo;ll get this error:
+A section using &amp;lsquo;configSource&amp;rsquo; may contain no other attributes or elements
+&amp;lt;ExamineLuceneIndexSets configSource=&amp;quot;config\ExamineIndex.config&amp;rdquo; /&amp;gt;
+&amp;lt;log4net configSource=&amp;quot;config\log4net.config&amp;rdquo;&amp;gt;
+&amp;lt;root&amp;gt;
+&amp;lt;level value=&amp;quot;ALL&amp;rdquo; /&amp;gt;
+&amp;lt;appender-ref ref=&amp;quot;aiAppender&amp;rdquo; /&amp;gt;
+Source File: \project\web.config
+This happens because part of the Application Insights installation process adds a &amp;lt;log4net&amp;gt; section to web.config. Which would make sense, except Umbraco already has a &amp;lt;log4net&amp;gt; section in /config/log4net.config. So as you can imagine, the solution is to manually move everything its added into that file.</description>
+    </item>
+    
+  </channel>
+</rss>

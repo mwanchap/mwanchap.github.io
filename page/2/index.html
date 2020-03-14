@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+
+<title>Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Matt Wanchap"/>
+<meta name="twitter:description" content=""/>
+
+<meta property="og:title" content="Matt Wanchap" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wanchap.com/" />
+<meta property="og:updated_time" content="2019-12-31T08:38:31+10:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://wanchap.com/index.xml" title="Matt Wanchap" />
+
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/" >Powershell - normalizing line endings for all files in a directory</a>
+        </span>
+        <span class="item__date">
+          Oct 22, 2019
+        </span>
+        <span >
+        
+        If you&rsquo;re working with a git repository, a much better way to solve this is by changing the core.autocrlf setting. In this case I didn&rsquo;t have that option, and needed a quick way to update thousands of files so the EOL chars would match in a binary diff tool. Here&rsquo;s my slightly modified version of this SO answer:
+$items = get-childitem -Path &ldquo;C:\path\to\dir&quot; -Recurse -File
+foreach($original_file in $items)
+{
+$text = [IO.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/powershell-normalizing-line-endings-for-all-files-in-a-directory/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/" >Connecting to Sharepoint with Powershell when MFA is enabled</a>
+        </span>
+        <span class="item__date">
+          Oct 20, 2019
+        </span>
+        <span >
+        
+        If you&rsquo;re using multifactor auth, the usual login method mentioned in the SPOService documentation isn&rsquo;t going to work (using Get-Credential) and you&rsquo;ll get an error saying &ldquo;Connect-SPOService : The sign-in name or password does not match one in the Microsoft account system&rdquo;.
+The correct process is rather bizarre:
+$orgName = &ldquo;organizationname&quot;
+connect-sposervice -url &ldquo;https://$orgName-admin.sharepoint.com&quot;
+Then you&rsquo;ll get the same Azure AD auth popup that you&rsquo;d get with Connect-AzureRmAccount and Microsoft&rsquo;s other Powershell modules.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/azure-devops-cli-removing-old-branches-after-squash-merges/" >Azure Devops CLI - removing old branches after squash merges</a>
+        </span>
+        <span class="item__date">
+          Oct 15, 2019
+        </span>
+        <span >
+        
+        We had a git repo with hundreds of already-merged branches which I wanted to clean up. They&rsquo;d all been merged via &ldquo;squash merges&rdquo;, meaning there was no merge commit to easily link back to the source branches. I wanted to delete these unnecessary branches, but only the ones that had definitely already been merged into the master branch via a pull request (PR). Below is how I used the Azure Devops CLI to get a list of them.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/azure-devops-cli-removing-old-branches-after-squash-merges/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/set-windows-spotlight-lockscreen-images-as-desktop-wallpapers-without-installing-anything/" >Set &#39;Windows spotlight&#39; lockscreen images as desktop wallpapers without installing anything</a>
+        </span>
+        <span class="item__date">
+          Oct 06, 2019
+        </span>
+        <span >
+        
+        I ended up moving the code for this post into my github since I&rsquo;m using it myself ;) Get it from here:&lt;br/ &gt;https://github.com/mwanchap/configs/blob/master/Scripts/Windows%20Spotlight%20Wallpapers.ps1
+Once you&rsquo;ve cloned it, the only things you need to do are:
+Decide where you want the wallpaper images to goUpdate the $location variable in the script with that location (I&rsquo;m using ~\Pictures\Spotlight Wallpapers)Run the scriptOpen windows background settings and set the background type to &ldquo;slideshow&rdquo;, pointed at that locationRun the script at startup if you want to get new images all the time (optional but recommended)
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/" >ImageProcessor security config for Umbraco &#43; Azure Storage Emulator</a>
+        </span>
+        <span class="item__date">
+          Sep 29, 2019
+        </span>
+        <span >
+        
+        This is only going to work if you&rsquo;re using ImageProcessor with Umbraco to deal with images being loaded from blob storage in the Azure Storage Emulator. Took me a while to get the settings right, the way I figured it out was:
+firstly, use Azure Storage Explorer to find the URL for your emulated blob container and make sure that works by requesting from there directlyFind the URL it&rsquo;s attempting to use by catching the ImageProcessingExceptions that get thrown when it can&rsquo;t find the file
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/" >The quickest, easiest way to make and connect to an Azure VM</a>
+        </span>
+        <span class="item__date">
+          Aug 15, 2019
+        </span>
+        <span >
+        
+        Connect-AzureRmAccount
+$creds = Get-Credential
+$vmname = &ldquo;TestVM&quot;
+$vm = New-AzureRmVm -Name $vmname -Credential $creds -Location &ldquo;AustraliaEast&rdquo; -Size &ldquo;Standard_DS3_v2&rdquo; # obviously change size and location as required
+$fqdn = $vm.FullyQualifiedDomainName;
+$username = $creds.UserName;
+&quot;full address:s:$fqdn&rdquo; | out-file &ldquo;~\desktop$vmname.rdp&rdquo;;
+&quot;username:s:$vmname$username&rdquo; | out-file &ldquo;~\desktop$vmname.rdp&rdquo; -Append;
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/recurring-issues-in-visual-studio-projects/" >Recurring issues in Visual Studio projects</a>
+        </span>
+        <span class="item__date">
+          Aug 15, 2019
+        </span>
+        <span >
+        
+        Common issues and solutions to errors I come across in Visual Studio on a semi-regular basis:
+Problem:
+&quot;Could not find a part of the path … bin\roslyn\csc.exe&quot;
+Solution:
+Run this in Package Manager Console:
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+Problem:
+&quot;Creation of the virtual directory http://localhost:12345/ failed with the error: Cannot create the Web site&quot;
+Solution:
+Update .csproj file and set the following:
+&lt;UseIISExpress&gt;true&lt;/UseIISExpress&gt;
+In the &lt;VisualStudio&gt; element, set the following:
+&lt;IISUrl&gt;http://localhost:1234&lt;/IISUrl&gt;
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/recurring-issues-in-visual-studio-projects/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/useful-git-stuff/" >Useful git stuff</a>
+        </span>
+        <span class="item__date">
+          Jul 18, 2019
+        </span>
+        <span >
+        
+        View diff for a specific file between two specific branches
+git difftool branch_from branch_to &ndash; &lsquo;.\file_to_examine&rsquo;
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/" >Get the maximum length of every field in a CSV, Excel etc</a>
+        </span>
+        <span class="item__date">
+          Jun 30, 2019
+        </span>
+        <span >
+        
+        While setting up tables in our data warehouse for use with some external APIs, it was getting a little tedious to figure out the max length of some long fields to get the write size for CREATE TABLE statements, so I wrote this little script to calculate it for me. Yeah, it&rsquo;s kinda messy, so sue me (or don&rsquo;t). You can swap out the import-csv part to also import from Excel or whatever else
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/" >Handling double-quoted CSVs in Azure Data Factory Pipelines</a>
+        </span>
+        <span class="item__date">
+          Jun 12, 2019
+        </span>
+        <span >
+        
+        Azure Data Factory by default uses a backslash as the escape character for CSVs, but we ran into an issue with this today processing one of the CSV files from data.gov.au. As with most CSVs they use quotes around values as normal and with double-quotes for empty values, but they also use double-quotes to escape quotes within non-empty values. This probably sounds confusing, so here&rsquo;s an example:
+&quot;column 1&rdquo;,&ldquo;column 2&rdquo;,&quot;&ldquo;,&ldquo;column 4 value is &quot;&ldquo;sort of&quot;&ldquo; like this&quot;
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

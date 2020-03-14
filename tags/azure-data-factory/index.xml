@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure Data Factory on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/azure-data-factory/</link>
+    <description>Recent content in Azure Data Factory on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2019 19:39:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/azure-data-factory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Handling double-quoted CSVs in Azure Data Factory Pipelines</title>
+      <link>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</link>
+      <pubDate>Wed, 12 Jun 2019 19:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</guid>
+      <description>Azure Data Factory by default uses a backslash as the escape character for CSVs, but we ran into an issue with this today processing one of the CSV files from data.gov.au. As with most CSVs they use quotes around values as normal and with double-quotes for empty values, but they also use double-quotes to escape quotes within non-empty values. This probably sounds confusing, so here&amp;rsquo;s an example:
+&amp;quot;column 1&amp;rdquo;,&amp;ldquo;column 2&amp;rdquo;,&amp;quot;&amp;ldquo;,&amp;ldquo;column 4 value is &amp;quot;&amp;ldquo;sort of&amp;quot;&amp;ldquo; like this&amp;quot;</description>
+    </item>
+    
+  </channel>
+</rss>

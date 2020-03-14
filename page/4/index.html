@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.67.0" />
+
+    
+
+<title>Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Matt Wanchap"/>
+<meta name="twitter:description" content=""/>
+
+<meta property="og:title" content="Matt Wanchap" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wanchap.com/" />
+<meta property="og:updated_time" content="2019-12-31T08:38:31+10:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="alternate" type="application/rss+xml" href="https://wanchap.com/index.xml" title="Matt Wanchap" />
+
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+  <div class="post-list">
+    
+    
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/get-the-date-each-branch-in-a-git-repo-diverged-from-master/" >Get the date each branch in a git repo diverged from master</a>
+        </span>
+        <span class="item__date">
+          Dec 12, 2018
+        </span>
+        <span >
+        
+        I&rsquo;m trying to clean up some long-lived branches in our repo and came across this handy stackoverflow post to get branches by the date of the commit they branched from.
+I&rsquo;ve modified it slightly to be easier to use for my purposes:
+git show-ref | { while read branch; do merge_base=$(git merge-base &ndash;all $branch master); date_branched=$(git show -s &ndash;format=format:&quot;%cd %an&rdquo; &ndash;date=short $merge_base); echo &ldquo;$date_branched, $branch&rdquo;; done } | sort
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/powershell-jobs/" >Powershell jobs</a>
+        </span>
+        <span class="item__date">
+          Dec 12, 2018
+        </span>
+        <span >
+        
+        Mostly for my own benefit but maybe someone will find this a helpful and concise reference
+Create a job like this
+$job = start-job {sleep 60; get-service;}
+If you&rsquo;re creating jobs in a loop, add them to an array
+$jobs = @()
+foreach ($asdf in $qwer) { $jobs += start-job {&hellip;} }
+Check job status while a job is running with
+$job | get-job
+Receive the result of that job with
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/powershell-jobs/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/azure-devops-unit-tests-and-azure-ad-service-authentication/" >Azure Devops, unit tests and Azure AD Service Authentication</a>
+        </span>
+        <span class="item__date">
+          Nov 26, 2018
+        </span>
+        <span >
+        
+        I couldn&rsquo;t think of a title for this one that wasn&rsquo;t ridiculously long so to help future Googlers, here&rsquo;s what we were trying to do:
+Authenticate against Azure Key Vaultusing a Service Principalusing Azure AD Service AuthenticationRrom our build serverRunning an Azure Devops build agent
+Whew. Basically we had some integration tests that retrieve a database connection string from an Azure Key Vault, and needed Azure Devops to be able to run those tests on our build server.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/azure-devops-unit-tests-and-azure-ad-service-authentication/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/making-entityframework-play-nice-with-azure-key-vault/" >Making EntityFramework play nice with Azure Key Vault</a>
+        </span>
+        <span class="item__date">
+          Nov 14, 2018
+        </span>
+        <span >
+        
+        Make a separate class containing a constructor to pass in the connection string from KV. Don&rsquo;t modify the constructor in the Whatever.Context.cs file because it&rsquo;ll get regenerated when you update the model and overwrite any changes you make in there.
+Get the connection string from the &ldquo;update model from database&rdquo; command, but replace &amp;quot; with actual quotes. The connection string in KV should look like this:
+metadata=res:///EntityFramework.DataWarehouse.csdl|res:///EntityFramework.DataWarehouse.ssdl|res://*/EntityFramework.DataWarehouse.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=databasename.database.windows.net;initial catalog=thedatabase;user id=dbusername;password=passwordgoeshere;MultipleActiveResultSets=True;App=EntityFramework&rdquo;
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/" >Salesforce - bypass running unnecessary unit tests during a deployment</a>
+        </span>
+        <span class="item__date">
+          Nov 09, 2018
+        </span>
+        <span >
+        
+        We had to urgently fix a bug in an Apex class written by a previous colleague, which was causing major issues with a customer-facing application on a Friday afternoon (because these things always happen then). We&rsquo;d found the bug and updated the code easily enough, but Salesforce&rsquo;s default deployment option of running all local unit tests was failing because of some completely unrelated tests that were failing.
+Salesforce&rsquo;s documentation (or at least the parts that I read) doesn&rsquo;t clarify that you aren&rsquo;t actually required to get 75% code coverage across all Apex code in your production org - you only need to get 75% coverage over the code you&rsquo;re deploying.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/salesforce-bypass-running-unnecessary-unit-tests-during-a-deployment/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/a-non-useful-powershell-snippet/" >A non-useful Powershell snippet</a>
+        </span>
+        <span class="item__date">
+          Oct 02, 2018
+        </span>
+        <span >
+        
+        What can I say, I was distracted
+$t = &ldquo;Taste the rainbow &ldquo;; $c = ([ConsoleColor].GetEnumNames()); (1..7) | % {$c += $c; $t += $t}; foreach($x in $c) { write-host $t -ForegroundColor $x -NoNewline; sleep -Milliseconds 50 }
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/" >Strongly-typed action links in ASP.NET Core MVC views</a>
+        </span>
+        <span class="item__date">
+          Sep 30, 2018
+        </span>
+        <span >
+        
+        While experimenting with ASP.NET Core and Razor views it occurred to me that the magic-string-based links really weren&rsquo;t ideal, so I did a little googling and came across the excellent AspNet.Mvc.TypedRouting nuget package, which lets you use strongly-typed references to controllers and action methods.
+I won&rsquo;t repeat the install instructions, but for some reason they didn&rsquo;t provide any examples of using their extension methods with the one thing I wanted to do - action links.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/strongly-typed-action-links-in-asp.net-core-mvc-views/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/adding-application-insights-to-a-.net-core-application/" >Adding Application Insights to a .NET Core application</a>
+        </span>
+        <span class="item__date">
+          Sep 20, 2018
+        </span>
+        <span >
+        
+        $appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&ldquo;ApplicationInsights&rdquo;: {
+&ldquo;InstrumentationKey&rdquo;: &ldquo;11111111-2222-3333-4444-555555555555&quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core
+        
+        </span>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/iis-secured-local-debugging/" >IIS secured local debugging</a>
+        </span>
+        <span class="item__date">
+          Aug 23, 2018
+        </span>
+        <span >
+        
+        Download and run this:
+https://github.com/mwanchap/configs/blob/master/SetupLocalhostCerts.ps1
+For each project:
+Open Visual StudioIn Solution Explorer, select the web project and press F4 to open properties (not right click -&gt; Properties, that&rsquo;s a different set of properties for some reason)Set &ldquo;SSL Enabled&rdquo; = TrueCopy the SSL URLRight click on the project name in Solution Explorer again and open Properties from thereSelect &ldquo;Web&rdquo; sectionPaste SSL URL into &ldquo;Project Url&quot;TODO: script to enable edit-and-continue for local IIS
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/iis-secured-local-debugging/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/visual-studio-edit-and-continue-issues/" >Visual Studio: Edit and Continue issues</a>
+        </span>
+        <span class="item__date">
+          Jul 16, 2018
+        </span>
+        <span >
+        
+        Huge thanks to Steve French for this one
+Like him, I&rsquo;d been having issues with &ldquo;Edit and Continue&rdquo; not working for ages. I tried everything and none of the usual advice helped at all. Finally I came across Steve&rsquo;s post here, and as he suggests, uninstalling Stackify Prefix immediately fixed the problem. Turns out everything was fine to start with, it was just Prefix that was getting in the way (probably due to the way it injects itself into the runtime / server / etc).
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/visual-studio-edit-and-continue-issues/">➦</a>
+        
+        </div>
+        
+     
+  </div>
+  
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/3/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/5/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+        </div>
+        
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

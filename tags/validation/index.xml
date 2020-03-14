@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Validation on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/validation/</link>
+    <description>Recent content in Validation on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 May 2014 16:43:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/validation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using jQuery validation plugin with fields in a jQuery UI .dialog()</title>
+      <link>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</link>
+      <pubDate>Wed, 21 May 2014 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/</guid>
+      <description>One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&amp;rsquo;s moved outside of the page&amp;rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&amp;rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&amp;rsquo;s not a lot you can do to move the dialog or the form.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dynamics CRM 2011 on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/dynamics-crm-2011/</link>
+    <description>Recent content in Dynamics CRM 2011 on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jan 2020 17:13:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/dynamics-crm-2011/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exporting from an SQL database (e.g. Dynamics) into Salesforce, without Excel</title>
+      <link>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</link>
+      <pubDate>Mon, 06 Jan 2020 17:13:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/exporting-from-an-sql-database-e.g.-dynamics-into-salesforce-without-excel/</guid>
+      <description>Whenever you paste content into it, Excel likes to be helpful and reformat it according to what it thinks you&amp;rsquo;re doing (e.g. format dates, interpret formulae), but often with CSVs it gets this wrong and messes up your carefully-formatted raw data. This was getting pretty frustrating, so rather than figuring out workarounds for Excel&amp;rsquo;s weirdness, here&amp;rsquo;s how to cut out the middleman and get the output of an SQL query directly into Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM Microsoft.IdentityModel exception in Windows 10</title>
+      <link>https://wanchap.com/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/</link>
+      <pubDate>Mon, 04 Jun 2018 18:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-microsoft.identitymodel-exception-in-windows-10/</guid>
+      <description>When trying to connect to Dynamics CRM services on a Windows 10, machine, you might get this error:
+Could not load file or assembly ‘Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35’ or one of its dependencies
+There are plenty of blog posts around that will all tell you to go and install &amp;ldquo;Windows Identity Foundation&amp;rdquo;, however this is no longer the case for Windows 10 and the installer for WIF will fail. This is because it&amp;rsquo;s now a Windows feature - install it via the &amp;ldquo;Turn Windows features on or off&amp;rdquo; section in &amp;ldquo;Programs and Features&amp;rdquo; as mentioned here.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a Linked Server login for EasySoft Salesforce ODBC Driver</title>
+      <link>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</link>
+      <pubDate>Wed, 20 Jan 2016 17:08:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/setting-up-a-linked-server-login-for-easysoft-salesforce-odbc-driver/</guid>
+      <description>We&amp;rsquo;re currently using EasySoft&amp;rsquo;s excellent Salesforce ODBC Driver to be able to treat our Salesforce org as if it were another SQL database (really useful for updating legacy stored procedures by rewriting queries that reference migrated Dynamics tables to query Salesforce instead!) We were working on updating a particular page in our website that needed to use it but was running into permissions issues when querying it, the error was:</description>
+    </item>
+    
+    <item>
+      <title>Scribe Agent Issues</title>
+      <link>https://wanchap.com/posts/scribe-agent-issues/</link>
+      <pubDate>Wed, 02 Dec 2015 18:21:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/scribe-agent-issues/</guid>
+      <description>Today we encountered a weird problem after resetting the credentials for the Salesforce account used for synchronising data. Although the &amp;ldquo;Test Connection&amp;rdquo; was successful, any attempts to connect to Salesforce ended up with this error: &amp;ldquo;Destination URL not reset. The URL returned from login must be set in the SforceService SOQL&amp;rdquo; Which really doesn&amp;rsquo;t help much; Googling for it just turns up a bunch of info about Salesforce API connections, so hopefully someone having the same issue finds this post.</description>
+    </item>
+    
+    <item>
+      <title>How to make yourself a Dynamics CRM 2011 Deployment Administrator</title>
+      <link>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</link>
+      <pubDate>Tue, 01 Sep 2015 16:53:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/</guid>
+      <description>Today I needed to deactivate one of our Dynamics organisations, but when I opened the Dynamics Deployment Manager, I received the following error:
+&amp;quot;Only the Deployment Administrators are able to use Deployment Manager. You are not a Deployment Administrator.&amp;ldquo;
+Bummer. I did a bit of Googling and found this post by Ronald Lemmen (thanks for pointing me in the right direction!). Since the Dynamics Deployment Manager is obviously checking the MSCRM_CONFIG database for this information I attached a database trace to it and found that it&amp;rsquo;s executing these queries (among many others):</description>
+    </item>
+    
+    <item>
+      <title>Authentication error querying Dynamics CRM OrganisationService</title>
+      <link>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</link>
+      <pubDate>Sat, 02 May 2015 21:28:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/</guid>
+      <description>An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
+&amp;rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&amp;ldquo;
+Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM - error publishing entity, role does not exist</title>
+      <link>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</link>
+      <pubDate>Tue, 05 Aug 2014 15:59:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-error-publishing-entity-role-does-not-exist/</guid>
+      <description>This morning I was trying to add a new option to an option set field for a custom entity I had made earlier, however an error dialog popped up which said &amp;ldquo;The requested record is unavailable or you have insufficient permission to view the record&amp;rdquo;, even though I&amp;rsquo;m in a System Administrator role. Upon downloading the exception details and examining them, the actual error was this:
+role With Id = dba45c71-05e2-e311-9210-0050568f0001 Does Not Exist</description>
+    </item>
+    
+    <item>
+      <title>Error adding dynamic values to email templates in Dynamics CRM Workflows</title>
+      <link>https://wanchap.com/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/</link>
+      <pubDate>Thu, 01 May 2014 18:38:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/error-adding-dynamic-values-to-email-templates-in-dynamics-crm-workflows/</guid>
+      <description>This morning I was setting up a new workflow process for sending an email to some users and came across a weird bug. When editing the body of an email, everything was fine until I needed to add a dynamic value from the entity to the email&amp;rsquo;s body, and then as soon as I tried to save, this:
+
+Error details:
+Unhandled Exception: System.ServiceModel.FaultException`1[[Microsoft.Xrm.Sdk.OrganizationServiceFault, Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]: System.Xml.XmlException: Microsoft Dynamics CRM has experienced an error.</description>
+    </item>
+    
+    <item>
+      <title>Dynamics CRM - Replacing old CRM 4 API references with regular expressions</title>
+      <link>https://wanchap.com/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/</link>
+      <pubDate>Wed, 19 Feb 2014 21:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/dynamics-crm-replacing-old-crm-4-api-references-with-regular-expressions/</guid>
+      <description>When upgrading Dynamics CRM 2011 to the most recent set of updates, it turns out that CRM 4 API stuff was no longer supported, even though the Microsoft code validation tool said that it should all work in IE! &amp;gt;:-[
+So I needed to quickly replace loads of old CRM 4 API references, such as
+crmForm.all.some_field.DataValue = 1;
+with the newer CRM 2011 API, which in this example would look like:</description>
+    </item>
+    
+    <item>
+      <title>Altering User-Defined Sharing Permissions for Dynamics CRM Charts Directly in the Database</title>
+      <link>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</link>
+      <pubDate>Thu, 23 Jan 2014 22:05:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/altering-user-defined-sharing-permissions-for-dynamics-crm-charts-directly-in-the-database/</guid>
+      <description>Today I received an email from a user experiencing difficulty editing charts that had been shared with them by another user, who had forgotten to check the &amp;ldquo;Write&amp;rdquo; permission. Unfortunately this person was away for the day, and for some reason CRM doesn&amp;rsquo;t have a neat admin tool for managing individual user-specified sharing settings for charts and such. So I had little choice but to dig into the bowels of the database and set the permissions manually.</description>
+    </item>
+    
+  </channel>
+</rss>

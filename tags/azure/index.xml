@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/azure/</link>
+    <description>Recent content in Azure on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Oct 2019 19:29:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connecting to Sharepoint with Powershell when MFA is enabled</title>
+      <link>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</link>
+      <pubDate>Sun, 20 Oct 2019 19:29:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/connecting-to-sharepoint-with-powershell-when-mfa-is-enabled/</guid>
+      <description>If you&amp;rsquo;re using multifactor auth, the usual login method mentioned in the SPOService documentation isn&amp;rsquo;t going to work (using Get-Credential) and you&amp;rsquo;ll get an error saying &amp;ldquo;Connect-SPOService : The sign-in name or password does not match one in the Microsoft account system&amp;rdquo;.
+The correct process is rather bizarre:
+$orgName = &amp;ldquo;organizationname&amp;quot;
+connect-sposervice -url &amp;ldquo;https://$orgName-admin.sharepoint.com&amp;quot;
+Then you&amp;rsquo;ll get the same Azure AD auth popup that you&amp;rsquo;d get with Connect-AzureRmAccount and Microsoft&amp;rsquo;s other Powershell modules.</description>
+    </item>
+    
+    <item>
+      <title>ImageProcessor security config for Umbraco &#43; Azure Storage Emulator</title>
+      <link>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</link>
+      <pubDate>Sun, 29 Sep 2019 22:58:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/imageprocessor-security-config-for-umbraco-azure-storage-emulator/</guid>
+      <description>This is only going to work if you&amp;rsquo;re using ImageProcessor with Umbraco to deal with images being loaded from blob storage in the Azure Storage Emulator. Took me a while to get the settings right, the way I figured it out was:
+firstly, use Azure Storage Explorer to find the URL for your emulated blob container and make sure that works by requesting from there directlyFind the URL it&amp;rsquo;s attempting to use by catching the ImageProcessingExceptions that get thrown when it can&amp;rsquo;t find the file</description>
+    </item>
+    
+    <item>
+      <title>The quickest, easiest way to make and connect to an Azure VM</title>
+      <link>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</link>
+      <pubDate>Thu, 15 Aug 2019 23:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/the-quickest-easiest-way-to-make-and-connect-to-an-azure-vm/</guid>
+      <description>Connect-AzureRmAccount
+$creds = Get-Credential
+$vmname = &amp;ldquo;TestVM&amp;quot;
+$vm = New-AzureRmVm -Name $vmname -Credential $creds -Location &amp;ldquo;AustraliaEast&amp;rdquo; -Size &amp;ldquo;Standard_DS3_v2&amp;rdquo; # obviously change size and location as required
+$fqdn = $vm.FullyQualifiedDomainName;
+$username = $creds.UserName;
+&amp;quot;full address:s:$fqdn&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo;;
+&amp;quot;username:s:$vmname$username&amp;rdquo; | out-file &amp;ldquo;~\desktop$vmname.rdp&amp;rdquo; -Append;</description>
+    </item>
+    
+    <item>
+      <title>Handling double-quoted CSVs in Azure Data Factory Pipelines</title>
+      <link>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</link>
+      <pubDate>Wed, 12 Jun 2019 19:39:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/</guid>
+      <description>Azure Data Factory by default uses a backslash as the escape character for CSVs, but we ran into an issue with this today processing one of the CSV files from data.gov.au. As with most CSVs they use quotes around values as normal and with double-quotes for empty values, but they also use double-quotes to escape quotes within non-empty values. This probably sounds confusing, so here&amp;rsquo;s an example:
+&amp;quot;column 1&amp;rdquo;,&amp;ldquo;column 2&amp;rdquo;,&amp;quot;&amp;ldquo;,&amp;ldquo;column 4 value is &amp;quot;&amp;ldquo;sort of&amp;quot;&amp;ldquo; like this&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>Useful Azure AD Powershell snippets</title>
+      <link>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</link>
+      <pubDate>Sun, 14 Apr 2019 18:30:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/useful-azure-ad-powershell-snippets/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of Azure AD stuff lately, so here are some powershell snippets that have been coming in handy.
+I always forget to Connect-AzureAD first, so don&amp;rsquo;t do that
+Get extension properties of a user (e.g. created date)
+Get-AzureADUser -SearchString &amp;lsquo;username or email addy&amp;rsquo; | select -ExpandProperty ExtensionProperty
+Get guest users that are not members of a specified group
+$allGuests = Get-AzureADUser -Filter &amp;ldquo;usertype eq &amp;lsquo;guest&amp;rsquo;&amp;rdquo; -All $true</description>
+    </item>
+    
+    <item>
+      <title>Azure AD error - &#39;IDX10311: RequireNonce is true but validationContext.Nonce is null&#39;</title>
+      <link>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</link>
+      <pubDate>Wed, 13 Mar 2019 22:45:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-ad-error-idx10311-requirenonce-is-true-but-validationcontext.nonce-is-null/</guid>
+      <description>I&amp;rsquo;ve experienced this one enough times now that I&amp;rsquo;d like to preserve the solution/s for future occurrences. The exact message is:
+IDX10311: RequireNonce is &amp;lsquo;true&amp;rsquo; (default) but validationContext.Nonce is null. A nonce cannot be validated. If you don&amp;rsquo;t need to check the nonce, set OpenIdConnectProtocolValidator.RequireNonce to &amp;lsquo;false&amp;rsquo;.An easy way to reproduce this one is to hit the &amp;ldquo;back&amp;rdquo; button after having signed in to an ASP.NET web app that auths with Azure AD using the OWIN library.</description>
+    </item>
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>Installing SQL Server Express to set up an Azure database locally</title>
+      <link>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</link>
+      <pubDate>Wed, 27 Jun 2018 16:43:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/installing-sql-server-express-to-set-up-an-azure-database-locally/</guid>
+      <description>Installing SQL Express:Download SQL Express installerSwitch to an account with full local admin permissions (our regular accounts don&amp;rsquo;t have these so I had to use a global admin account instead) and install SQL Express with that accountOnce installation completes, make a note of the connection string you&amp;rsquo;re given on the final page of the installerOpen SSMS and connect to the database - default name is localhost\sqlexpressNavigate to Security -&amp;gt; Logins -&amp;gt; New LoginAdd the regular (non-admin) domain account that you&amp;rsquo;ll be using most of the timeOnce added, open that account under the Logins section and then open the &amp;ldquo;Server Roles&amp;rdquo; pageAdd the account to the &amp;ldquo;sysadmin&amp;rdquo; roleObtaining the Azure database:Open the database and select the &amp;ldquo;Export&amp;rdquo; option at the top of the &amp;ldquo;Overview&amp;rdquo; pageChoose a storage account and container to drop the export file in and enter the server admin credsOnce the file has been created, access that storage container and download the db export fileRestoring the export fileBack in SSMS, connect to your local SQL express server instance again (if it isn&amp;rsquo;t still connected), right-click on the &amp;ldquo;Databases&amp;rdquo; node and select &amp;ldquo;Import Data-tier Application&amp;quot;Select the db export file, give the database a name, click &amp;ldquo;Next&amp;quot;Don&amp;rsquo;t forget to update connection strings in your applications ;) If they&amp;rsquo;re running under your normal account (i.</description>
+    </item>
+    
+    <item>
+      <title>Azure Active Directory Redirect Loop</title>
+      <link>https://wanchap.com/posts/azure-active-directory-redirect-loop/</link>
+      <pubDate>Thu, 08 Oct 2015 17:46:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-active-directory-redirect-loop/</guid>
+      <description>While developing an Azure web app that uses Azure AD integration, I ran into a mysterious redirect loop, first on my wife&amp;rsquo;s phone while trying to show it off (embarrassing!) and then again at work. Turns out that if you don&amp;rsquo;t specify https, the Microsoft sign-in page keeps redirecting back to the app and vice-versa. Took me a little while to figure this out, thanks to tugberkugurlu for finding the solution!</description>
+    </item>
+    
+  </channel>
+</rss>

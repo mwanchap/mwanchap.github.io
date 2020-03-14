@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MVC on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/mvc/</link>
+    <description>Recent content in MVC on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Sep 2018 13:37:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adding Application Insights to a .NET Core application</title>
+      <link>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</link>
+      <pubDate>Thu, 20 Sep 2018 13:37:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/adding-application-insights-to-a-.net-core-application/</guid>
+      <description>$appInsights = New-AzureRmApplicationInsights -Location USEast -ResourceGroupName rgname -Name ainame
+$appInsights.InstrumentationKey #copy this
+dotnet new mvc
+dotnet add package Microsoft.ApplicationInsights.AspNetCore
+In appsettings.json, add this
+{
+&amp;ldquo;ApplicationInsights&amp;rdquo;: {
+&amp;ldquo;InstrumentationKey&amp;rdquo;: &amp;ldquo;11111111-2222-3333-4444-555555555555&amp;quot;
+}
+}
+In program.cs add UseApplicationInsights() to the method chain for CreateDefaultBuilder
+dotnet run
+Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core</description>
+    </item>
+    
+    <item>
+      <title>Customising Umbraco&#39;s Default Grid Editors</title>
+      <link>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</link>
+      <pubDate>Wed, 19 Oct 2016 20:18:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/customising-umbracos-default-grid-editors/</guid>
+      <description>Create a new directory in App_Plugins called anything you like. This will be your &amp;ldquo;package&amp;rdquo; directoryCopy the web.config file that&amp;rsquo;s inside the main &amp;ldquo;Views&amp;rdquo; directory (not your project&amp;rsquo;s main web.config!) into your package directory. This is needed for MVC to work properlyCreate a package.manifest file and put this in it (come back and modify these properties as necessary):
+{
+&amp;ldquo;gridEditors&amp;rdquo;:
+[{
+&amp;ldquo;name&amp;rdquo;: &amp;ldquo;Speaker Portrait&amp;rdquo;,
+&amp;ldquo;alias&amp;rdquo;: &amp;ldquo;speakerPortrait&amp;rdquo;,
+&amp;ldquo;view&amp;rdquo;: &amp;ldquo;media&amp;rdquo;,
+&amp;ldquo;render&amp;rdquo;: &amp;ldquo;/app_plugins/yourpackagedir/MediaMarkup.</description>
+    </item>
+    
+  </channel>
+</rss>

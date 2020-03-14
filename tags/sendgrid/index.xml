@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sendgrid on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/sendgrid/</link>
+    <description>Recent content in Sendgrid on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2019 17:19:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/sendgrid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing Sendgrid SMTP without sending emails using sandbox mode</title>
+      <link>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</link>
+      <pubDate>Sun, 03 Mar 2019 17:19:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/testing-sendgrid-smtp-without-sending-emails-using-sandbox-mode/</guid>
+      <description>Here&amp;rsquo;s how to test out a Sendgrid integration using SMTP without actually sending emails. Obviously make sure you have Sendgrid SMTP set up in your config first, and then just add the X-SMTPAPI header (docs link) with some JSON like the below.
+MailMessage msg = new MailMessage();
+var json = @&amp;quot;{
+&amp;ldquo;&amp;ldquo;mail_settings&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;sandbox_mode&amp;rdquo;&amp;quot;: {
+&amp;ldquo;&amp;ldquo;enable&amp;rdquo;&amp;quot;: true
+}
+}
+}&amp;quot;;
+msg.Headers.Add(&amp;ldquo;X-SMTPAPI&amp;rdquo;, json);
+// all the usual email stuff
+SmtpClient smtpclient = new SmtpClient();</description>
+    </item>
+    
+  </channel>
+</rss>

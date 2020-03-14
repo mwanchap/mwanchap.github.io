@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>log4net on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/log4net/</link>
+    <description>Recent content in log4net on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Sep 2014 22:23:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/log4net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery ajax error logging on the server with log4net</title>
+      <link>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</link>
+      <pubDate>Wed, 17 Sep 2014 22:23:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/jquery-ajax-error-logging-on-the-server-with-log4net/</guid>
+      <description>This post is based on Toby Gundry&amp;rsquo;s post on the same technique, but adapted for logging jQuery ajax errors (although I added a few extra things too).
+In your Javascript:
+$(document).on({
+ajaxError: function (event, jqXHR, ajaxSettings) {
+var err = &amp;ldquo;Location: &amp;quot; + document.location.href + &amp;ldquo;; &amp;ldquo;;
+if (jqXHR)
+{
+err += &amp;ldquo;Status: &amp;quot; + jqXHR.status + &amp;ldquo;; &amp;ldquo;;
+err += &amp;ldquo;Text: &amp;quot; + jqXHR.statusText + &amp;ldquo;; &amp;ldquo;;
+}
+if (jqXHR.</description>
+    </item>
+    
+  </channel>
+</rss>

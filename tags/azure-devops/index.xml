@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure Devops on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/azure-devops/</link>
+    <description>Recent content in Azure Devops on Matt Wanchap</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Oct 2019 18:27:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://wanchap.com/tags/azure-devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Azure Devops CLI - removing old branches after squash merges</title>
+      <link>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</link>
+      <pubDate>Tue, 15 Oct 2019 18:27:00 +0000</pubDate>
+      
+      <guid>https://wanchap.com/posts/azure-devops-cli-removing-old-branches-after-squash-merges/</guid>
+      <description>We had a git repo with hundreds of already-merged branches which I wanted to clean up. They&amp;rsquo;d all been merged via &amp;ldquo;squash merges&amp;rdquo;, meaning there was no merge commit to easily link back to the source branches. I wanted to delete these unnecessary branches, but only the ones that had definitely already been merged into the master branch via a pull request (PR). Below is how I used the Azure Devops CLI to get a list of them.</description>
+    </item>
+    
+  </channel>
+</rss>
