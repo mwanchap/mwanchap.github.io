@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.68.0" />
 
     
 
@@ -138,6 +138,31 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/dont-use-eval-to-parse-json-data/" >Don&#39;t use eval to parse JSON data</a>
+        </span>
+        <span class="item__date">
+          May 20, 2014
+        </span>
+        <span >
+        
+        Today I read about an interesting security vulnerability in Javascript&rsquo;s eval() function that I wasn&rsquo;t aware of previously (which I was naively using to parse JSON data). Open a developer console and try this:
+eval(&ldquo;alert(&lsquo;pwned&rsquo;)&quot;)
+The code is executed! This could perhaps be used to return malformed instructions instead of JSON and do something malicious to the client. However, try this:
+JSON.parse(&ldquo;alert(&lsquo;not pwned&rsquo;)&quot;)
+Notice that it just throws a parsing error, but of course for actual JSON it still produces the correct object.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/dont-use-eval-to-parse-json-data/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -355,27 +380,6 @@ Obviously replace EVENTSOURCEGOESHERE with your event source name.
         </div>
         
      
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/a-wonderful-day/" >A wonderful day</a>
-        </span>
-        <span class="item__date">
-          Oct 03, 2013
-        </span>
-        <span >
-        
-        Momentous things done today:
-Start my first web-based source control https://bitbucket.org/mwanchapStart a blog of some sort (hint: it&rsquo;s this one!)Drink a beer
-Pretty good, I reckon.
-        
-        </span>
-        
-        </div>
-        
-     
   </div>
   
 
@@ -474,12 +478,23 @@ Pretty good, I reckon.
     <li class="page-item active"><a class="page-link" href="/page/8/">8</a></li>
     
     
-    <li class="page-item disabled">
-    <a href="" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/9/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

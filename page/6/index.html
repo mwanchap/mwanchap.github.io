@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.68.0" />
 
     
 
@@ -138,6 +138,37 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/useful-vim-stuff/" >Useful Vim Stuff</a>
+        </span>
+        <span class="item__date">
+          Oct 18, 2017
+        </span>
+        <span >
+        
+        !ls - execute ls in shell
+Ctrl+q - block select
+Ctrl+q, I - insert mode across multi-line block selection (operates across selection after Esc is pressed)
+qx - record macro x
+@@ - replay last macro
+2@x - replay x twice
+Ctrl+6 - edit last file (think of it like Ctrl+^ or ^^)
+g; - previous change
+gq - reformat
+O - other end of visual selection
+:split - horizontal split the current file
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/useful-vim-stuff/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -356,30 +387,6 @@ Thrown back at it when being accessed under certain circumstances (I forget exac
         </div>
         
      
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/iis-returns-404-on-all-.woff-files/" >IIS returns 404 on all .woff files</a>
-        </span>
-        <span class="item__date">
-          Nov 10, 2014
-        </span>
-        <span >
-        
-        For some reason (tell me if you know why) IIS does not seem to like .woff files, and any attempt to load them for use in CSS will be met with a 404. I found a solution to it here, and it is to paste the following into your web.config&rsquo;s system.webserver section:
-&lt;staticContent&gt;
-&lt;remove fileExtension=&rdquo;.woff&rdquo;/&gt;
-&lt;mimeMap fileExtension=&rdquo;.woff&rdquo; mimeType=&quot;application/x-font-woff&rdquo; /&gt;
-&lt;/staticContent&gt;
-Which fixed the problem immediately!
-        
-        </span>
-        
-        </div>
-        
-     
   </div>
   
 
@@ -479,7 +486,18 @@ Which fixed the problem immediately!
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -487,7 +505,7 @@ Which fixed the problem immediately!
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

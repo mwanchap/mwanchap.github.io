@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C# on Matt Wanchap</title>
-    <link>https://wanchap.com/tags/c#/</link>
-    <description>Recent content in C# on Matt Wanchap</description>
+    <title>C-sharp on Matt Wanchap</title>
+    <link>https://wanchap.com/tags/c-sharp/</link>
+    <description>Recent content in C-sharp on Matt Wanchap</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Apr 2019 22:09:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 15:36:51 +1000</lastBuildDate>
     
-	<atom:link href="https://wanchap.com/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wanchap.com/tags/c-sharp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recolouring Images With a Colormatrix</title>
+      <link>https://wanchap.com/posts/recolouring-images-with-a-colormatrix/</link>
+      <pubDate>Sun, 22 Mar 2020 15:36:51 +1000</pubDate>
+      
+      <guid>https://wanchap.com/posts/recolouring-images-with-a-colormatrix/</guid>
+      <description>I fell in love with this wallpaper (&amp;quot;Sunny Stag&amp;rdquo; by Robert Farkas) the moment I saw it:
+However I prefer dark themes and darker-coloured wallpapers, the original was a bit too bright for me. One Reddit user had made some inverted versions but I wanted a similar-coloured stag on a dark background (i.e. the colours should stay mostly the same). I use NegativeScreen all the time to darken my screens because it has &amp;ldquo;smart inversion&amp;rdquo; modes, which mostly preserve colours while still making things darker.</description>
+    </item>
     
     <item>
       <title>Formats for dealing with dates and datetimes in Salesforce</title>

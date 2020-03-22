@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.68.0" />
 
     
 
@@ -138,6 +138,30 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/iis-returns-404-on-all-.woff-files/" >IIS returns 404 on all .woff files</a>
+        </span>
+        <span class="item__date">
+          Nov 10, 2014
+        </span>
+        <span >
+        
+        For some reason (tell me if you know why) IIS does not seem to like .woff files, and any attempt to load them for use in CSS will be met with a 404. I found a solution to it here, and it is to paste the following into your web.config&rsquo;s system.webserver section:
+&lt;staticContent&gt;
+&lt;remove fileExtension=&rdquo;.woff&rdquo;/&gt;
+&lt;mimeMap fileExtension=&rdquo;.woff&rdquo; mimeType=&quot;application/x-font-woff&rdquo; /&gt;
+&lt;/staticContent&gt;
+Which fixed the problem immediately!
+        
+        </span>
+        
+        </div>
+        
+     
       
         
       
@@ -353,31 +377,6 @@ Finish all of the drinks if you sincerely think that nobody would ever get malic
         </div>
         
      
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/dont-use-eval-to-parse-json-data/" >Don&#39;t use eval to parse JSON data</a>
-        </span>
-        <span class="item__date">
-          May 20, 2014
-        </span>
-        <span >
-        
-        Today I read about an interesting security vulnerability in Javascript&rsquo;s eval() function that I wasn&rsquo;t aware of previously (which I was naively using to parse JSON data). Open a developer console and try this:
-eval(&ldquo;alert(&lsquo;pwned&rsquo;)&quot;)
-The code is executed! This could perhaps be used to return malformed instructions instead of JSON and do something malicious to the client. However, try this:
-JSON.parse(&ldquo;alert(&lsquo;not pwned&rsquo;)&quot;)
-Notice that it just throws a parsing error, but of course for actual JSON it still produces the correct object.
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/dont-use-eval-to-parse-json-data/">➦</a>
-        
-        </div>
-        
-     
   </div>
   
 
@@ -478,12 +477,23 @@ Notice that it just throws a parsing error, but of course for actual JSON it sti
     <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
+    
+    
     <li class="page-item">
     <a href="/page/8/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

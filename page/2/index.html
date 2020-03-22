@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.68.0" />
 
     
 
@@ -138,6 +138,30 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/set-default-program-for-opening-files-without-extensions-in-windows/" >Set default program for opening files without extensions in Windows</a>
+        </span>
+        <span class="item__date">
+          Oct 29, 2019
+        </span>
+        <span >
+        
+        For some reason, downloading the request / result CSV files for a Salesforce &ldquo;Bulk Data Load&rdquo; job returns CSV files with the file extension missing, so you can&rsquo;t just click to open them. This became super annoying during a troublesome data load so I decided to fix it once and for all. Open cmd as admin and enter the following:
+assoc .=&quot;No Extension&quot;
+ftype &ldquo;No Extension&quot;=&quot;C:\ProgramData\chocolatey\lib\csvfileview\tools\CSVFileView.exe&rdquo; &ldquo;%1&quot;
+Obviously substitute in your favourite CSV editor (unless by some bizarre coincidence, you also like CSVFileView and install everything with chocolatey).
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/set-default-program-for-opening-files-without-extensions-in-windows/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -352,28 +376,6 @@ git difftool branch_from branch_to &ndash; &lsquo;.\file_to_examine&rsquo;
         </div>
         
      
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/" >Handling double-quoted CSVs in Azure Data Factory Pipelines</a>
-        </span>
-        <span class="item__date">
-          Jun 12, 2019
-        </span>
-        <span >
-        
-        Azure Data Factory by default uses a backslash as the escape character for CSVs, but we ran into an issue with this today processing one of the CSV files from data.gov.au. As with most CSVs they use quotes around values as normal and with double-quotes for empty values, but they also use double-quotes to escape quotes within non-empty values. This probably sounds confusing, so here&rsquo;s an example:
-&quot;column 1&rdquo;,&ldquo;column 2&rdquo;,&quot;&ldquo;,&ldquo;column 4 value is &quot;&ldquo;sort of&quot;&ldquo; like this&quot;
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/handling-double-quoted-csvs-in-azure-data-factory-pipelines/">➦</a>
-        
-        </div>
-        
-     
   </div>
   
 
@@ -467,7 +469,16 @@ git difftool branch_from branch_to &ndash; &lsquo;.\file_to_examine&rsquo;
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -475,7 +486,7 @@ git difftool branch_from branch_to &ndash; &lsquo;.\file_to_examine&rsquo;
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

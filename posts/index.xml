@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Matt Wanchap</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Mar 2020 17:53:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 15:36:51 +1000</lastBuildDate>
     
 	<atom:link href="https://wanchap.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recolouring Images With a Colormatrix</title>
+      <link>https://wanchap.com/posts/recolouring-images-with-a-colormatrix/</link>
+      <pubDate>Sun, 22 Mar 2020 15:36:51 +1000</pubDate>
+      
+      <guid>https://wanchap.com/posts/recolouring-images-with-a-colormatrix/</guid>
+      <description>I fell in love with this wallpaper (&amp;quot;Sunny Stag&amp;rdquo; by Robert Farkas) the moment I saw it:
+However I prefer dark themes and darker-coloured wallpapers, the original was a bit too bright for me. One Reddit user had made some inverted versions but I wanted a similar-coloured stag on a dark background (i.e. the colours should stay mostly the same). I use NegativeScreen all the time to darken my screens because it has &amp;ldquo;smart inversion&amp;rdquo; modes, which mostly preserve colours while still making things darker.</description>
+    </item>
     
     <item>
       <title>One-liner to check/uncheck every checkbox on a page</title>

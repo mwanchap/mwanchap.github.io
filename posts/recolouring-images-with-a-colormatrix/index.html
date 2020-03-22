@@ -17,23 +17,21 @@
     
     
 
-<title>Authentication error querying Dynamics CRM OrganisationService • Matt Wanchap</title>
+<title>Recolouring Images With a Colormatrix • Matt Wanchap</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Authentication error querying Dynamics CRM OrganisationService"/>
-<meta name="twitter:description" content="An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
-&rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&ldquo;
-Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS."/>
+<meta name="twitter:title" content="Recolouring Images With a Colormatrix"/>
+<meta name="twitter:description" content="I fell in love with this wallpaper (&quot;Sunny Stag&rdquo; by Robert Farkas) the moment I saw it:
+However I prefer dark themes and darker-coloured wallpapers, the original was a bit too bright for me. One Reddit user had made some inverted versions but I wanted a similar-coloured stag on a dark background (i.e. the colours should stay mostly the same). I use NegativeScreen all the time to darken my screens because it has &ldquo;smart inversion&rdquo; modes, which mostly preserve colours while still making things darker."/>
 
-<meta property="og:title" content="Authentication error querying Dynamics CRM OrganisationService" />
-<meta property="og:description" content="An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
-&rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&ldquo;
-Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS." />
+<meta property="og:title" content="Recolouring Images With a Colormatrix" />
+<meta property="og:description" content="I fell in love with this wallpaper (&quot;Sunny Stag&rdquo; by Robert Farkas) the moment I saw it:
+However I prefer dark themes and darker-coloured wallpapers, the original was a bit too bright for me. One Reddit user had made some inverted versions but I wanted a similar-coloured stag on a dark background (i.e. the colours should stay mostly the same). I use NegativeScreen all the time to darken my screens because it has &ldquo;smart inversion&rdquo; modes, which mostly preserve colours while still making things darker." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wanchap.com/posts/authentication-error-querying-dynamics-crm-organisationservice/" />
-<meta property="article:published_time" content="2015-05-02T21:28:00+00:00" />
-<meta property="article:modified_time" content="2015-05-02T21:28:00+00:00" />
+<meta property="og:url" content="https://wanchap.com/posts/recolouring-images-with-a-colormatrix/" />
+<meta property="article:published_time" content="2020-03-22T15:36:51+10:00" />
+<meta property="article:modified_time" content="2020-03-22T15:36:51+10:00" />
 
 
     
@@ -147,13 +145,13 @@ Thrown back at it when being accessed under certain circumstances (I forget exac
     
 <article>
   <header>
-    <h1>Authentication error querying Dynamics CRM OrganisationService</h1>
+    <h1>Recolouring Images With a Colormatrix</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> May 02, 2015
+      <i class="fas fa-calendar-alt"></i> Mar 22, 2020
     
     
     
@@ -165,12 +163,6 @@ Thrown back at it when being accessed under certain circumstances (I forget exac
            <i class="fas fa-tags"></i>
           
           <a class="badge badge-tag" href="/tags/c-sharp">c-sharp</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/dynamics-crm-2011">dynamics crm 2011</a>
-           
-      
-          <a class="badge badge-tag" href="/tags/iis">iis</a>
           
       
     
@@ -184,23 +176,25 @@ Thrown back at it when being accessed under certain circumstances (I forget exac
   
   
   <div class="post">
-    <p>An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting<br /><pre>&rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&ldquo;</pre><br />Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using <code>CredentialCache.DefaultNetworkCredentials</code> as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.<br /><br />Turns out the solution was to add an <pre>[OperationBehavior(Impersonation = ImpersonationOption.Required)]</pre> attribute to any methods that tried to query the OrganisationService!</p>
+    <p>I fell in love with this wallpaper (<em>&quot;<a href="https://www.reddit.com/r/wallpapers/comments/8z0za6/sunny_stag_by_robert_farkas_6211x2662/">Sunny Stag</a>&rdquo; by Robert Farkas</em>) the moment I saw it:</p>
+<p><img src="https://preview.redd.it/xrh00l5uf3a11.png?width=960&amp;crop=smart&amp;auto=webp&amp;s=cd91f9aaa7f1c0a0c3b4c8b4f3f2a6294a9490b0" alt="Sunny Stag by Robert Farkas"></p>
+<p>However I prefer dark themes and darker-coloured wallpapers, the original was a bit too bright for me. One Reddit user had made some inverted versions but I wanted a similar-coloured stag on a dark background (i.e. the colours should stay mostly the same). I use <a href="https://zerowidthjoiner.net/negativescreen">NegativeScreen</a> all the time to darken my screens because it has &ldquo;smart inversion&rdquo; modes, which mostly preserve colours while still making things darker.</p>
+<p>I had a look in its config file and noticed each inversion mode uses a &ldquo;colour matrix&rdquo;, so I did a little Googling and came across <a href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageattributes?view=netframework-4.8#examples">the MS docs</a> for using the ColorMatrix class to recolour an image. All I really had to do was change the matrix to the &ldquo;smart inversion&rdquo; matrix from NegativeScreen&rsquo;s config, and save the resulting image. Here&rsquo;s the code for it:</p>
+<script src="https://gist.github.com/mwanchap/aa590e8ed8d3988b9ec4d3aabe8d5bf8.js"></script>
+<p>And I think the resulting image looks pretty nice!</p>
+<p><img src="https://i.imgur.com/qVD5akE.jpg" alt="Sunny Stag by Robert Farkas">
+<a href="https://i.imgur.com/dseh2op.jpg">(Full-size version)</a></p>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/posts/iis-returns-404-on-all-.woff-files/" class="navigation-prev">
+    <a href="/posts/one-liner-to-checkuncheck-every-checkbox-on-a-page/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">IIS returns 404 on all .woff files</span>
+      <span class="navigation-tittle">One-liner to check/uncheck every checkbox on a page</span>
     </a>
     
-    
-    <a href="/posts/how-to-make-yourself-a-dynamics-crm-2011-deployment-administrator/" class="navigation-next">
-      <span class="navigation-tittle">How to make yourself a Dynamics CRM 2011 Deployment Administrator</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
-    </a>
     
 </div>
 

@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wanchap.com/tags/c-sharp/</loc>
+    <lastmod>2020-03-22T15:36:51+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/</loc>
+    <lastmod>2020-03-22T15:36:51+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/posts/recolouring-images-with-a-colormatrix/</loc>
+    <lastmod>2020-03-22T15:36:51+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/</loc>
+    <lastmod>2020-03-22T15:36:51+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wanchap.com/tags/javascript/</loc>
     <lastmod>2020-03-12T17:53:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://wanchap.com/posts/one-liner-to-checkuncheck-every-checkbox-on-a-page/</loc>
-    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wanchap.com/posts/</loc>
-    <lastmod>2020-03-12T17:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wanchap.com/tags/</loc>
     <lastmod>2020-03-12T17:53:00+00:00</lastmod>
   </url>
   
@@ -205,11 +215,6 @@
   <url>
     <loc>https://wanchap.com/posts/handy-soql-query-snippets/</loc>
     <lastmod>2019-06-04T15:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wanchap.com/tags/c#/</loc>
-    <lastmod>2019-04-23T22:09:00+00:00</lastmod>
   </url>
   
   <url>

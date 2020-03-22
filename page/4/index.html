@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.67.0" />
+<meta name="generator" content="Hugo 0.68.0" />
 
     
 
@@ -138,6 +138,29 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/docker-asp.net-mvc-hello-world-abridged-edition/" >Docker &#43; ASP.NET MVC Hello world - abridged edition</a>
+        </span>
+        <span class="item__date">
+          Dec 26, 2018
+        </span>
+        <span >
+        
+        Here&rsquo;s the exact steps to get the ASP.NET MVC sample application running in a Docker container in Windows 10, abridged from the Microsoft tutorial here. I used a fresh Azure VM to avoid the many weird issues I kept running into with my bizarrely-screwy desktop, because of course it is.
+$ip = (New-AzureRmVm -Name dockertest -Credential (Get-Credential) | Get-AzureRmPublicIpAddress); &ldquo;Remote desktop to: &quot; + $ip.IpAddress; mstsc -v $ip.IpAddress
+Next, install chocolatey, then install everything else:choco install visualstudio2017professional visualstudio2017-workload-netweb docker docker-desktop -ySign out and back in again, run docker desktop as admin, right-click the tray icon and switch to windows containers, let it enable hyper-v and reboot.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/docker-asp.net-mvc-hello-world-abridged-edition/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -351,28 +374,6 @@ Open Visual StudioIn Solution Explorer, select the web project and press F4 to o
         </div>
         
      
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/visual-studio-edit-and-continue-issues/" >Visual Studio: Edit and Continue issues</a>
-        </span>
-        <span class="item__date">
-          Jul 16, 2018
-        </span>
-        <span >
-        
-        Huge thanks to Steve French for this one
-Like him, I&rsquo;d been having issues with &ldquo;Edit and Continue&rdquo; not working for ages. I tried everything and none of the usual advice helped at all. Finally I came across Steve&rsquo;s post here, and as he suggests, uninstalling Stackify Prefix immediately fixed the problem. Turns out everything was fine to start with, it was just Prefix that was getting in the way (probably due to the way it injects itself into the runtime / server / etc).
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/visual-studio-edit-and-continue-issues/">➦</a>
-        
-        </div>
-        
-     
   </div>
   
 
@@ -470,7 +471,16 @@ Like him, I&rsquo;d been having issues with &ldquo;Edit and Continue&rdquo; not 
         
     
     
-    <li class="page-item"><a class="page-link" href="/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/9/">9</a></li>
     
     
     <li class="page-item">
@@ -478,7 +488,7 @@ Like him, I&rsquo;d been having issues with &ldquo;Edit and Continue&rdquo; not 
     </li>
     
     <li class="page-item">
-        <a href="/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
