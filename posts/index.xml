@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Matt Wanchap</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Mar 2020 15:36:51 +1000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 10:45:13 +1000</lastBuildDate>
     
 	<atom:link href="https://wanchap.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting Started With Ansible on Azure VMs</title>
+      <link>https://wanchap.com/posts/getting-started-with-ansible-on-azure-vms/</link>
+      <pubDate>Fri, 10 Apr 2020 10:45:13 +1000</pubDate>
+      
+      <guid>https://wanchap.com/posts/getting-started-with-ansible-on-azure-vms/</guid>
+      <description>Here&amp;rsquo;s some notes I took during the excellent Getting Started with Ansible on Windows course on Pluralsight, specific to Azure VMs. I was trying to set up a cluster of servers to use as Azure Devops build agents, so my notes all relate to that.
+ Create some Azure VMs using a script like this one Add networking rules to each to allow WinRM over HTTPS: inbound TCP port 5986 (my example script above already does this) Also run the ConfigureRemotingForAnsible script (my example script does this too) Ansible&amp;rsquo;s win_ping module doesn&amp;rsquo;t actually use ICMP ping so if you have issues with it, they aren&amp;rsquo;t related to a firewall blocking pings.</description>
+    </item>
     
     <item>
       <title>Recolouring Images With a Colormatrix</title>

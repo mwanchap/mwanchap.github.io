@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,30 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/" >Powershell error: &#39;Retrieving COM class factory failed: class not registered (REGDB_E_CLASSNOTREG)&#39;</a>
+        </span>
+        <span class="item__date">
+          Nov 05, 2019
+        </span>
+        <span >
+        
+        The problematic command and full error message was:
+&gt;get-webbinding
+&quot;get-webconfigurationproperty : Retrieving the COM class factory for component with CLSID {688EEEE5-6A7E-422F-B2E1-6AF00DC944A6} failed due to the following error: 80040154 Class not registered (Exception from HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG)).&ldquo;
+I was pretty stuck on the above error while trying to run a script for setting up sites in IIS which involved some calls to get-webbinding (in the WebAdministration module). After much digging around I finally ran into this post.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/powershell-error-retrieving-com-class-factory-failed-class-not-registered-regdb_e_classnotreg/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -351,27 +375,6 @@ In the &lt;VisualStudio&gt; element, set the following:
 git difftool branch_from branch_to &ndash; &lsquo;.\file_to_examine&rsquo;
         
         </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/" >Get the maximum length of every field in a CSV, Excel etc</a>
-        </span>
-        <span class="item__date">
-          Jun 30, 2019
-        </span>
-        <span >
-        
-        While setting up tables in our data warehouse for use with some external APIs, it was getting a little tedious to figure out the max length of some long fields to get the write size for CREATE TABLE statements, so I wrote this little script to calculate it for me. Yeah, it&rsquo;s kinda messy, so sue me (or don&rsquo;t). You can swap out the import-csv part to also import from Excel or whatever else
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/get-the-maximum-length-of-every-field-in-a-csv-excel-etc/">➦</a>
         
         </div>
         

@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,30 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/iis-secured-local-debugging/" >IIS secured local debugging</a>
+        </span>
+        <span class="item__date">
+          Aug 23, 2018
+        </span>
+        <span >
+        
+        Download and run this:
+https://github.com/mwanchap/configs/blob/master/SetupLocalhostCerts.ps1
+For each project:
+Open Visual StudioIn Solution Explorer, select the web project and press F4 to open properties (not right click -&gt; Properties, that&rsquo;s a different set of properties for some reason)Set &ldquo;SSL Enabled&rdquo; = TrueCopy the SSL URLRight click on the project name in Solution Explorer again and open Properties from thereSelect &ldquo;Web&rdquo; sectionPaste SSL URL into &ldquo;Project Url&quot;TODO: script to enable edit-and-continue for local IIS
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/iis-secured-local-debugging/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -354,30 +378,6 @@ Unless you&rsquo;re on a brand new project, any existing views will need to be m
         </span>
         
           ... <a class="read-more-symbol" href="/posts/using-umbraco-modelsbuilder/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/powershell-as-a-visual-studio-external-tool/" >Powershell as a Visual Studio External Tool</a>
-        </span>
-        <span class="item__date">
-          Oct 22, 2017
-        </span>
-        <span >
-        
-        It&rsquo;s handy to be able to open Powershell at the current solution directory, e.g. for invoking scripts or git commands etc.
-Click the Tools menu -&gt; External Tools -&gt; Add
-Title: Powershell, or whatever you want
-Command: your PS directory, e.g C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-Arguments: -ExecutionPolicy RemoteSigned -NoExit -Command &ldquo;Set-Location &lsquo;$(SolutionDir)&rsquo; | Clear-Host&quot;
-Initial directory: $(SolutionDir)
-        
-        </span>
         
         </div>
         

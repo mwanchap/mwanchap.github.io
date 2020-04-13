@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,27 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/chrome-forcing-all-localhost-queries-to-https-breaking-various-clis/" >Chrome forcing all localhost queries to https, breaking various CLIs</a>
+        </span>
+        <span class="item__date">
+          Jan 13, 2019
+        </span>
+        <span >
+        
+        I use the Azure CLI and the Force.com CLI pretty regularly, and both of them make use of a little webserver running on localhost, presumably to catch the auth tokens once the SSO process redirects back. I also like to use localhost as a new tab page, to better invoke Chrome&rsquo;s Vimium extension on all new tabs. On several installs of several dev machines, http://localhost has been regularly redirected to https where it shouldn&rsquo;t be, causing breakage of all the CLIs, since they&rsquo;re not providing TLS certs, and my new tab page as I haven&rsquo;t got a TLS binding set up for the IIS default website.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/chrome-forcing-all-localhost-queries-to-https-breaking-various-clis/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -346,30 +367,6 @@ dotnet run
 Ref: https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core
         
         </span>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/iis-secured-local-debugging/" >IIS secured local debugging</a>
-        </span>
-        <span class="item__date">
-          Aug 23, 2018
-        </span>
-        <span >
-        
-        Download and run this:
-https://github.com/mwanchap/configs/blob/master/SetupLocalhostCerts.ps1
-For each project:
-Open Visual StudioIn Solution Explorer, select the web project and press F4 to open properties (not right click -&gt; Properties, that&rsquo;s a different set of properties for some reason)Set &ldquo;SSL Enabled&rdquo; = TrueCopy the SSL URLRight click on the project name in Solution Explorer again and open Properties from thereSelect &ldquo;Web&rdquo; sectionPaste SSL URL into &ldquo;Project Url&quot;TODO: script to enable edit-and-continue for local IIS
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/iis-secured-local-debugging/">➦</a>
         
         </div>
         

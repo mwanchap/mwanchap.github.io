@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,39 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/" >Using Log4Net to use both event log and a rolling log file</a>
+        </span>
+        <span class="item__date">
+          Oct 29, 2013
+        </span>
+        <span >
+        
+        Here&rsquo;s the config section, note that the applicationNameproperty in the EventLogAppender needs to be the same as the event source in the windows event log that you want to log to. If the event source doesn&rsquo;t exist, that appender won&rsquo;t work. In this particular project I create that during install using WiX (which is covered in another post)
+
+&lt;log4netdebug=&quot;true&quot;&gt;
+&lt;appendername=&quot;RollingLogFileAppender&quot;type=&quot;log4net.Appender.RollingFileAppender&quot;&gt;
+&lt;filevalue=&quot;log.txt&quot;/&gt;
+&lt;datePatternvalue=&quot;dd-MM-yyyy&quot;/&gt;
+&lt;appendToFilevalue=&quot;true&quot;/&gt;
+&lt;locationinfovalue=&quot;false&quot;/&gt;
+&lt;rollingStylevalue=&quot;Size&quot;/&gt;
+&lt;maximumFileSizevalue=&quot;1MB&quot;/&gt;
+&lt;maxSizeRollBackupsvalue=&quot;10&quot;/&gt;
+&lt;staticLogFileNamevalue=&quot;true&quot;/&gt;
+&lt;layouttype=&quot;log4net.Layout.PatternLayout&quot;&gt;
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/">➦</a>
+        
+        </div>
+        
+     
       
         
       

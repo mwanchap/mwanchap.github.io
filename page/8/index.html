@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,27 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/" >Using jQuery validation plugin with fields in a jQuery UI .dialog()</a>
+        </span>
+        <span class="item__date">
+          May 21, 2014
+        </span>
+        <span >
+        
+        One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&rsquo;s moved outside of the page&rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&rsquo;s not a lot you can do to move the dialog or the form.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -343,39 +364,6 @@ Obviously replace EVENTSOURCEGOESHERE with your event source name.
         </span>
         
           ... <a class="read-more-symbol" href="/posts/using-wix-to-create-an-event-source-during-install-of-a-.net-framework-project/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/" >Using Log4Net to use both event log and a rolling log file</a>
-        </span>
-        <span class="item__date">
-          Oct 29, 2013
-        </span>
-        <span >
-        
-        Here&rsquo;s the config section, note that the applicationNameproperty in the EventLogAppender needs to be the same as the event source in the windows event log that you want to log to. If the event source doesn&rsquo;t exist, that appender won&rsquo;t work. In this particular project I create that during install using WiX (which is covered in another post)
-
-&lt;log4netdebug=&quot;true&quot;&gt;
-&lt;appendername=&quot;RollingLogFileAppender&quot;type=&quot;log4net.Appender.RollingFileAppender&quot;&gt;
-&lt;filevalue=&quot;log.txt&quot;/&gt;
-&lt;datePatternvalue=&quot;dd-MM-yyyy&quot;/&gt;
-&lt;appendToFilevalue=&quot;true&quot;/&gt;
-&lt;locationinfovalue=&quot;false&quot;/&gt;
-&lt;rollingStylevalue=&quot;Size&quot;/&gt;
-&lt;maximumFileSizevalue=&quot;1MB&quot;/&gt;
-&lt;maxSizeRollBackupsvalue=&quot;10&quot;/&gt;
-&lt;staticLogFileNamevalue=&quot;true&quot;/&gt;
-&lt;layouttype=&quot;log4net.Layout.PatternLayout&quot;&gt;
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/using-log4net-to-use-both-event-log-and-a-rolling-log-file/">➦</a>
         
         </div>
         

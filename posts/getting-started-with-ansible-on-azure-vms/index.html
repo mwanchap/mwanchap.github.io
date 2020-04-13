@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.68.3" />
+
+    
+    
+    
+
+<title>Getting Started With Ansible on Azure VMs • Matt Wanchap</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started With Ansible on Azure VMs"/>
+<meta name="twitter:description" content="Here&rsquo;s some notes I took during the excellent Getting Started with Ansible on Windows course on Pluralsight, specific to Azure VMs. I was trying to set up a cluster of servers to use as Azure Devops build agents, so my notes all relate to that.
+ Create some Azure VMs using a script like this one Add networking rules to each to allow WinRM over HTTPS: inbound TCP port 5986 (my example script above already does this) Also run the ConfigureRemotingForAnsible script (my example script does this too) Ansible&rsquo;s win_ping module doesn&rsquo;t actually use ICMP ping so if you have issues with it, they aren&rsquo;t related to a firewall blocking pings."/>
+
+<meta property="og:title" content="Getting Started With Ansible on Azure VMs" />
+<meta property="og:description" content="Here&rsquo;s some notes I took during the excellent Getting Started with Ansible on Windows course on Pluralsight, specific to Azure VMs. I was trying to set up a cluster of servers to use as Azure Devops build agents, so my notes all relate to that.
+ Create some Azure VMs using a script like this one Add networking rules to each to allow WinRM over HTTPS: inbound TCP port 5986 (my example script above already does this) Also run the ConfigureRemotingForAnsible script (my example script does this too) Ansible&rsquo;s win_ping module doesn&rsquo;t actually use ICMP ping so if you have issues with it, they aren&rsquo;t related to a firewall blocking pings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanchap.com/posts/getting-started-with-ansible-on-azure-vms/" />
+<meta property="article:published_time" content="2020-04-10T10:45:13+10:00" />
+<meta property="article:modified_time" content="2020-04-10T10:45:13+10:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css"> 
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" media="print"> 
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://wanchap.com/">Matt Wanchap</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://wanchap.com/matt.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Matt Wanchap</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/MattWanchap" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/mwanchap" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/mwanchap" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/mwanchap" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/2939759" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Getting Started With Ansible on Azure VMs</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 10, 2020
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>Here&rsquo;s some notes I took during the excellent <a href="https://app.pluralsight.com/library/courses/getting-started-ansible-windows/table-of-contents">Getting Started with Ansible on Windows</a> course on Pluralsight, specific to Azure VMs. I was trying to set up a cluster of servers to use as Azure Devops build agents, so my notes all relate to that.</p>
+<ul>
+<li>Create some Azure VMs using a script like <a href="https://github.com/mwanchap/stuff/blob/master/Scripts/CreateAzureVmForAnsible.ps1">this one</a></li>
+<li>Add networking rules to each to allow WinRM over HTTPS: inbound TCP port 5986 (my example script above already does this)</li>
+<li>Also run the <a href="https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1">ConfigureRemotingForAnsible</a> script (my example script does this too)</li>
+<li>Ansible&rsquo;s win_ping module doesn&rsquo;t actually use ICMP ping so if you have issues with it, they aren&rsquo;t related to a firewall blocking pings.</li>
+<li>In ansible&rsquo;s hosts file, you don&rsquo;t need to put the domain on the username like is demonstrated in the course, I tried vmname\username, username@vmname and so on, none worked. Obviously in a real domain it wouldn&rsquo;t work like that anyway.</li>
+</ul>
+<p>I ended up with this Ansible hosts file:</p>
+<script src="https://gist.github.com/mwanchap/a975b57db3c539b59a4d02cc4a864b8c.js"></script>
+<p>And here&rsquo;s the playbook I used to set up my demo build servers. It registers the Azure pipelines agent first, then installs a bunch of different frameworks and build tools that we&rsquo;ve used for some projects. Probably don&rsquo;t authenticate your agents with your personal access token, though.</p>
+<script src="https://gist.github.com/mwanchap/d77faff809340ea228e2147441f69f39.js"></script>
+<p>Unrelated to Ansible, but I spent more time on this than anything else: For some reason Azure Devops&rsquo; Nuget tool installer always ended up either installing 4.3 or 4.4, so if you get errors like the below, make sure it&rsquo;s using the right version (as of this writing, that was 4.x = 4.9.4).</p>
+<p><code>##[error]The nuget command failed with exit code(1) and error(Error parsing solution file at C:\agent\_work\1\s\src\SolutionName.sln: Exception has been thrown by the target of an invocation.  The project file could not be loaded. Could not load file or assembly 'Microsoft.Build.Framework, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The system cannot find the file specified.</code></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/recolouring-images-with-a-colormatrix/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Recolouring Images With a Colormatrix</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

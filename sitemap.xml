@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wanchap.com/tags/c-sharp/</loc>
-    <lastmod>2020-03-22T15:36:51+10:00</lastmod>
+    <loc>https://wanchap.com/posts/getting-started-with-ansible-on-azure-vms/</loc>
+    <lastmod>2020-04-10T10:45:13+10:00</lastmod>
   </url>
   
   <url>
     <loc>https://wanchap.com/posts/</loc>
+    <lastmod>2020-04-10T10:45:13+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wanchap.com/tags/c-sharp/</loc>
     <lastmod>2020-03-22T15:36:51+10:00</lastmod>
   </url>
   

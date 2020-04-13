@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.68.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 
@@ -138,6 +138,29 @@
   <div class="post-list">
     
     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/authentication-error-querying-dynamics-crm-organisationservice/" >Authentication error querying Dynamics CRM OrganisationService</a>
+        </span>
+        <span class="item__date">
+          May 02, 2015
+        </span>
+        <span >
+        
+        An IIS website we had that queries the Dynamics CRM (2011) OrganisationService was getting
+&rdquo;[SecurityNegotiationException: The caller was not authenticated by the service.]&ldquo;
+Thrown back at it when being accessed under certain circumstances (I forget exactly what they were, although I do remember it being a huge pain in the butt). The Service was instantiated using CredentialCache.DefaultNetworkCredentials as in many examples. The problem was that those client credentials were not being impersonated correctly even though impersonation and windows auth was enabled in IIS.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="/posts/authentication-error-querying-dynamics-crm-organisationservice/">➦</a>
+        
+        </div>
+        
+     
       
         
       
@@ -352,27 +375,6 @@ Finish all of the drinks if you sincerely think that nobody would ever get malic
         </span>
         
           ... <a class="read-more-symbol" href="/posts/the-json-deserialisation-drinking-game/">➦</a>
-        
-        </div>
-        
-     
-      
-        
-      
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/" >Using jQuery validation plugin with fields in a jQuery UI .dialog()</a>
-        </span>
-        <span class="item__date">
-          May 21, 2014
-        </span>
-        <span >
-        
-        One issue I ran into while using the jQuery UI library along with the jQuery validation plugin in an ASP.NET page is that when the dialog is created, it&rsquo;s moved outside of the page&rsquo;s main form. jQuery validation requires all fields to be validated to be inside a form, so fields in the dialog won&rsquo;t validate, plus if you need to have server-side controls inside of that dialog, there&rsquo;s not a lot you can do to move the dialog or the form.
-        
-        </span>
-        
-          ... <a class="read-more-symbol" href="/posts/using-jquery-validation-plugin-with-fields-in-a-jquery-ui-.dialog/">➦</a>
         
         </div>
         
